@@ -1,0 +1,18 @@
+/* .Time,
+.Date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+.Time-position {
+    position: absolute;
+    /* top: 0;
+    width: 100%;
+    height: 100%; */
+    letter-spacing: 1em;
+    color: azure;
+    font-family: "Gloria Hallelujah", cursive;
+}
