@@ -1,6 +1,20 @@
 import React, { Component } from "react";
-import "./Time.css";
-
+import { withStyles } from "@material-ui/core/styles";
+const styles = {
+    // time: {
+    //     margin: "auto",
+    //     position: "absolute",
+    //     left: 0,
+    //     right: 0,
+    //     textAlign: "center",
+    //     letterSpacing: "1em",
+    //     color: "azure",
+    // },
+    time: {
+        textAlign: "center",
+        color: "azure",
+    },
+};
 class Time extends Component {
     constructor(props) {
         super(props);
@@ -14,6 +28,7 @@ class Time extends Component {
     }
 
     render() {
+        const { classes } = this.props;
         let { todayTime } = this.state;
         let hours = todayTime.getHours();
         let minutes = todayTime.getMinutes();
@@ -22,22 +37,19 @@ class Time extends Component {
         let month = todayTime.getMonth();
         let year = todayTime.getFullYear();
         return (
-            <div className="Time-position">
-                <div className="Time">
-                    <h1>
-                        {hours < 10 ? `0${hours}` : hours}:
-                        {minutes < 10 ? `0${minutes}` : minutes}:
-                        {seconds < 10 ? `0${seconds}` : seconds}
-                    </h1>
-                </div>
-                <div className="Date">
-                    <p>
-                        {day}/{month}/{year}
-                    </p>
-                </div>
+            <div className={classes.time}>
+                <h1>Welcome to my Website</h1>
+                <h2>
+                    {hours < 10 ? `0${hours}` : hours}:
+                    {minutes < 10 ? `0${minutes}` : minutes}:
+                    {seconds < 10 ? `0${seconds}` : seconds}
+                </h2>
+                <p>
+                    {day}/{month}/{year}
+                </p>
             </div>
         );
     }
 }
 
-export default Time;
+export default withStyles(styles)(Time);

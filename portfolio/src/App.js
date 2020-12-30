@@ -1,75 +1,48 @@
-import "./App.css";
-import SliderPage from "react-slider-page";
-import Navbar from "./Navbar";
+import React, { Component } from "react";
 import About from "./About";
-import AlternateTimeline from "./Timeline";
-function App() {
-    return (
-        <div style={{ display: "flex" }}>
-            <SliderPage>
-                {/* Introduction */}
-                <section
-                    id="Welcome"
-                    style={{
-                        backgroundColor: "orange",
-                        textAlign: "center",
-                    }}
-                >
-                    <div>Welcome to Aditya's Website</div>
-                </section>
+import ProjectsTimeline from "./ProjectsTimeline";
+import { projects, experiences, educations } from "./seedInfo";
+import { withStyles } from "@material-ui/core/styles";
+import AwesomeSlider from "react-awesome-slider";
+import AwesomeSliderStyles from "react-awesome-slider/dist/styles.css";
+import Time from "./Time";
 
-                {/* About */}
-                <section
-                    id="about"
-                    style={{
-                        backgroundColor: "teal",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                    }}
-                >
+const styles = {
+    container: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        color: "azure",
+    },
+
+    particlePage: {
+        backgroundColor: "#030614fa",
+        width: "100%",
+        height: "100%",
+    },
+
+    "& AwesomeSlider": {
+        overflow: "visible",
+    },
+};
+class App extends Component {
+    render() {
+        const { classes } = this.props;
+        return (
+            <AwesomeSlider cssModule={AwesomeSliderStyles}>
+                <div className={classes.container}>
+                    <Time />
+                </div>
+                <div className={classes.container}>
                     <About />
-                </section>
-
-                {/* Projects */}
-                <section
-                    id="projects"
-                    style={{
-                        backgroundColor: "red",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                    }}
-                >
-                    <section
-                        style={{
-                            width: "100%",
-
-                            border: "solid 2px cyan",
-                            padding: "10%",
-                        }}
-                    >
-                        <h1
-                            style={{
-                                textAlign: "center",
-                                border: "solid 1px black",
-                            }}
-                        >
-                            Projects
-                        </h1>
-                        <AlternateTimeline />
-                    </section>
-                </section>
-                <section id="timeline" style={{ backgroundColor: "blue" }}>
-                    <div>Timeline</div>
-                </section>
-
-                <section id="vue" style={{ backgroundColor: "cyan" }}>
-                    <div>Vue</div>
-                </section>
-            </SliderPage>
-        </div>
-    );
+                </div>
+                <div className={classes.container}>
+                    <ProjectsTimeline projects={projects} />
+                </div>
+                <div className={classes.container}>Art</div>
+            </AwesomeSlider>
+        );
+    }
 }
 
-export default App;
+export default withStyles(styles)(App);
