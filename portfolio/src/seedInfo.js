@@ -4,7 +4,8 @@ const projects = [
         startPeriod: "06/2016",
         endPeriod: "03/2017",
         descriptions: [
-            "Develop 7 artworks (2 sculptures, 3 paintings, and 2 photographs) to be exhibited in Sekolah Pelita Harapan Sentul City (SPH SC) art exhibition event.",
+            "Develop 7 artworks for Sekolah Pelita Harapan Sentul City (SPH SC) art exhibition event.",
+            "Completed 2 sculptures, 3 paintings, and 2 photographs.",
             "Improving technical skills and disciplines.",
         ],
         type: "art",

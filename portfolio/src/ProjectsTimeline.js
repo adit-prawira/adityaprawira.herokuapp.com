@@ -5,7 +5,7 @@ import TimelineSeparator from "@material-ui/lab/TimelineSeparator";
 import TimelineConnector from "@material-ui/lab/TimelineConnector";
 import TimelineContent from "@material-ui/lab/TimelineContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import Paper from "@material-ui/core/Paper";
@@ -14,62 +14,48 @@ import AlbumIcon from "@material-ui/icons/Album";
 import BrushIcon from "@material-ui/icons/Brush";
 import BuildIcon from "@material-ui/icons/Build";
 import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
-
-import Switch from "@material-ui/core/Switch";
-import Collapse from "@material-ui/core/Collapse";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+import SeeMore from "./SeeMore";
 
 const styles = {
     timelineContainer: {
-        width: "100%",
         borderRadius: "10px",
-        backgroundColor: "rgba(240,255,255,0.5)",
+        backgroundColor: "rgba(240,255,255,0.4)",
     },
     paper: {
-        textAlign: "center",
+        padding: "1%",
     },
 };
-const useStyles = makeStyles((theme) => ({
-    root: {
-        height: 180,
-    },
-    container: {
-        display: "flex",
-    },
-    paper: {
-        margin: theme.spacing(1),
-    },
-}));
+
 export default withStyles(styles)(
     class ProjectsTimeline extends Component {
         handleIcon(type) {
             if (type === "art") {
                 return (
-                    <TimelineDot>
+                    <TimelineDot color="primary">
                         <BrushIcon />
                     </TimelineDot>
                 );
             } else if (type === "engineering") {
                 return (
-                    <TimelineDot>
+                    <TimelineDot color="secondary">
                         <BuildIcon />
                     </TimelineDot>
                 );
             } else if (type === "game") {
                 return (
-                    <TimelineDot>
+                    <TimelineDot color="secondary">
                         <SportsEsportsIcon />
                     </TimelineDot>
                 );
             } else if (type === "music") {
                 return (
-                    <TimelineDot>
+                    <TimelineDot color="primary">
                         <AlbumIcon />
                     </TimelineDot>
                 );
             } else {
                 return (
-                    <TimelineDot>
+                    <TimelineDot color="primary">
                         <LaptopMacIcon />
                     </TimelineDot>
                 );
@@ -83,26 +69,38 @@ export default withStyles(styles)(
                     align="alternate"
                     className={classes.timelineContainer}
                 >
-                    {projects.map(({ title, startPeriod, endPeriod, type }) => (
-                        <TimelineItem>
-                            <TimelineOppositeContent>
-                                <Typography color="textSecondary">
-                                    {startPeriod} - {endPeriod}
-                                </Typography>
-                            </TimelineOppositeContent>
-                            <TimelineSeparator>
-                                {this.handleIcon(type)}
-                                <TimelineConnector />
-                            </TimelineSeparator>
-                            <TimelineContent>
-                                <Paper elevation={3} className={classes.paper}>
-                                    <Typography variant="h6" component="h">
-                                        {title}
+                    {projects.map(
+                        ({
+                            title,
+                            startPeriod,
+                            endPeriod,
+                            type,
+                            descriptions,
+                        }) => (
+                            <TimelineItem>
+                                <TimelineOppositeContent>
+                                    <Typography color="textSecondary">
+                                        {startPeriod} - {endPeriod}
                                     </Typography>
-                                </Paper>
-                            </TimelineContent>
-                        </TimelineItem>
-                    ))}
+                                </TimelineOppositeContent>
+                                <TimelineSeparator>
+                                    {this.handleIcon(type)}
+                                    <TimelineConnector />
+                                </TimelineSeparator>
+                                <TimelineContent>
+                                    <Paper
+                                        elevation={3}
+                                        className={classes.paper}
+                                    >
+                                        <Typography>
+                                            <b>{title}</b>
+                                        </Typography>
+                                        <SeeMore descriptions={descriptions} />
+                                    </Paper>
+                                </TimelineContent>
+                            </TimelineItem>
+                        )
+                    )}
                 </Timeline>
             );
         }

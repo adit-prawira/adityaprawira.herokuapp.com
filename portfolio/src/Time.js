@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 const styles = {
-    // time: {
-    //     margin: "auto",
-    //     position: "absolute",
-    //     left: 0,
-    //     right: 0,
-    //     textAlign: "center",
-    //     letterSpacing: "1em",
-    //     color: "azure",
-    // },
     time: {
-        textAlign: "center",
+        margin: "15%",
+        position: "absolute",
+        left: 0,
+        right: 0,
         color: "azure",
+        "& h3": {
+            letterSpacing: "1em",
+        },
     },
 };
 class Time extends Component {
@@ -37,16 +36,38 @@ class Time extends Component {
         let month = todayTime.getMonth();
         let year = todayTime.getFullYear();
         return (
-            <div className={classes.time}>
-                <h1>Welcome to my Website</h1>
-                <h2>
-                    {hours < 10 ? `0${hours}` : hours}:
-                    {minutes < 10 ? `0${minutes}` : minutes}:
-                    {seconds < 10 ? `0${seconds}` : seconds}
-                </h2>
-                <p>
-                    {day}/{month}/{year}
-                </p>
+            <div className={classes.root}>
+                <div className={classes.time}>
+                    <Grid container spacing={3}>
+                        <Grid
+                            item
+                            xs={12}
+                            sm={8}
+                            style={{ border: "solid 1px azure" }}
+                        >
+                            <Typography>Intro</Typography>
+                            <h2>
+                                Hi, I'm Aditya Prawira, a master's student and
+                                also a music producer based out of Melbourne,
+                                VIC.
+                            </h2>
+                            <h3>
+                                {hours < 10 ? `0${hours}` : hours}:
+                                {minutes < 10 ? `0${minutes}` : minutes}:
+                                {seconds < 10 ? `0${seconds}` : seconds}
+                            </h3>
+                            <h3>
+                                {day}/{month}/{year}
+                            </h3>
+                        </Grid>
+                        <Grid
+                            item
+                            xs={12}
+                            sm={4}
+                            style={{ border: "solid 1px azure" }}
+                        ></Grid>
+                    </Grid>
+                </div>
             </div>
         );
     }
