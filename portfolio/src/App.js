@@ -8,7 +8,7 @@ import AwesomeSliderStyles from "react-awesome-slider/dist/styles.css";
 import Time from "./Time";
 import Particles from "react-particles-js";
 import { particle } from "./styles/ParticleStyles";
-import ReactPlayer from "react-player";
+
 const styles = {
     container: {
         display: "flex",

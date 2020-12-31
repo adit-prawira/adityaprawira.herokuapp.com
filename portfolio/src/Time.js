@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import ReactPlayer from "react-player";
 const styles = {
     time: {
         margin: "15%",
@@ -65,7 +66,21 @@ class Time extends Component {
                             xs={12}
                             sm={4}
                             style={{ border: "solid 1px azure" }}
-                        ></Grid>
+                        >
+                            <ReactPlayer
+                                playing={true}
+                                height="20px"
+                                width="100%"
+                                loop
+                                controls
+                                url={[
+                                    {
+                                        src: "Audio/fort.mp3",
+                                        type: "Audio/webm",
+                                    },
+                                ]}
+                            />
+                        </Grid>
                     </Grid>
                 </div>
             </div>
