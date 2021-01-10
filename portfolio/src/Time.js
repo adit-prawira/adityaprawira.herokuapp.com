@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import ReactPlayer from "react-player";
 const styles = {
     time: {
-        margin: "15%",
+        margin: "20%",
         position: "absolute",
         left: 0,
         right: 0,

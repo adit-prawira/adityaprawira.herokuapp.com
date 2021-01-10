@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import About from "./About";
 import ProjectsTimeline from "./ProjectsTimeline";
-import { projects, experiences, educations } from "./seedInfo";
+import { projects } from "./seedInfo";
 import { withStyles } from "@material-ui/core/styles";
 import AwesomeSlider from "react-awesome-slider";
 import AwesomeSliderStyles from "react-awesome-slider/dist/styles.css";
 import Time from "./Time";
 import Particles from "react-particles-js";
 import { particle } from "./styles/ParticleStyles";
-
+import "./AwsCustom.css";
 const styles = {
     container: {
         display: "flex",
