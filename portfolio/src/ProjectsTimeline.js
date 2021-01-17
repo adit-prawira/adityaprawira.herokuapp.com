@@ -21,14 +21,17 @@ import { v4 as uuidv4 } from "uuid";
 import { Box } from "grommet";
 const styles = (theme) => ({
     root: {
+        overflowX: "visible",
         overflowY: "auto",
-        overflowX: "hidden",
+
         backgroundColor: "rgb(43, 48, 62)",
     },
-    timelineContainer: { padding: "2%" },
+
     timeline: {
         margin: "auto",
-        border: "1px solid rgb(139, 212, 191)",
+        paddingLeft: "2%",
+        paddingRight: "2%",
+        // border: "1px solid rgb(139, 212, 191)",
         borderRadius: "10px",
     },
     paper: {
@@ -36,6 +39,7 @@ const styles = (theme) => ({
         margin: theme.spacing(1),
         "&:hover": {
             backgroundColor: "rgba(255,255,255,0.1)",
+            cursor: "pointer",
         },
     },
 });
@@ -77,7 +81,7 @@ const ProjectsTimeline = ({ classes, projects }) => {
     return (
         <Box flex fill className={classes.root}>
             <Navbar />
-            <div flex fill className={classes.timelineContainer}>
+            <div className={classes.timelineContainer}>
                 <Timeline align="alternate" className={classes.timeline}>
                     {projects.map(
                         (

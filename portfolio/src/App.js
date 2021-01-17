@@ -25,7 +25,11 @@ class App extends Component {
                                     path="/"
                                     render={(routeProps) => (
                                         <Page>
-                                            <Home {...routeProps} />
+                                            <Home
+                                                projects={projects}
+                                                artworks={artworks}
+                                                {...routeProps}
+                                            />
                                         </Page>
                                     )}
                                 />

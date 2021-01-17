@@ -4,20 +4,16 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import { Footer } from "grommet";
-import { withStyles } from "@material-ui/core/styles";
-const styles = {
-    footer: {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "blue",
-    },
-};
 
 class MyFooter extends Component {
     render() {
         return (
-            <Footer background="brand" pad="small" justify="end">
+            <Footer
+                pad="small"
+                justify="end"
+                style={{ backgroundColor: "rgb(34, 40, 54)" }}
+                className="footer mt-auto"
+            >
                 <a href="https://www.instagram.com/azuregazemusic/">
                     <InstagramIcon color="secondary" fontSize="large" />
                 </a>
@@ -35,4 +31,4 @@ class MyFooter extends Component {
     }
 }
 
-export default withStyles(styles)(MyFooter);
+export default MyFooter;

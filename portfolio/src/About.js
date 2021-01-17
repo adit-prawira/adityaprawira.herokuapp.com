@@ -15,6 +15,10 @@ const styles = {
         overflowX: "hidden",
         overflowY: "auto",
     },
+    about: {
+        // border: "1px solid black",
+        padding: "1%",
+    },
     root: {
         display: "flex",
         justifyContent: "center",
@@ -23,6 +27,17 @@ const styles = {
         padding: "5%",
         backgroundColor: "rgb(43, 48, 62)",
         color: "rgb(139, 212, 191)",
+    },
+    contact: {
+        // border: "1px solid black",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+
+        flexDirection: "column",
+    },
+    contactLabel: {
+        color: "rgb(125,136,171)",
     },
 };
 class About extends Component {
@@ -33,12 +48,7 @@ class About extends Component {
                 <Navbar />
                 <div className={classes.root}>
                     <Grid container spacing={3}>
-                        <Grid
-                            item
-                            xs={12}
-                            sm={6}
-                            style={{ border: "solid 1px black" }}
-                        >
+                        <Grid item xs={12} sm={8} className={classes.about}>
                             <h1>Hi, I'm Aditya Prawira.</h1>
                             <Typography>
                                 I'm a master's student specialized in Robotics
@@ -64,18 +74,15 @@ class About extends Component {
                             </Typography>
                         </Grid>
 
-                        <Grid
-                            item
-                            xs={12}
-                            sm={6}
-                            style={{
-                                border: "solid 1px black",
-                            }}
-                        >
-                            <h3 color="textSecondary">GET IN TOUCH</h3>
+                        <Grid item xs={12} sm={4} className={classes.contact}>
+                            <h4 className={classes.contactLabel}>
+                                GET IN TOUCH
+                            </h4>
                             <Typography>adityaprawira96@gmail.com</Typography>
                             <Typography>(+61) 402 555 502</Typography>
-                            <h3 color="textSecondary">SOCIAL MEDIA</h3>
+                            <h4 className={classes.contactLabel}>
+                                SOCIAL MEDIA
+                            </h4>
                             <div>
                                 <a href="https://www.instagram.com/azuregazemusic/">
                                     <InstagramIcon
@@ -106,7 +113,7 @@ class About extends Component {
                                 src="Images/myphoto.jpg"
                                 alt="myphoto"
                                 style={{
-                                    width: "30%",
+                                    width: "50%",
                                     border: "solid 2px black",
                                     borderRadius: "50%",
                                     marginTop: "5%",

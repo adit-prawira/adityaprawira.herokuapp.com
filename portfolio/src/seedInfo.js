@@ -9,6 +9,7 @@ const projects = [
             "Improve experiences and familiarities with React, Javascript, CSS, HTML, and UI/UX design.",
         ],
         type: "programming",
+        image: "/Images/personal.png",
     },
     {
         title: "Unimelb B-SCI Course Planner React Web App Project",
@@ -21,6 +22,7 @@ const projects = [
             "Utilize Javascript, HTML, CSS, and React in developing the web app.",
         ],
         type: "programming",
+        image: "/Images/planar.png",
     },
     {
         title: "Artist Express Web App Development Project",
@@ -35,6 +37,7 @@ const projects = [
             "A website that introduces my self as a music producer.",
         ],
         type: "programming",
+        image: "/Images/azure-web.png",
     },
     {
         title: "A Two-Level Tower Game Project (Java OOP)",
@@ -47,6 +50,7 @@ const projects = [
             "Mathematical modelling applied for some motions in the game.",
         ],
         type: "game",
+        image: "/Images/tower.png",
     },
     {
         title: "Monthly Music Single and EP Album Project",
@@ -57,6 +61,7 @@ const projects = [
             "Receiving offers to be promoted by several musical blogs and labels.",
         ],
         type: "music",
+        image: "/Images/music.png",
     },
     {
         title: "Warman Project",
@@ -68,6 +73,7 @@ const projects = [
             "A productive and efficient team collaboration project",
         ],
         type: "engineering",
+        image: "/Images/warman.png",
     },
     {
         title: "Rainfall Cycle",
@@ -80,6 +86,7 @@ const projects = [
             "Data representation to plot climate changes in data analysis",
         ],
         type: "programming",
+        image: "/Images/rainfall.png",
     },
     {
         title: "Drone Delivery Path Optimization",
@@ -92,6 +99,7 @@ const projects = [
             "Develop sorting algorithms for multiple purposes",
         ],
         type: "programming",
+        image: "/Images/drones.png",
     },
     {
         title: "Art Exhibition",
@@ -103,6 +111,7 @@ const projects = [
             "Improving technical skills and disciplines.",
         ],
         type: "art",
+        image: "/Images/art-exhibition.jpg",
     },
 ];
 
