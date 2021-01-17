@@ -11,7 +11,7 @@ import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
 import { makeStyles } from "@material-ui/core/styles";
 import { particle } from "./styles/ParticleParams";
-import { Box } from "grommet";
+import { Box, Calendar } from "grommet";
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -20,19 +20,26 @@ const useStyles = makeStyles((theme) => ({
         overflowY: "auto",
         backgroundColor: "rgb(43, 48, 62)",
     },
+    selfImage: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+    },
     time: {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
     },
     particleContainer: {
-        height: "10%",
+        height: "5%",
     },
     content: {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        padding: "5%",
+        paddingLeft: "5%",
+        paddingRight: "5%",
+        paddingBottom: "5%",
     },
     link: {
         textDecoration: "none",
@@ -84,25 +91,40 @@ function Home({ artworks, projects }) {
             </div>
             <div className={classes.content}>
                 <Grid container spacing={3}>
-                    <Grid item xs={12} sm={8}>
+                    <Grid item xs={12} sm={5}>
                         <h2>Hi, I'm Aditya Prawira,</h2>
                         <Typography>
                             a master's student and also a music producer based
                             out of Melbourne, VIC.
                         </Typography>
+                        <hr />
+                        <div className={classes.selfImage}>
+                            {" "}
+                            <img
+                                src="/Images/self-cartoon.png"
+                                alt="self"
+                                style={{ width: "90%" }}
+                            />
+                        </div>
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        sm={3}
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Calendar
+                            size="small"
+                            date={new Date().toISOString()}
+                            // onSelect={(date) => {}}
+                        />
                     </Grid>
                     <Grid item xs={12} sm={4}>
                         <div className={classes.root}>
                             <GridList className={classes.gridList}>
-                                {/* <GridListTile
-                                    key="Subheader"
-                                    cols={2}
-                                    style={{ height: "auto" }}
-                                >
-                                    <ListSubheader component="div">
-                                        December
-                                    </ListSubheader>
-                                </GridListTile> */}
                                 {artworks.map(({ title, date }) => (
                                     <GridListTile key={title}>
                                         <img
@@ -154,7 +176,6 @@ function Home({ artworks, projects }) {
                     </Grid>
                 </Grid>
             </div>
-
             <MyFooter />
         </Box>
     );
