@@ -1,59 +1,90 @@
 import React, { Component } from "react";
-import About from "./About";
-import ProjectsTimeline from "./ProjectsTimeline";
-import { projects } from "./seedInfo";
-import { withStyles } from "@material-ui/core/styles";
-import AwesomeSlider from "react-awesome-slider";
-import AwesomeSliderStyles from "react-awesome-slider/dist/styles.css";
-import Time from "./Time";
-import Particles from "react-particles-js";
-import { particle } from "./styles/ParticleStyles";
-import "./AwsCustom.css";
-const styles = {
-    container: {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        color: "azure",
-    },
-    timeline: {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        color: "azure",
-        paddingLeft: "10%",
-        paddingRight: "10%",
-    },
-    particlePage: {
-        backgroundColor: "#030614fa",
-        width: "100%",
-        height: "100%",
-    },
+// import About from "./About";
 
-    "& AwesomeSlider": {
-        overflow: "visible",
-    },
-};
+// import AwesomeSlider from "react-awesome-slider";
+// import AwesomeSliderStyles from "react-awesome-slider/dist/styles.css";
+// import Particles from "react-particles-js";
+// import { particle } from "./styles/ParticleStyles";
+import Page from "./Page";
+import Home from "./Home";
+import About from "./About";
+import Artworks from "./Artworks";
+import ProjectsTimeline from "./ProjectsTimeline";
+import Navbar from "./Navbar";
+import { projects } from "./seedInfo";
+import { Route, Switch } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 class App extends Component {
     render() {
-        const { classes } = this.props;
         return (
-            <AwesomeSlider cssModule={AwesomeSliderStyles}>
-                <div className={classes.particlePage}>
-                    <Time />
-                    <Particles params={particle} />
-                </div>
-                <div className={classes.container}>
-                    <About />
-                </div>
-                <div className={classes.timeline}>
-                    <ProjectsTimeline projects={projects} />
-                </div>
-                <div className={classes.container}>Art</div>
-            </AwesomeSlider>
+            <Route
+                render={({ location }) => (
+                    <TransitionGroup>
+                        <CSSTransition
+                            key={location.key}
+                            classNames="page"
+                            timeout={500}
+                        >
+                            <Switch location={location}>
+                                <Route
+                                    exact
+                                    path="/"
+                                    render={(routeProps) => (
+                                        <Page>
+                                            <Home {...routeProps} />
+                                        </Page>
+                                    )}
+                                />
+                                <Route
+                                    exact
+                                    path="/about"
+                                    render={(routeProps) => (
+                                        <Page>
+                                            <About {...routeProps} />
+                                        </Page>
+                                    )}
+                                />
+                                <Route
+                                    exact
+                                    path="/projects"
+                                    render={(routeProps) => (
+                                        <Page>
+                                            <ProjectsTimeline
+                                                projects={projects}
+                                                {...routeProps}
+                                            />
+                                        </Page>
+                                    )}
+                                />
+                                <Route
+                                    exact
+                                    path="/projects/:title"
+                                    render={(routeProps) => (
+                                        <Page>
+                                            <ProjectsTimeline
+                                                projects={projects}
+                                                {...routeProps}
+                                            />
+                                        </Page>
+                                    )}
+                                />
+                                <Route
+                                    exact
+                                    path="/artworks"
+                                    render={(routeProps) => (
+                                        <Page>
+                                            <Artworks {...routeProps} />
+                                        </Page>
+                                    )}
+                                />
+                            </Switch>
+                        </CSSTransition>
+                    </TransitionGroup>
+                )}
+            />
         );
     }
 }
 
-export default withStyles(styles)(App);
+export default App;
