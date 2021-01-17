@@ -37,13 +37,13 @@ export default withStyles(styles, { withTheme: true })(function ProjectDetails(
                     <Grid item xs={1}>
                         <FormControlLabel
                             control={
-                                <a
+                                <span
                                     onClick={() => setReadMore(!readMore)}
                                     color="textSecondary"
                                     className={classes.readToggle}
                                 >
                                     {readIcon}
-                                </a>
+                                </span>
                             }
                         />
                     </Grid>
@@ -53,13 +53,13 @@ export default withStyles(styles, { withTheme: true })(function ProjectDetails(
                     <Grid item xs={1}>
                         <FormControlLabel
                             control={
-                                <a
+                                <span
                                     onClick={() => setReadMore(!readMore)}
                                     color="textSecondary"
                                     className={classes.readToggle}
                                 >
                                     {readIcon}
-                                </a>
+                                </span>
                             }
                         />
                     </Grid>

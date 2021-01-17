@@ -13,7 +13,7 @@ import AlbumIcon from "@material-ui/icons/Album";
 import BrushIcon from "@material-ui/icons/Brush";
 import BuildIcon from "@material-ui/icons/Build";
 import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
-import ProjectDetails from "./ProjectDetails";
+// import ProjectDetails from "./ProjectDetails";
 import Paper from "@material-ui/core/Paper";
 import Navbar from "./Navbar";
 import MyFooter from "./MyFooter";

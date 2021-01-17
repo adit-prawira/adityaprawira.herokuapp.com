@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
+import { Clock } from "grommet";
 const styles = {
     navbar: {
         display: "flex",
@@ -8,6 +9,7 @@ const styles = {
         alignItems: "center",
         flexDirection: "row",
         padding: "1%",
+        color: "azure",
         backgroundColor: "rgb(43, 48, 62)",
     },
     link: {
@@ -34,6 +36,7 @@ class Navbar extends Component {
                 <Link to="/artworks" className={classes.link}>
                     Artworks
                 </Link>
+                <Clock type="digital" color="azure" />
             </nav>
         );
     }

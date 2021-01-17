@@ -39,5 +39,6 @@ export const particle = {
             },
         },
     },
+
     retina_detect: true,
 };

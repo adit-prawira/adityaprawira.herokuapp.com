@@ -151,8 +151,22 @@ const educations = [
     },
 ];
 
+const artworks = [
+    { title: "Within the Mist", date: "31/12/2020" },
+    { title: "Cold Morning", date: "03/11/2020" },
+    { title: "waterfall", date: "13/10/2020" },
+    { title: "City Night Walk", date: "10/09/2020" },
+    { title: "springtime", date: "03/09/2020" },
+    { title: "Wander", date: "29/07/2020" },
+    { title: "Sleep Deprived", date: "15/07/2020" },
+    { title: "Reminiscing", date: "06/07/2020" },
+    { title: "Hey There", date: "14/05/2020" },
+    { title: "Blue Nostalgia", date: "03/05/2020" },
+];
+
 module.exports = {
     projects,
     experiences,
     educations,
+    artworks,
 };

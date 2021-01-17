@@ -1,16 +1,26 @@
 import React, { Component } from "react";
-
 import Grid from "@material-ui/core/Grid";
-
-import { Clock } from "grommet";
-import { Link } from "react-router-dom";
-import "./styles/Home.css";
-import { withStyles } from "@material-ui/core/styles";
 import Navbar from "./Navbar";
+import Particles from "react-particles-js";
+import MyFooter from "./MyFooter";
+import { withStyles } from "@material-ui/core/styles";
+import { particle } from "./styles/ParticleParams";
+import { Box } from "grommet";
+import "./styles/Home.css";
 const styles = {
     root: {
         color: "azure",
+        overflowX: "hidden",
+        overflowY: "auto",
         backgroundColor: "rgb(43, 48, 62)",
+    },
+    time: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    particleContainer: {
+        height: "10%",
     },
     content: {
         border: "1px solid azure",
@@ -29,9 +39,14 @@ class Home extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <div className={classes.root}>
+            <Box flex fill className={classes.root}>
                 <Navbar />
-                <div className={classes.content}>
+                <div className={classes.particleContainer}>
+                    <div className={classes.particle}>
+                        <Particles params={particle} />
+                    </div>
+                </div>
+                <Box className={classes.content}>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
                             <h2>
@@ -40,13 +55,10 @@ class Home extends Component {
                                 VIC.
                             </h2>
                         </Grid>
-
-                        <Grid item xs={12}>
-                            <Clock type="digital" />
-                        </Grid>
                     </Grid>
-                </div>
-            </div>
+                </Box>
+                <MyFooter />
+            </Box>
         );
     }
 }
