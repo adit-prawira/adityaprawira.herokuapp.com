@@ -10,6 +10,7 @@ const projects = [
         ],
         type: "programming",
         image: "/Images/personal.png",
+        links: [],
     },
     {
         title: "Unimelb B-SCI Course Planner React Web App Project",
@@ -23,6 +24,7 @@ const projects = [
         ],
         type: "programming",
         image: "/Images/planar.png",
+        links: [],
     },
     {
         title: "Artist Express Web App Development Project",
@@ -38,6 +40,7 @@ const projects = [
         ],
         type: "programming",
         image: "/Images/azure-web.png",
+        links: [],
     },
     {
         title: "A Two-Level Tower Game Project (Java OOP)",
@@ -51,6 +54,7 @@ const projects = [
         ],
         type: "game",
         image: "/Images/tower.png",
+        links: [],
     },
     {
         title: "Monthly Music Single and EP Album Project",
@@ -62,6 +66,7 @@ const projects = [
         ],
         type: "music",
         image: "/Images/music.png",
+        links: [],
     },
     {
         title: "Warman Project",
@@ -74,6 +79,7 @@ const projects = [
         ],
         type: "engineering",
         image: "/Images/warman.png",
+        links: [],
     },
     {
         title: "Rainfall Cycle",
@@ -100,6 +106,7 @@ const projects = [
         ],
         type: "programming",
         image: "/Images/drones.png",
+        links: [],
     },
     {
         title: "Art Exhibition",
@@ -112,6 +119,7 @@ const projects = [
         ],
         type: "art",
         image: "/Images/art-exhibition.jpg",
+        links: [],
     },
 ];
 

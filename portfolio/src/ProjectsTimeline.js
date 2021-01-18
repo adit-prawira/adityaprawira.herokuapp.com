@@ -13,37 +13,13 @@ import AlbumIcon from "@material-ui/icons/Album";
 import BrushIcon from "@material-ui/icons/Brush";
 import BuildIcon from "@material-ui/icons/Build";
 import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
-// import ProjectDetails from "./ProjectDetails";
 import Paper from "@material-ui/core/Paper";
 import Navbar from "./Navbar";
 import MyFooter from "./MyFooter";
 import { v4 as uuidv4 } from "uuid";
 import { Box } from "grommet";
-const styles = (theme) => ({
-    root: {
-        overflowX: "visible",
-        overflowY: "auto",
-
-        backgroundColor: "rgb(43, 48, 62)",
-    },
-
-    timeline: {
-        margin: "auto",
-        paddingLeft: "2%",
-        paddingRight: "2%",
-        // border: "1px solid rgb(139, 212, 191)",
-        borderRadius: "10px",
-    },
-    paper: {
-        padding: "2%",
-        margin: theme.spacing(1),
-        "&:hover": {
-            backgroundColor: "rgba(255,255,255,0.1)",
-            cursor: "pointer",
-        },
-    },
-});
-
+import styles from "./styles/ProjectsTimelineStyles";
+import { Link } from "react-router-dom";
 const ProjectsTimeline = ({ classes, projects }) => {
     const handleIcon = (type) => {
         if (type === "art") {
@@ -109,13 +85,15 @@ const ProjectsTimeline = ({ classes, projects }) => {
                                         elevation={3}
                                         className={classes.paper}
                                     >
-                                        {title}
+                                        <Link
+                                            to={`/projects/${title
+                                                .toLowerCase()
+                                                .replace(/ /g, "-")}`}
+                                            className={classes.titleProject}
+                                        >
+                                            {title}
+                                        </Link>
                                     </Paper>
-                                    {/* <SeeMore
-                                    descriptions={descriptions}
-                                    index={index}
-                                    title={title}
-                                /> */}
                                 </TimelineContent>
                             </TimelineItem>
                         )

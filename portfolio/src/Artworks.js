@@ -4,24 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Navbar from "./Navbar";
 import MyFooter from "./MyFooter";
-const styles = {
-    root: {
-        overflowX: "hidden",
-        overflowY: "auto",
-        backgroundColor: "rgb(43, 48, 62)",
-    },
-    gallery: {
-        padding: "1%",
-    },
-    images: {
-        width: "100%",
-    },
-    imgContainer: {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-    },
-};
+import styles from "./styles/ArtworksStyles";
 class Artworks extends Component {
     render() {
         const { classes, artworks } = this.props;

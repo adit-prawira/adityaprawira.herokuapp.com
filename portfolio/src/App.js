@@ -4,11 +4,27 @@ import Home from "./Home";
 import About from "./About";
 import Artworks from "./Artworks";
 import ProjectsTimeline from "./ProjectsTimeline";
+import ProjectDetails from "./ProjectDetails";
 import { projects, artworks } from "./seedInfo";
 import { Route, Switch } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.findProject = this.findProject.bind(this);
+        this.filtered = this.filteredProjects.bind(this);
+    }
+    findProject(urlTitle) {
+        return projects.find(function (project) {
+            return project.title.toLowerCase().replace(/ /g, "-") === urlTitle;
+        });
+    }
+    filteredProjects(urlTitle) {
+        return projects.filter(function (project) {
+            return project.title.toLowerCase().replace(/ /g, "-") !== urlTitle;
+        });
+    }
     render() {
         return (
             <Route
@@ -59,9 +75,15 @@ class App extends Component {
                                     path="/projects/:title"
                                     render={(routeProps) => (
                                         <Page>
-                                            <ProjectsTimeline
-                                                projects={projects}
-                                                {...routeProps}
+                                            <ProjectDetails
+                                                project={this.findProject(
+                                                    routeProps.match.params
+                                                        .title
+                                                )}
+                                                filteredProjects={this.filteredProjects(
+                                                    routeProps.match.params
+                                                        .title
+                                                )}
                                             />
                                         </Page>
                                     )}

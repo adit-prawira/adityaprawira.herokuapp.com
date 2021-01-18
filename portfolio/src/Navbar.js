@@ -2,23 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import { Clock } from "grommet";
-const styles = {
-    navbar: {
-        display: "flex",
-        justifyContent: "space-around",
-        alignItems: "center",
-        flexDirection: "row",
-        padding: "1%",
-        color: "azure",
-        backgroundColor: "rgb(43, 48, 62)",
-    },
-    link: {
-        textDecoration: "none",
-        fontWeight: "bold",
-        color: "azure",
-    },
-};
-
+import styles from "./styles/NavbarStyles";
 class Navbar extends Component {
     render() {
         const { classes } = this.props;
@@ -31,7 +15,7 @@ class Navbar extends Component {
                     About
                 </Link>
                 <Link to="/projects" className={classes.link}>
-                    Project
+                    Projects
                 </Link>
                 <Link to="/artworks" className={classes.link}>
                     Artworks
