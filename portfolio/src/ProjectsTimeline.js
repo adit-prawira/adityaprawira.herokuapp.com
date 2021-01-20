@@ -5,7 +5,6 @@ import TimelineSeparator from "@material-ui/lab/TimelineSeparator";
 import TimelineConnector from "@material-ui/lab/TimelineConnector";
 import TimelineContent from "@material-ui/lab/TimelineContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
-import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import LaptopMacIcon from "@material-ui/icons/LaptopMac";
@@ -16,10 +15,13 @@ import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
 import Paper from "@material-ui/core/Paper";
 import Navbar from "./Navbar";
 import MyFooter from "./MyFooter";
+import styles from "./styles/ProjectsTimelineStyles";
+
+import { withStyles } from "@material-ui/core/styles";
 import { v4 as uuidv4 } from "uuid";
 import { Box } from "grommet";
-import styles from "./styles/ProjectsTimelineStyles";
 import { Link } from "react-router-dom";
+
 const ProjectsTimeline = ({ classes, projects }) => {
     const handleIcon = (type) => {
         if (type === "art") {
@@ -59,45 +61,31 @@ const ProjectsTimeline = ({ classes, projects }) => {
             <Navbar />
             <div className={classes.timelineContainer}>
                 <Timeline align="alternate" className={classes.timeline}>
-                    {projects.map(
-                        (
-                            {
-                                title,
-                                startPeriod,
-                                endPeriod,
-                                type,
-                                descriptions,
-                            },
-                            index
-                        ) => (
-                            <TimelineItem key={uuidv4()}>
-                                <TimelineOppositeContent>
-                                    <Typography style={{ color: "azure" }}>
-                                        {startPeriod} - {endPeriod}
-                                    </Typography>
-                                </TimelineOppositeContent>
-                                <TimelineSeparator>
-                                    {handleIcon(type)}
-                                    <TimelineConnector />
-                                </TimelineSeparator>
-                                <TimelineContent>
-                                    <Paper
-                                        elevation={3}
-                                        className={classes.paper}
+                    {projects.map(({ title, startPeriod, endPeriod, type }) => (
+                        <TimelineItem key={uuidv4()}>
+                            <TimelineOppositeContent>
+                                <Typography style={{ color: "azure" }}>
+                                    {startPeriod} - {endPeriod}
+                                </Typography>
+                            </TimelineOppositeContent>
+                            <TimelineSeparator>
+                                {handleIcon(type)}
+                                <TimelineConnector />
+                            </TimelineSeparator>
+                            <TimelineContent>
+                                <Paper elevation={3} className={classes.paper}>
+                                    <Link
+                                        to={`/projects/${title
+                                            .toLowerCase()
+                                            .replace(/ /g, "-")}`}
+                                        className={classes.titleProject}
                                     >
-                                        <Link
-                                            to={`/projects/${title
-                                                .toLowerCase()
-                                                .replace(/ /g, "-")}`}
-                                            className={classes.titleProject}
-                                        >
-                                            {title}
-                                        </Link>
-                                    </Paper>
-                                </TimelineContent>
-                            </TimelineItem>
-                        )
-                    )}
+                                        {title}
+                                    </Link>
+                                </Paper>
+                            </TimelineContent>
+                        </TimelineItem>
+                    ))}
                 </Timeline>
             </div>
 

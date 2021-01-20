@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
     titleProject: {
         textDecoration: "none",
         color: "azure",
+        "&:hover": {
+            color: "rgb(240,248,255,0.5)",
+        },
     },
     titleBar: {
         background:

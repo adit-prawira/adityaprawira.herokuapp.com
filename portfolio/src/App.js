@@ -5,7 +5,8 @@ import About from "./About";
 import Artworks from "./Artworks";
 import ProjectsTimeline from "./ProjectsTimeline";
 import ProjectDetails from "./ProjectDetails";
-import { projects, artworks } from "./seedInfo";
+import EducationDetails from "./EducationDetails";
+import { projects, artworks, educations } from "./seedInfo";
 import { Route, Switch } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
@@ -18,6 +19,14 @@ class App extends Component {
     findProject(urlTitle) {
         return projects.find(function (project) {
             return project.title.toLowerCase().replace(/ /g, "-") === urlTitle;
+        });
+    }
+    findEducation(urlTitle) {
+        return educations.find(function (education) {
+            return (
+                education.companyName.toLowerCase().replace(/ /g, "-") ===
+                urlTitle
+            );
         });
     }
     filteredProjects(urlTitle) {
@@ -54,7 +63,25 @@ class App extends Component {
                                     path="/about"
                                     render={(routeProps) => (
                                         <Page>
-                                            <About {...routeProps} />
+                                            <About
+                                                educations={educations}
+                                                {...routeProps}
+                                            />
+                                        </Page>
+                                    )}
+                                />
+                                <Route
+                                    exact
+                                    path="/about/:companyName"
+                                    render={(routeProps) => (
+                                        <Page>
+                                            <EducationDetails
+                                                education={this.findEducation(
+                                                    routeProps.match.params
+                                                        .companyName
+                                                )}
+                                                {...routeProps}
+                                            />
                                         </Page>
                                     )}
                                 />

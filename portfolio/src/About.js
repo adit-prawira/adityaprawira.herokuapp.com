@@ -10,9 +10,11 @@ import Navbar from "./Navbar";
 import MyFooter from "./MyFooter";
 import { Box } from "grommet";
 import styles from "./styles/AboutStyles";
+import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 class About extends Component {
     render() {
-        const { classes } = this.props;
+        const { classes, educations } = this.props;
         return (
             <Box flex fill className={classes.box}>
                 <Navbar />
@@ -42,6 +44,39 @@ class About extends Component {
                                 platforms like Spotify, Apple Music, Soundcloud,
                                 iHeartRadio, and many more.
                             </Typography>
+                            <br />
+                            <h3>My Studies:</h3>
+                            <div className={classes.studiesContainer}>
+                                {educations.map(
+                                    ({
+                                        logo,
+                                        companyName,
+                                        startYear,
+                                        endYear,
+                                    }) => (
+                                        <div
+                                            className={classes.logoContainer}
+                                            key={uuidv4()}
+                                        >
+                                            <Link
+                                                to={`/about/${companyName
+                                                    .toLowerCase()
+                                                    .replace(/ /g, "-")}`}
+                                            >
+                                                <img
+                                                    src={logo}
+                                                    alt={companyName}
+                                                    className={classes.studies}
+                                                />
+                                            </Link>
+
+                                            <Typography>
+                                                {startYear} - {endYear}
+                                            </Typography>
+                                        </div>
+                                    )
+                                )}
+                            </div>
                         </Grid>
 
                         <Grid item xs={12} sm={4} className={classes.contact}>
@@ -82,12 +117,7 @@ class About extends Component {
                             <img
                                 src="Images/myphoto.jpg"
                                 alt="myphoto"
-                                style={{
-                                    width: "50%",
-                                    border: "solid 2px black",
-                                    borderRadius: "50%",
-                                    marginTop: "5%",
-                                }}
+                                className={classes.profile}
                             />
                         </Grid>
                     </Grid>

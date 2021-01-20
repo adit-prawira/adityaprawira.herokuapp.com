@@ -149,22 +149,63 @@ const experiences = [
 
 const educations = [
     {
-        companyName: "International Baccalaureate",
+        companyName: "Sekolah Pelita Harapan Sentul City",
         degree: "High School Diploma",
         startYear: "2014",
         endYear: "2017",
+        logo: "/Images/sph.ico",
+        image: "/Images/sph.ico",
+        descriptions: [
+            "International Baccalaureate based education",
+            "High School/Secondary Diplomas and Certificates",
+        ],
+        courses: [
+            "Physics HL",
+            "Math HL",
+            "Business Management HL",
+            "English B HL",
+            "Indonesian A SL",
+            "Art SL",
+        ],
     },
     {
         companyName: "University of Melbourne",
         degree: "Bachelor of Science - BS, Mechanical Systems",
         startYear: "2017",
         endYear: "2020",
+        logo: "/Images/unimelb.ico",
+        image: "/Images/unimelb.png",
+        descriptions: [
+            "3 years full-time studies majored in Mechanical Systems",
+            "Involved in Warman Project",
+            "Design an engineering device and create a professional engineering drawing and 3d simulation",
+            "Develop knowledge in engineering and risk management",
+        ],
+        courses: [
+            "Mechanical System Designs(MCEN30021)",
+            "System Modelling and Simulation(MCEN30020)",
+            "Thermodynamics and Fluid mechanics(MCEN30018)",
+            "Mechanics, and Materials(MCEN30017)",
+        ],
     },
     {
         companyName: "RMIT University",
         degree: "Master of Engineering, Robotics and Mechatronics Engineering",
         startYear: "2020",
         endYear: "Present",
+        logo: "/Images/rmit.ico",
+        image: "/Images/rmit.png",
+        descriptions: [
+            "2 years master full-time studies specialized robotics and mechatronics engineering",
+            "Develop professional practices in engineering industry",
+            "Trained to enhance communication, management and flexibility in different work environments",
+        ],
+        courses: [
+            "OENG1120(Research Method in Engineering)",
+            "OENG1117(Risk and Project Management)",
+            "MANU2453(Advanced Robotic Systems)",
+            "OENG1115(Innovation and Technology Management)",
+        ],
     },
 ];
 

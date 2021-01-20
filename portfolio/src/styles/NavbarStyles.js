@@ -12,6 +12,9 @@ const styles = {
         textDecoration: "none",
         fontWeight: "bold",
         color: "azure",
+        "&:hover": {
+            color: "rgb(240,248,255,0.5)",
+        },
     },
 };
 export default styles;

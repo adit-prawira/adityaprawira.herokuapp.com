@@ -3,8 +3,8 @@ import Grid from "@material-ui/core/Grid";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
-import { Link } from "react-router-dom";
 import useStyles from "./styles/ProjectCarouselStyles";
+import { Link } from "react-router-dom";
 export default function ProjectCarousel({ projects }) {
     const classes = useStyles();
     return (
