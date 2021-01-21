@@ -73,22 +73,24 @@ const ProjectsTimeline = ({ classes, projects }) => {
                                 <TimelineConnector />
                             </TimelineSeparator>
                             <TimelineContent>
-                                <Paper elevation={3} className={classes.paper}>
-                                    <Link
-                                        to={`/projects/${title
-                                            .toLowerCase()
-                                            .replace(/ /g, "-")}`}
-                                        className={classes.titleProject}
+                                <Link
+                                    to={`/projects/${title
+                                        .toLowerCase()
+                                        .replace(/ /g, "-")}`}
+                                    className={classes.titleProject}
+                                >
+                                    <Paper
+                                        elevation={3}
+                                        className={classes.paper}
                                     >
-                                        {title}
-                                    </Link>
-                                </Paper>
+                                        <Typography>{title}</Typography>
+                                    </Paper>
+                                </Link>
                             </TimelineContent>
                         </TimelineItem>
                     ))}
                 </Timeline>
             </div>
-
             <MyFooter />
         </Box>
     );

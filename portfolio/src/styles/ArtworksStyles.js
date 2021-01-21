@@ -9,6 +9,11 @@ const styles = {
     },
     images: {
         width: "100%",
+        "&:hover": {
+            boxShadow: "0 0.5em 0.5em -0.4em black",
+            transform: "translateY(-0.25em)",
+            cursor: "pointer",
+        },
     },
     imgContainer: {
         display: "flex",

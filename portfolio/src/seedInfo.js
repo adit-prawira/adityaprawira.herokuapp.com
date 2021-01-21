@@ -154,7 +154,7 @@ const educations = [
         startYear: "2014",
         endYear: "2017",
         logo: "/Images/sph.ico",
-        image: "/Images/sph.ico",
+        image: "/Images/sph.png",
         descriptions: [
             "International Baccalaureate based education",
             "High School/Secondary Diplomas and Certificates",
