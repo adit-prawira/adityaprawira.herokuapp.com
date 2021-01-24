@@ -30,7 +30,6 @@ const styles = {
     },
 
     studies: {
-        border: "3px solid rgb(34, 40, 54)",
         borderRadius: "50%",
         "&:hover": {
             cursor: "pointer",

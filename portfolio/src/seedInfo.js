@@ -210,16 +210,134 @@ const educations = [
 ];
 
 const artworks = [
-    { title: "Within the Mist", date: "31/12/2020" },
-    { title: "Cold Morning", date: "03/11/2020" },
-    { title: "waterfall", date: "13/10/2020" },
-    { title: "City Night Walk", date: "10/09/2020" },
-    { title: "springtime", date: "03/09/2020" },
-    { title: "Wander", date: "29/07/2020" },
-    { title: "Sleep Deprived", date: "15/07/2020" },
-    { title: "Reminiscing", date: "06/07/2020" },
-    { title: "Hey There", date: "14/05/2020" },
-    { title: "Blue Nostalgia", date: "03/05/2020" },
+    {
+        title: "Within the Mist",
+        dateCreated: "26/12/2020",
+        releaseDate: "31/12/2020",
+        tracksNumber: 3,
+        spotify:
+            "https://open.spotify.com/album/3VcK7fN34jgbEzbiyP5Nwa?si=810TbDJfTdSHxaUfzsbacA",
+        appleMusic:
+            "https://music.apple.com/us/album/within-the-mist-single/1547507932",
+        soundCloud: "https://soundcloud.com/azuregaze/sets/within-the-mist",
+        trackTitles: ["within the mist", "sanpo", "by your side"],
+    },
+    {
+        title: "Cold Morning",
+        dateCreated: "01/11/2020",
+        releaseDate: "03/11/2020",
+        tracksNumber: 2,
+        spotify:
+            "https://open.spotify.com/album/2gRb8eXpOQRlGweJBzLsmj?si=m6x39ZkVSQKiV0B00_jDyA",
+        appleMusic:
+            "https://music.apple.com/us/album/cold-morning-single/1538670268",
+        soundCloud: "https://soundcloud.com/azuregaze/sets/cold-morning",
+        trackTitles: [
+            "walking through the cold morning breeze",
+            "met her at the station",
+        ],
+    },
+    {
+        title: "waterfall",
+        dateCreated: "17/01/2020",
+        releaseDate: "13/10/2020",
+        tracksNumber: 1,
+        spotify:
+            "https://open.spotify.com/album/5ojtNrVgRB6n9qVzpaBfLx?si=6zBwuRQoToWZTZ5hYw7tUw",
+        appleMusic:
+            "https://music.apple.com/us/album/waterfall-single/1535671046",
+        soundCloud: "https://soundcloud.com/azuregaze/waterfall",
+        trackTitles: ["waterfall"],
+    },
+    {
+        title: "City Night Walk",
+        dateCreated: "03/09/2020",
+        releaseDate: "10/09/2020",
+        tracksNumber: 3,
+        spotify:
+            "https://open.spotify.com/album/7BneYOQpyBcBHdO7oBekjs?si=0GSSVujzSnSiYoZpmldwQA",
+        appleMusic:
+            "https://music.apple.com/us/album/city-night-walk-single/1531757712",
+        soundCloud: "https://soundcloud.com/azuregaze/sets/city-night-walk",
+        trackTitles: ["city night walk", "on the way home", "suddenly sleepy"],
+    },
+    {
+        title: "springtime",
+        dateCreated: "19/01/2020",
+        releaseDate: "03/09/2020",
+        tracksNumber: 1,
+        spotify:
+            "https://open.spotify.com/album/4Jyyu3vi32weEbgYQSjEDd?si=YbRSEWlzRgGxHlSsN5nqAw",
+        appleMusic:
+            "https://music.apple.com/us/album/springtime-single/1530987506",
+        soundCloud: "https://soundcloud.com/azuregaze/springtime",
+        trackTitles: ["springtime"],
+    },
+    {
+        title: "Wander",
+        dateCreated: "18/07/2020",
+        releaseDate: "29/07/2020",
+        tracksNumber: 2,
+        spotify:
+            "https://open.spotify.com/album/3PG95oQgYdBxp34nWhq0dO?si=MiIg6DXMTVOTta_ipdf5tg",
+        appleMusic: "https://music.apple.com/us/album/wander-single/1525609992",
+        soundCloud: "https://soundcloud.com/azuregaze/sets/wander",
+        trackTitles: ["Wander", "Pluie de la Ville"],
+    },
+    {
+        title: "Sleep Deprived",
+        dateCreated: "07/07/2020",
+        releaseDate: "15/07/2020",
+        tracksNumber: 1,
+        spotify:
+            "https://open.spotify.com/album/1iL37wBwCXOVZtilnNMvvK?si=E9uY-ETPQmOurEACpritxw",
+        appleMusic:
+            "https://music.apple.com/us/album/sleep-deprived-single/1523865684",
+        soundCloud: "https://soundcloud.com/azuregaze/sleep-deprived",
+        trackTitles: ["Sleep Deprived"],
+    },
+    {
+        title: "Reminiscing",
+        dateCreated: "23/06/2020",
+        releaseDate: "06/07/2020",
+        tracksNumber: 1,
+        spotify:
+            "https://open.spotify.com/album/1YNASOH8I4Uco64V4lmfD7?si=6QbnmPAvQkuo9hPHJ1lVZQ",
+        appleMusic:
+            "https://music.apple.com/us/album/reminiscing-single/1522701238",
+        soundCloud: "https://soundcloud.com/azuregaze/reminiscing",
+        trackTitles: ["Reminiscing"],
+    },
+    {
+        title: "Hey There",
+        dateCreated: "03/05/2020",
+        releaseDate: "14/05/2020",
+        tracksNumber: 0,
+        spotify:
+            "https://open.spotify.com/album/26hrFc2urW7yQlpCZljzgo?si=cs4YtxrsSLOR07Z0pFRZww",
+        appleMusic:
+            "https://music.apple.com/us/album/hey-there-single/1513381692",
+        soundCloud: "https://soundcloud.com/azuregaze/hey-there",
+        trackTitles: ["Hey There"],
+    },
+    {
+        title: "Blue Nostalgia",
+        dateCreated: "27/12/2019",
+        releaseDate: "03/05/2020",
+        tracksNumber: 5,
+        spotify:
+            "https://open.spotify.com/album/5TykcNF7HwmCV3mMc9c5MK?si=Pv-kAa-rSF6j5axYXaxKjw",
+        appleMusic:
+            "https://music.apple.com/us/album/blue-nostalgia-ep/1511766216",
+        soundCloud: "https://soundcloud.com/azuregaze/sets/blue-nostalgia",
+        trackTitles: [
+            "Love in Tokyo",
+            "Rain and Cigarettes",
+            "Funny Romance",
+            "Blue Nostalgia",
+            "Lovesick",
+        ],
+    },
 ];
 
 module.exports = {

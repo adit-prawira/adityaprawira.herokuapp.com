@@ -18,7 +18,7 @@ class Navbar extends Component {
                     Projects
                 </Link>
                 <Link to="/artworks" className={classes.link}>
-                    Artworks
+                    Artworks/Albums
                 </Link>
                 <Clock type="digital" color="azure" />
             </nav>

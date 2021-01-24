@@ -8,6 +8,8 @@ import MyFooter from "./MyFooter";
 import ProjectCarousel from "./ProjectCarousel";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./styles/ProjectDetailsStyles";
+// import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+// import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 function ProjectDetails({ classes, project, filteredProjects }) {
     const { descriptions, startPeriod, endPeriod, image, title } = project;
     return (
