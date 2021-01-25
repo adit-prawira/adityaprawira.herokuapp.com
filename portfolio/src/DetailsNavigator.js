@@ -1,20 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 const styles = {
     root: {
         display: "flex",
-        justifyContent: "space-between",
+        justifyContent: "center",
         alignItems: "center",
-        padding: "1%",
-        marginTop: 0,
-        "& img": {
-            width: "5%",
-            "&:hover": {
-                cursor: "pointer",
-                color: "rgba(255,255,255,0.1)",
-            },
-        },
+        marginTop: "auto",
+        marginBottom: "auto",
     },
 };
 const DetailsNavigator = ({ classes, elements, currentItemTitle, history }) => {
@@ -30,7 +27,13 @@ const DetailsNavigator = ({ classes, elements, currentItemTitle, history }) => {
                 .replace(/ /g, "-");
             return (
                 <Link to={`/projects/${next}`}>
-                    <img src="/Images/right-arrow.png" alt="right-arrow" />
+                    <Button
+                        variant="outlined"
+                        color="secondary"
+                        style={{ width: "100%" }}
+                    >
+                        <ArrowForwardIcon />
+                    </Button>
                 </Link>
             );
         }
@@ -40,7 +43,13 @@ const DetailsNavigator = ({ classes, elements, currentItemTitle, history }) => {
                 .replace(/ /g, "-");
             return (
                 <Link to={`/projects/${previous}`}>
-                    <img src="/Images/left-arrow.png" alt="left-arrow" />
+                    <Button
+                        variant="outlined"
+                        color="secondary"
+                        style={{ width: "100%" }}
+                    >
+                        <ArrowBackIcon />
+                    </Button>
                 </Link>
             );
         }
@@ -53,17 +62,62 @@ const DetailsNavigator = ({ classes, elements, currentItemTitle, history }) => {
                 .replace(/ /g, "-");
             return (
                 <>
-                    <Link to={`/projects/${previous}`}>
-                        <img src="/Images/left-arrow.png" alt="left-arrow" />
-                    </Link>
-                    <Link to={`/projects/${next}`}>
-                        <img src="/Images/right-arrow.png" alt="right-arrow" />
-                    </Link>
+                    <Grid
+                        item
+                        xs={12}
+                        sm={1}
+                        style={{
+                            border: "1px solid azure",
+                        }}
+                    >
+                        {" "}
+                        <Link to={`/projects/${previous}`}>
+                            <Button
+                                variant="outlined"
+                                color="secondary"
+                                style={{ width: "100%" }}
+                            >
+                                <ArrowBackIcon />
+                            </Button>
+                        </Link>
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        sm={10}
+                        style={{
+                            border: "1px solid azure",
+                        }}
+                    ></Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        sm={1}
+                        style={{
+                            border: "1px solid azure",
+                        }}
+                    >
+                        <Link to={`/projects/${next}`}>
+                            <Button
+                                variant="outlined"
+                                color="secondary"
+                                style={{ width: "100%" }}
+                            >
+                                <ArrowForwardIcon />
+                            </Button>
+                        </Link>
+                    </Grid>
                 </>
             );
         }
     };
 
-    return <div className={classes.root}>{decide()}</div>;
+    return (
+        <div className={classes.root}>
+            <Grid container spacing={3}>
+                {decide()}
+            </Grid>
+        </div>
+    );
 };
 export default withStyles(styles)(DetailsNavigator);
