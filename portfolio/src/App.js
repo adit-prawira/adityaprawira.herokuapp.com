@@ -24,8 +24,7 @@ class App extends Component {
     findEducation(urlTitle) {
         return educations.find(function (education) {
             return (
-                education.companyName.toLowerCase().replace(/ /g, "-") ===
-                urlTitle
+                education.title.toLowerCase().replace(/ /g, "-") === urlTitle
             );
         });
     }
@@ -72,13 +71,13 @@ class App extends Component {
                                 />
                                 <Route
                                     exact
-                                    path="/about/:companyName"
+                                    path="/about/:title"
                                     render={(routeProps) => (
                                         <Page>
                                             <EducationDetails
                                                 education={this.findEducation(
                                                     routeProps.match.params
-                                                        .companyName
+                                                        .title
                                                 )}
                                                 {...routeProps}
                                             />
@@ -111,6 +110,8 @@ class App extends Component {
                                                     routeProps.match.params
                                                         .title
                                                 )}
+                                                allProjects={projects}
+                                                {...routeProps}
                                             />
                                         </Page>
                                     )}

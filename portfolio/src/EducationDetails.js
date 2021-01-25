@@ -10,7 +10,7 @@ import { v4 as uuidv4 } from "uuid";
 import styles from "./styles/ProjectDetailsStyles";
 function EducationDetails({ classes, education }) {
     const {
-        companyName,
+        title,
         degree,
         startYear,
         endYear,
@@ -25,7 +25,7 @@ function EducationDetails({ classes, education }) {
                 <Grid container spacing={3} className={classes.container}>
                     <Grid item xs={12} sm={7}>
                         <Typography>
-                            <label>Company Name:</label> {companyName}
+                            <label>Company Name:</label> {title}
                         </Typography>
                         <br />
                         <Typography>
@@ -54,7 +54,7 @@ function EducationDetails({ classes, education }) {
                         </ul>
                     </Grid>
                     <Grid item xs={12} sm={5} className={classes.media}>
-                        <img src={image} alt={companyName} />
+                        <img src={image} alt={title} />
                     </Grid>
                 </Grid>
             </div>

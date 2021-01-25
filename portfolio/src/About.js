@@ -48,24 +48,19 @@ class About extends Component {
                             <h3>My Studies:</h3>
                             <div className={classes.studiesContainer}>
                                 {educations.map(
-                                    ({
-                                        logo,
-                                        companyName,
-                                        startYear,
-                                        endYear,
-                                    }) => (
+                                    ({ logo, title, startYear, endYear }) => (
                                         <div
                                             className={classes.logoContainer}
                                             key={uuidv4()}
                                         >
                                             <Link
-                                                to={`/about/${companyName
+                                                to={`/about/${title
                                                     .toLowerCase()
                                                     .replace(/ /g, "-")}`}
                                             >
                                                 <img
                                                     src={logo}
-                                                    alt={companyName}
+                                                    alt={title}
                                                     className={classes.studies}
                                                 />
                                             </Link>

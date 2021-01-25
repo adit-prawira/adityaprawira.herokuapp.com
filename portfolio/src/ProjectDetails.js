@@ -8,9 +8,14 @@ import MyFooter from "./MyFooter";
 import ProjectCarousel from "./ProjectCarousel";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./styles/ProjectDetailsStyles";
-// import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-// import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-function ProjectDetails({ classes, project, filteredProjects }) {
+import DetailsNavigator from "./DetailsNavigator";
+function ProjectDetails({
+    classes,
+    project,
+    filteredProjects,
+    allProjects,
+    history,
+}) {
     const { descriptions, startPeriod, endPeriod, image, title } = project;
     return (
         <Box flex fill className={classes.root}>
@@ -47,7 +52,11 @@ function ProjectDetails({ classes, project, filteredProjects }) {
                     </Grid>
                 </Grid>
             </div>
-
+            <DetailsNavigator
+                elements={allProjects}
+                currentItemTitle={title}
+                history={history}
+            />
             <MyFooter />
         </Box>
     );

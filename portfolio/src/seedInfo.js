@@ -76,6 +76,11 @@ const projects = [
             "A team of 4 that construct and develop a competitive autonomous device to compete in Warman Competition 2020.",
             "The device was appreciated and predicted to win the competition or at least secure a top 5 position",
             "A productive and efficient team collaboration project",
+            "Responsible for designing delivery/propulsion systems of the device",
+            "Develop engineering drawings for cart mechanism, mecanum wheels, 3D models and simulations of the system",
+            "Combining the subsystem with the other subsystems",
+            "Develop a risk management analysis, and budgeting on the design",
+            "Deliver a professional presentation to the client (professional Engineer)",
         ],
         type: "engineering",
         image: "/Images/warman.png",
@@ -126,21 +131,21 @@ const projects = [
 const experiences = [
     {
         title: "Summer Program Student Mentor",
-        companyName: "Sekolah Pelita Harapan",
+        title: "Sekolah Pelita Harapan",
         type: "Internship",
         startPeriod: "05/2015",
         endPeriod: "06/2015",
     },
     {
         title: "Undergraduate Student",
-        companyName: "Univeristy of Melbourne",
+        title: "Univeristy of Melbourne",
         type: "Full-time",
         startPeriod: "07/2017",
         endPeriod: "07/2020",
     },
     {
         title: "Music Producer (Azure Gaze)",
-        companyName: "DistroKid",
+        title: "DistroKid",
         type: "Self-employed",
         startPeriod: "04/2020",
         endPeriod: "Present",
@@ -149,7 +154,7 @@ const experiences = [
 
 const educations = [
     {
-        companyName: "Sekolah Pelita Harapan Sentul City",
+        title: "Sekolah Pelita Harapan Sentul City",
         degree: "High School Diploma",
         startYear: "2014",
         endYear: "2017",
@@ -169,7 +174,7 @@ const educations = [
         ],
     },
     {
-        companyName: "University of Melbourne",
+        title: "University of Melbourne",
         degree: "Bachelor of Science - BS, Mechanical Systems",
         startYear: "2017",
         endYear: "2020",
@@ -189,7 +194,7 @@ const educations = [
         ],
     },
     {
-        companyName: "RMIT University",
+        title: "RMIT University",
         degree: "Master of Engineering, Robotics and Mechatronics Engineering",
         startYear: "2020",
         endYear: "Present",
