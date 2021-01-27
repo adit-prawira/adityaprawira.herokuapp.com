@@ -1,4 +1,4 @@
-const projects = [
+export const projects = [
     {
         title: "Personal Portfolio React Web App",
         startPeriod: "12/2020",
@@ -128,31 +128,31 @@ const projects = [
     },
 ];
 
-const experiences = [
+export const experiences = [
     {
         title: "Summer Program Student Mentor",
-        title: "Sekolah Pelita Harapan",
+        companyName: "Sekolah Pelita Harapan",
         type: "Internship",
         startPeriod: "05/2015",
         endPeriod: "06/2015",
     },
     {
         title: "Undergraduate Student",
-        title: "Univeristy of Melbourne",
+        companyName: "Univeristy of Melbourne",
         type: "Full-time",
         startPeriod: "07/2017",
         endPeriod: "07/2020",
     },
     {
         title: "Music Producer (Azure Gaze)",
-        title: "DistroKid",
+        companyName: "DistroKid",
         type: "Self-employed",
         startPeriod: "04/2020",
         endPeriod: "Present",
     },
 ];
 
-const educations = [
+export const educations = [
     {
         title: "Sekolah Pelita Harapan Sentul City",
         degree: "High School Diploma",
@@ -214,7 +214,7 @@ const educations = [
     },
 ];
 
-const artworks = [
+export const artworks = [
     {
         title: "Within the Mist",
         dateCreated: "26/12/2020",
@@ -344,10 +344,3 @@ const artworks = [
         ],
     },
 ];
-
-module.exports = {
-    projects,
-    experiences,
-    educations,
-    artworks,
-};
