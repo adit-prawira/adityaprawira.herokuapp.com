@@ -131,21 +131,21 @@ const projects = [
 const experiences = [
     {
         title: "Summer Program Student Mentor",
-        title: "Sekolah Pelita Harapan",
+        companyName: "Sekolah Pelita Harapan",
         type: "Internship",
         startPeriod: "05/2015",
         endPeriod: "06/2015",
     },
     {
         title: "Undergraduate Student",
-        title: "Univeristy of Melbourne",
+        companyName: "Univeristy of Melbourne",
         type: "Full-time",
         startPeriod: "07/2017",
         endPeriod: "07/2020",
     },
     {
         title: "Music Producer (Azure Gaze)",
-        title: "DistroKid",
+        companyName: "DistroKid",
         type: "Self-employed",
         startPeriod: "04/2020",
         endPeriod: "Present",

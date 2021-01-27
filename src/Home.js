@@ -57,7 +57,7 @@ function Home({ artworks, projects }) {
                     <Grid item xs={12} sm={4}>
                         <div className={classes.root}>
                             <GridList className={classes.gridList}>
-                                {artworks.map(({ title, date }) => (
+                                {artworks.map(({ title, dateCreated }) => (
                                     <GridListTile key={title}>
                                         <img
                                             src={`/Images/${title
@@ -68,7 +68,9 @@ function Home({ artworks, projects }) {
                                         <GridListTileBar
                                             title={title}
                                             subtitle={
-                                                <span>Created in: {dateCreated}</span>
+                                                <span>
+                                                    Created in: {dateCreated}
+                                                </span>
                                             }
                                             actionIcon={
                                                 <IconButton
