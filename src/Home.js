@@ -68,7 +68,7 @@ function Home({ artworks, projects }) {
                                         <GridListTileBar
                                             title={title}
                                             subtitle={
-                                                <span>Created in: {date}</span>
+                                                <span>Created in: {dateCreated}</span>
                                             }
                                             actionIcon={
                                                 <IconButton
