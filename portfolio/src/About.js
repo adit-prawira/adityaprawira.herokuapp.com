@@ -15,6 +15,7 @@ import { v4 as uuidv4 } from "uuid";
 class About extends Component {
     render() {
         const { classes, educations } = this.props;
+
         return (
             <Box flex fill className={classes.box}>
                 <Navbar />
@@ -39,8 +40,8 @@ class About extends Component {
                             </Typography>
                             <br />
                             <Typography>
-                                I also love to produce music and you can find me
-                                as "Azure Gaze" on your favorite music streaming
+                                I also produce music and you can find me as
+                                "Azure Gaze" on your favorite music streaming
                                 platforms like Spotify, Apple Music, Soundcloud,
                                 iHeartRadio, and many more.
                             </Typography>

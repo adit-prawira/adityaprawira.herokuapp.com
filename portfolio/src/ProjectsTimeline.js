@@ -59,7 +59,7 @@ const ProjectsTimeline = ({ classes, projects }) => {
     return (
         <Box flex fill className={classes.root}>
             <Navbar />
-            <div className={classes.timelineContainer}>
+            <div>
                 <Timeline align="alternate" className={classes.timeline}>
                     {projects.map(({ title, startPeriod, endPeriod, type }) => (
                         <TimelineItem key={uuidv4()}>

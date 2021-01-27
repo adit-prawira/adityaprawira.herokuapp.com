@@ -6,9 +6,10 @@ import Grid from "@material-ui/core/Grid";
 import Navbar from "./Navbar";
 import MyFooter from "./MyFooter";
 import { v4 as uuidv4 } from "uuid";
+import DetailsNavigator from "./DetailsNavigator";
 // import { Link } from "react-router-dom";
 import styles from "./styles/ProjectDetailsStyles";
-function EducationDetails({ classes, education }) {
+function EducationDetails({ classes, education, allEducations }) {
     const {
         title,
         degree,
@@ -18,6 +19,7 @@ function EducationDetails({ classes, education }) {
         descriptions,
         courses,
     } = education;
+    const type = "about";
     return (
         <Box flex fill className={classes.root}>
             <Navbar />
@@ -58,7 +60,11 @@ function EducationDetails({ classes, education }) {
                     </Grid>
                 </Grid>
             </div>
-
+            <DetailsNavigator
+                elements={allEducations}
+                currentItemTitle={title}
+                type={type}
+            />
             <MyFooter />
         </Box>
     );

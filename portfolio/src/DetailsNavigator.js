@@ -5,92 +5,80 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 const styles = {
     root: {
-        border: "1px solid azure",
+        // border: "1px solid azure",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         padding: "1%",
     },
+    button: {
+        width: "100%",
+        color: "rgb(244, 213, 138)",
+        border: "1px solid rgb(225, 63, 91)",
+        textDecoration: "none",
+    },
 };
-const DetailsNavigator = ({ classes, elements, currentItemTitle, history }) => {
+const DetailsNavigator = ({ classes, elements, currentItemTitle, type }) => {
     const index = elements.map((item) => item.title).indexOf(currentItemTitle);
 
     const hasNextItem = index < elements.length - 1;
     const hasPreviousItem = index > 0;
-
+    const isFinal = hasPreviousItem && !hasNextItem;
+    const isInitial = hasNextItem && !hasPreviousItem;
     const decide = () => {
         return (
             <>
-                <Grid
-                    item
-                    xs={12}
-                    sm={1}
-                    // style={{
-                    //     border: "1px solid azure",
-                    // }}
-                >
-                    {" "}
-                    {hasPreviousItem && (
+                {hasPreviousItem && (
+                    <Grid item xs={12} sm={1}>
                         <Link
-                            to={`/projects/${elements[index - 1].title
+                            to={`/${type}/${elements[index - 1].title
                                 .toLowerCase()
                                 .replace(/ /g, "-")}`}
                         >
                             <Button
                                 variant="outlined"
                                 color="secondary"
-                                style={{ width: "100%" }}
+                                className={classes.button}
                             >
                                 <ArrowBackIcon />
-                                Previous
                             </Button>
                         </Link>
-                    )}
-                </Grid>
-                <Grid
-                    item
-                    xs={12}
-                    sm={10}
-                    // style={{
-                    //     border: "1px solid azure",
-                    // }}
-                >
-                    <Link to={`/projects`}>
+                    </Grid>
+                )}
+
+                <Grid item xs={12} sm={isFinal || isInitial ? 11 : 10}>
+                    <Link to={`/${type}`}>
                         <Button
                             variant="outlined"
                             color="primary"
-                            style={{ width: "100%" }}
+                            className={classes.button}
                         >
-                            Go Back
+                            <ExitToAppIcon />
                         </Button>
                     </Link>
                 </Grid>
-                <Grid
-                    item
-                    xs={12}
-                    sm={1}
-                    // style={{
-                    //     border: "1px solid azure",
-                    // }}
-                >
-                    {hasNextItem && (
+
+                {hasNextItem && (
+                    <Grid item xs={12} sm={1}>
                         <Link
-                            to={`/projects/${elements[index + 1].title
+                            to={`/${type}/${elements[index + 1].title
                                 .toLowerCase()
                                 .replace(/ /g, "-")}`}
                         >
                             <Button
+                                aria-label="Next"
                                 variant="outlined"
                                 color="secondary"
-                                style={{ width: "100%" }}
+                                className={classes.button}
                             >
-                                Next <ArrowForwardIcon />
+                                <ArrowForwardIcon />
                             </Button>
                         </Link>
-                    )}
-                </Grid>
+                    </Grid>
+                )}
             </>
         );
     };

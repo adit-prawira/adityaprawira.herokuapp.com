@@ -79,6 +79,7 @@ class App extends Component {
                                                     routeProps.match.params
                                                         .title
                                                 )}
+                                                allEducations={educations}
                                                 {...routeProps}
                                             />
                                         </Page>

@@ -2,7 +2,7 @@ const styles = (theme) => ({
     root: {
         overflowX: "visible",
         overflowY: "auto",
-
+        // border: "1px solid azure",
         backgroundColor: "rgb(43, 48, 62)",
     },
 
@@ -11,6 +11,7 @@ const styles = (theme) => ({
         paddingLeft: "2%",
         paddingRight: "2%",
         borderRadius: "10px",
+        // border: "1px solid azure",
     },
     paper: {
         padding: "1%",

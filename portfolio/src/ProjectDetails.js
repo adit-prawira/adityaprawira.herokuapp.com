@@ -9,14 +9,9 @@ import ProjectCarousel from "./ProjectCarousel";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./styles/ProjectDetailsStyles";
 import DetailsNavigator from "./DetailsNavigator";
-function ProjectDetails({
-    classes,
-    project,
-    filteredProjects,
-    allProjects,
-    history,
-}) {
+function ProjectDetails({ classes, project, filteredProjects, allProjects }) {
     const { descriptions, startPeriod, endPeriod, image, title } = project;
+    const type = "projects";
     return (
         <Box flex fill className={classes.root}>
             <Navbar />
@@ -55,7 +50,7 @@ function ProjectDetails({
             <DetailsNavigator
                 elements={allProjects}
                 currentItemTitle={title}
-                history={history}
+                type={type}
             />
             <MyFooter />
         </Box>
