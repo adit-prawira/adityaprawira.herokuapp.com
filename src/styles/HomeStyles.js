@@ -67,11 +67,11 @@ const useStyles = makeStyles((theme) => ({
         overflowY: "auto",
     },
     cv: {
-        marginTop: "30%",
+        marginTop: "50%",
     },
     dialogFooter: {
         display: "flex",
-        justifyContent: "space-between",
+
         alignItems: "center",
         backgroundColor: "rgb(34, 40, 54)",
     },

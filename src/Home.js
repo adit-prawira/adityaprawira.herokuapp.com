@@ -179,6 +179,7 @@ function Home({ artworks, projects }) {
                         pageNumber={pageNumber}
                         numPages={numPages}
                         setPageNumber={setPageNumber}
+                        style={{ alignContent: "flex-end" }}
                     />
                     <Button
                         onClick={handleClose}
