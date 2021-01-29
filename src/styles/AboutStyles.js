@@ -1,4 +1,4 @@
-const styles = {
+const styles = (theme) => ({
     box: {
         backgroundColor: "rgb(43, 48, 62)",
         overflowX: "hidden",
@@ -11,7 +11,7 @@ const styles = {
         // border: "1px solid black",
         padding: "1%",
     },
-    root: {
+    container: {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -53,5 +53,22 @@ const styles = {
         borderRadius: "50%",
         marginTop: "5%",
     },
-};
+    root: {
+        margin: 0,
+        backgroundColor: "rgb(34, 40, 54)",
+        color: "azure",
+        padding: theme.spacing(2),
+    },
+    closeButton: {
+        position: "absolute",
+        right: theme.spacing(1),
+        top: theme.spacing(1),
+        color: theme.palette.grey[500],
+    },
+    dialog: {
+        backgroundColor: "rgb(43, 48, 62)",
+    },
+    send: { color: "rgb(244, 213, 138)" },
+    dialogFooter: { backgroundColor: "rgb(34, 40, 54)" },
+});
 export default styles;

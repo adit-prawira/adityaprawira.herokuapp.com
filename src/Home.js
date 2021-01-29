@@ -13,6 +13,7 @@ import { particle } from "./styles/ParticleParams";
 import { Box, Calendar } from "grommet";
 import ProjectCarousel from "./ProjectCarousel";
 import useStyles from "./styles/HomeStyles";
+
 function Home({ artworks, projects }) {
     const classes = useStyles();
     return (
@@ -39,21 +40,7 @@ function Home({ artworks, projects }) {
                             />
                         </div>
                     </Grid>
-                    <Grid
-                        item
-                        xs={12}
-                        sm={3}
-                        style={{
-                            display: "flex",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <Calendar
-                            size="small"
-                            date={new Date().toISOString()}
-                            // onSelect={(date) => {}}
-                        />
-                    </Grid>
+
                     <Grid item xs={12} sm={4}>
                         <div className={classes.root}>
                             <GridList className={classes.gridList}>
@@ -85,6 +72,21 @@ function Home({ artworks, projects }) {
                                 ))}
                             </GridList>
                         </div>
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        sm={3}
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Calendar
+                            size="small"
+                            date={new Date().toISOString()}
+                        />
+                        <br />
                     </Grid>
 
                     <ProjectCarousel projects={projects} />
