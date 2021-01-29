@@ -186,7 +186,7 @@ function Home({ artworks, projects }) {
                         variant="contained"
                         color="secondary"
                     >
-                        Cancel
+                        Go Back
                     </Button>
                 </DialogActions>
             </Dialog>
