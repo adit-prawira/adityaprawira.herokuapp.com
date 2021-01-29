@@ -22,6 +22,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import { Document, Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
 import { withStyles } from "@material-ui/core/styles";
+import PdfControlPanel from "./PdfControlPanel";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const DialogTitle = (props) => {
@@ -174,9 +175,11 @@ function Home({ artworks, projects }) {
                     </Document>
                 </DialogContent>
                 <DialogActions className={classes.dialogFooter}>
-                    <Typography className={classes.pageNav}>
-                        Page {pageNumber} of {numPages}
-                    </Typography>
+                    <PdfControlPanel
+                        pageNumber={pageNumber}
+                        numPages={numPages}
+                        setPageNumber={setPageNumber}
+                    />
                     <Button
                         onClick={handleClose}
                         variant="contained"
