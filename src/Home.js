@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import Navbar from "./Navbar";
 import Particles from "react-particles-js";
@@ -13,9 +13,63 @@ import { particle } from "./styles/ParticleParams";
 import { Box, Calendar } from "grommet";
 import ProjectCarousel from "./ProjectCarousel";
 import useStyles from "./styles/HomeStyles";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import MuiDialogTitle from "@material-ui/core/DialogTitle";
+import MuiDialogContent from "@material-ui/core/DialogContent";
+import MuiDialogActions from "@material-ui/core/DialogActions";
+import CloseIcon from "@material-ui/icons/Close";
+import { Document, Page } from "react-pdf";
+import { pdfjs } from "react-pdf";
+import { withStyles } from "@material-ui/core/styles";
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+const DialogTitle = (props) => {
+    const classes = useStyles();
+    const { children, onClose, ...other } = props;
+    return (
+        <MuiDialogTitle disableTypography className={classes.root} {...other}>
+            <Typography variant="h6">{children}</Typography>
+            {onClose ? (
+                <IconButton
+                    aria-label="close"
+                    className={classes.closeButton}
+                    onClick={onClose}
+                >
+                    <CloseIcon />
+                </IconButton>
+            ) : null}
+        </MuiDialogTitle>
+    );
+};
+
+const DialogContent = withStyles((theme) => ({
+    root: {
+        padding: theme.spacing(2),
+    },
+}))(MuiDialogContent);
+
+const DialogActions = withStyles((theme) => ({
+    root: {
+        margin: 0,
+        padding: theme.spacing(1),
+    },
+}))(MuiDialogActions);
 
 function Home({ artworks, projects }) {
     const classes = useStyles();
+    const [numPages, setNumPages] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
+    const [open, setOpen] = useState(false);
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
+    const onDocumentLoadSuccess = ({ numPages }) => {
+        setNumPages(numPages);
+    };
     return (
         <Box flex fill className={classes.container}>
             <Navbar />
@@ -40,9 +94,35 @@ function Home({ artworks, projects }) {
                             />
                         </div>
                     </Grid>
-
+                    <Grid
+                        item
+                        xs={12}
+                        sm={3}
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
+                        <div className="row mx-auto">
+                            <Calendar
+                                size="small"
+                                date={new Date().toISOString()}
+                                className="mx-auto mb-3"
+                            />
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={handleClickOpen}
+                                className="mx-auto"
+                            >
+                                My CV
+                            </Button>
+                        </div>
+                    </Grid>
                     <Grid item xs={12} sm={4}>
-                        <div className={classes.root}>
+                        <div className={classes.gridListContainer}>
                             <GridList className={classes.gridList}>
                                 {artworks.map(({ title, dateCreated }) => (
                                     <GridListTile key={title}>
@@ -73,25 +153,39 @@ function Home({ artworks, projects }) {
                             </GridList>
                         </div>
                     </Grid>
-                    <Grid
-                        item
-                        xs={12}
-                        sm={3}
-                        style={{
-                            display: "flex",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <Calendar
-                            size="small"
-                            date={new Date().toISOString()}
-                        />
-                        <br />
-                    </Grid>
-
                     <ProjectCarousel projects={projects} />
                 </Grid>
             </div>
+            <Dialog
+                onClose={handleClose}
+                aria-labelledby="customized-dialog-title"
+                open={open}
+            >
+                <DialogTitle id="customized-dialog-title" onClose={handleClose}>
+                    Email Me
+                </DialogTitle>
+                <DialogContent dividers className={classes.dialog}>
+                    <Document
+                        file="/Documents/my_cv.pdf"
+                        onLoadSuccess={onDocumentLoadSuccess}
+                        className={classes.cv}
+                    >
+                        <Page pageNumber={pageNumber} />
+                    </Document>
+                </DialogContent>
+                <DialogActions className={classes.dialogFooter}>
+                    <Typography className={classes.pageNav}>
+                        Page {pageNumber} of {numPages}
+                    </Typography>
+                    <Button
+                        onClick={handleClose}
+                        variant="contained"
+                        color="secondary"
+                    >
+                        Cancel
+                    </Button>
+                </DialogActions>
+            </Dialog>
             <MyFooter />
         </Box>
     );

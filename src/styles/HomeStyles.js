@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "bold",
         color: "azure",
     },
-    root: {
+    gridListContainer: {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "space-around",
@@ -45,6 +45,38 @@ const useStyles = makeStyles((theme) => ({
     },
     icon: {
         color: "rgba(255, 255, 255, 0.54)",
+    },
+    root: {
+        margin: 0,
+        backgroundColor: "rgb(34, 40, 54)",
+        color: "azure",
+        padding: theme.spacing(2),
+    },
+    closeButton: {
+        position: "absolute",
+        right: theme.spacing(1),
+        top: theme.spacing(1),
+        color: theme.palette.grey[500],
+    },
+    dialog: {
+        backgroundColor: "rgb(43, 48, 62)",
+        display: "flex",
+        justifyContent: "space-around",
+        alignItems: "center",
+        overflowX: "hidden",
+        overflowY: "auto",
+    },
+    cv: {
+        marginTop: "30%",
+    },
+    dialogFooter: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        backgroundColor: "rgb(34, 40, 54)",
+    },
+    pageNav: {
+        color: "azure",
     },
 }));
 
