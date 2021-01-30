@@ -106,17 +106,17 @@ function Home({ artworks, projects }) {
                             alignItems: "center",
                         }}
                     >
-                        <div className="row mx-auto">
-                            <Calendar
-                                size="small"
-                                date={new Date().toISOString()}
-                                className="mx-auto mb-3"
-                            />
+                        <Calendar
+                            size="small"
+                            date={new Date().toISOString()}
+                            className="mx-auto mb-3"
+                        />
+                        <div style={{ width: "100%" }} className="row">
                             <Button
                                 variant="contained"
                                 color="primary"
                                 onClick={handleClickOpen}
-                                className="mx-auto"
+                                className="btn btn-lg btn-block mx-auto"
                             >
                                 My CV
                             </Button>
