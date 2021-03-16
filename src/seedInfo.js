@@ -216,6 +216,17 @@ export const educations = [
 
 export const artworks = [
     {
+        title: "Lost",
+        dateCreated: "13/03/2021",
+        releaseDate: "14/03/2021",
+        tracksNumber: 2,
+        spotify:
+            "https://open.spotify.com/album/2OrqjmzTWak9PlC7GnaVxm?si=Xx9SkwDHStO9vW_cQw98Ig",
+        appleMusic: "https://music.apple.com/us/album/lost-single/1558363703",
+        soundCloud: "https://soundcloud.com/azuregaze/sets/lost",
+        trackTitles: ["lost", "lakeside"],
+    },
+    {
         title: "Within the Mist",
         dateCreated: "26/12/2020",
         releaseDate: "31/12/2020",

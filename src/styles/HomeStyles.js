@@ -71,7 +71,6 @@ const useStyles = makeStyles((theme) => ({
     },
     dialogFooter: {
         display: "flex",
-
         alignItems: "center",
         backgroundColor: "rgb(34, 40, 54)",
     },
