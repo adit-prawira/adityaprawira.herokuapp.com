@@ -163,7 +163,7 @@ function Home({ artworks, projects }) {
                 open={open}
             >
                 <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-                    Email Me
+                    My CV
                 </DialogTitle>
                 <DialogContent dividers className={classes.dialog}>
                     <Document

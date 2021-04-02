@@ -14,7 +14,7 @@ const styles = {
             color: "rgb(139, 212, 191)",
         },
         "& img": {
-            width: "90%",
+            width: "80%",
         },
     },
     container: {
