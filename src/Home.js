@@ -127,7 +127,6 @@ function Home({ artworks, projects }) {
                             </Button>
                             <Button
                                 variant="contained"
-                                color="primary"
                                 name="resume"
                                 onClick={handleClickOpen}
                                 className={classes.buttonResume}
