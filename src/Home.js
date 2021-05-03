@@ -61,12 +61,15 @@ function Home({ artworks, projects }) {
     const classes = useStyles();
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
+    const [docType, setDocType] = useState("");
     const [open, setOpen] = useState(false);
-    const handleClickOpen = () => {
+    const handleClickOpen = (event, name) => {
+        setDocType(event.target.innerText.toLowerCase().replace(" ", "_"));
         setOpen(true);
     };
     const handleClose = () => {
         setOpen(false);
+        setPageNumber(1);
     };
     const onDocumentLoadSuccess = ({ numPages }) => {
         setNumPages(numPages);
@@ -111,14 +114,26 @@ function Home({ artworks, projects }) {
                             date={new Date().toISOString()}
                             className="mx-auto mb-3"
                         />
-                        <div style={{ width: "100%" }} className="row">
+                        <div className={classes.buttons}>
                             <Button
                                 variant="contained"
                                 color="primary"
+                                name="cv"
                                 onClick={handleClickOpen}
-                                className="btn btn-lg btn-block mx-auto"
+                                className={classes.buttonCv}
+                                //className="btn btn-lg btn-block mx-auto"
                             >
                                 My CV
+                            </Button>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                name="resume"
+                                onClick={handleClickOpen}
+                                className={classes.buttonResume}
+                                //className="btn btn-lg btn-block mx-auto"
+                            >
+                                My Resume
                             </Button>
                         </div>
                     </Grid>
@@ -167,7 +182,7 @@ function Home({ artworks, projects }) {
                 </DialogTitle>
                 <DialogContent dividers className={classes.dialog}>
                     <Document
-                        file="/Documents/my_cv.pdf"
+                        file={`/Documents/${docType}.pdf`}
                         onLoadSuccess={onDocumentLoadSuccess}
                         className={classes.cv}
                     >
@@ -190,6 +205,7 @@ function Home({ artworks, projects }) {
                     </Button>
                 </DialogActions>
             </Dialog>
+
             <MyFooter />
         </Box>
     );

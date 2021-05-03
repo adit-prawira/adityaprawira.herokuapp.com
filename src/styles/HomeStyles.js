@@ -69,6 +69,21 @@ const useStyles = makeStyles((theme) => ({
     cv: {
         marginTop: "50%",
     },
+    buttons: {
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-evenly",
+    },
+    buttonCv: {
+        marginTop: "5%",
+    },
+    buttonResume: {
+        marginTop: "5%",
+        color: "grey",
+        backgroundColor: "rgb(211, 233, 166)",
+        "&:hover": { backgroundColor: "rgb(186, 225, 106)" },
+    },
     dialogFooter: {
         display: "flex",
         alignItems: "center",
