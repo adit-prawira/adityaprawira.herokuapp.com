@@ -121,7 +121,6 @@ function Home({ artworks, projects }) {
                                 name="cv"
                                 onClick={handleClickOpen}
                                 className={classes.buttonCv}
-                                //className="btn btn-lg btn-block mx-auto"
                             >
                                 My CV
                             </Button>
@@ -129,8 +128,14 @@ function Home({ artworks, projects }) {
                                 variant="contained"
                                 name="resume"
                                 onClick={handleClickOpen}
-                                className={classes.buttonResume}
-                                //className="btn btn-lg btn-block mx-auto"
+                                style={{
+                                    marginTop: "5%",
+                                    color: "grey",
+                                    backgroundColor: "rgb(211, 233, 166)",
+                                    "&:hover": {
+                                        backgroundColor: "rgb(186, 225, 106)",
+                                    },
+                                }}
                             >
                                 My Resume
                             </Button>
@@ -177,7 +182,7 @@ function Home({ artworks, projects }) {
                 open={open}
             >
                 <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-                    My CV
+                    {docType === "my_cv" ? "My CV" : "My Resume"}
                 </DialogTitle>
                 <DialogContent dividers className={classes.dialog}>
                     <Document
