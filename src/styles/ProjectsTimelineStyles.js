@@ -1,11 +1,12 @@
 const styles = (theme) => ({
     root: {
+        width: "100%",
+        border: "1px solid white",
         overflowX: "visible",
         overflowY: "auto",
     },
 
     timeline: {
-        margin: "auto",
         paddingLeft: "2%",
         paddingRight: "2%",
         borderRadius: "10px",

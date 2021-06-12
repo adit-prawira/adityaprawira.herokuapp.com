@@ -56,39 +56,34 @@ const ProjectsTimeline = ({ classes, projects }) => {
         }
     };
     return (
-        <Box flex fill className={classes.root}>
-            <div>
-                <Timeline align="alternate" className={classes.timeline}>
-                    {projects.map(({ title, startPeriod, endPeriod, type }) => (
-                        <TimelineItem key={uuidv4()}>
-                            <TimelineOppositeContent>
-                                <Typography style={{ color: "azure" }}>
-                                    {startPeriod} - {endPeriod}
-                                </Typography>
-                            </TimelineOppositeContent>
-                            <TimelineSeparator>
-                                {handleIcon(type)}
-                                <TimelineConnector />
-                            </TimelineSeparator>
-                            <TimelineContent>
-                                <Link
-                                    to={`/projects/${title
-                                        .toLowerCase()
-                                        .replace(/ /g, "-")}`}
-                                    className={classes.titleProject}
-                                >
-                                    <Paper
-                                        elevation={3}
-                                        className={classes.paper}
-                                    >
-                                        <Typography>{title}</Typography>
-                                    </Paper>
-                                </Link>
-                            </TimelineContent>
-                        </TimelineItem>
-                    ))}
-                </Timeline>
-            </div>
+        <Box>
+            <Timeline align="alternate">
+                {projects.map(({ title, startPeriod, endPeriod, type }) => (
+                    <TimelineItem key={uuidv4()}>
+                        <TimelineOppositeContent>
+                            <Typography style={{ color: "azure" }}>
+                                {startPeriod} - {endPeriod}
+                            </Typography>
+                        </TimelineOppositeContent>
+                        <TimelineSeparator>
+                            {handleIcon(type)}
+                            <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent>
+                            <Link
+                                to={`/projects/${title
+                                    .toLowerCase()
+                                    .replace(/ /g, "-")}`}
+                                className={classes.titleProject}
+                            >
+                                <Paper elevation={3} className={classes.paper}>
+                                    <Typography>{title}</Typography>
+                                </Paper>
+                            </Link>
+                        </TimelineContent>
+                    </TimelineItem>
+                ))}
+            </Timeline>
         </Box>
     );
 };

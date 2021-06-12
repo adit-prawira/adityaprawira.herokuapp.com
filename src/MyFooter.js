@@ -13,7 +13,6 @@ class MyFooter extends Component {
                 justify="end"
                 style={{
                     backgroundColor: "rgb(34, 40, 54)",
-                    marginTop: "100vh",
                 }}
                 className="footer mt-auto"
             >

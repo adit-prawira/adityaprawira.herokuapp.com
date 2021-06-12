@@ -1,19 +1,14 @@
 const styles = (theme) => ({
     box: {
         color: "white",
+        padding: "2%",
         border: "1px solid white",
+        borderRadius: "10px",
+        boxShadow: "5px 10px white",
+
         "& h4": {
             color: "rgb(125,136,171)",
         },
-    },
-    about: {},
-    container: {
-        border: "1px solid white",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "rgb(43, 48, 62)",
-        color: "rgb(139, 212, 191)",
     },
     contact: {
         display: "flex",
