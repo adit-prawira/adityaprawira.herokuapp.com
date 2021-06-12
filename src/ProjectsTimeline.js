@@ -13,8 +13,7 @@ import BrushIcon from "@material-ui/icons/Brush";
 import BuildIcon from "@material-ui/icons/Build";
 import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
 import Paper from "@material-ui/core/Paper";
-import Navbar from "./Navbar";
-import MyFooter from "./MyFooter";
+
 import styles from "./styles/ProjectsTimelineStyles";
 
 import { withStyles } from "@material-ui/core/styles";
@@ -58,7 +57,6 @@ const ProjectsTimeline = ({ classes, projects }) => {
     };
     return (
         <Box flex fill className={classes.root}>
-            <Navbar />
             <div>
                 <Timeline align="alternate" className={classes.timeline}>
                     {projects.map(({ title, startPeriod, endPeriod, type }) => (
@@ -91,7 +89,6 @@ const ProjectsTimeline = ({ classes, projects }) => {
                     ))}
                 </Timeline>
             </div>
-            <MyFooter />
         </Box>
     );
 };

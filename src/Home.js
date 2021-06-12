@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
-import Navbar from "./Navbar";
-import Particles from "react-particles-js";
-import MyFooter from "./MyFooter";
+
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
-import { particle } from "./styles/ParticleParams";
+
 import { Box, Calendar } from "grommet";
 import ProjectCarousel from "./ProjectCarousel";
 import useStyles from "./styles/HomeStyles";
@@ -76,10 +74,6 @@ function Home({ artworks, projects }) {
     };
     return (
         <Box flex fill className={classes.container}>
-            <Navbar />
-            <div className={classes.particleContainer}>
-                <Particles params={particle} />
-            </div>
             <div className={classes.content}>
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={5}>
@@ -209,8 +203,6 @@ function Home({ artworks, projects }) {
                     </Button>
                 </DialogActions>
             </Dialog>
-
-            <MyFooter />
         </Box>
     );
 }

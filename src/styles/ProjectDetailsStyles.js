@@ -3,7 +3,6 @@ const styles = {
         overflowX: "hidden",
         overflowY: "auto",
         color: "azure",
-        backgroundColor: "rgb(43, 48, 62)",
     },
     content: {
         display: "flex",
@@ -20,7 +19,7 @@ const styles = {
     container: {
         border: "1px solid rgb(125,136,171)",
         borderRadius: "10px",
-        backgroundColor: "rgb(34, 40, 54)",
+        backgroundColor: "rgba(34, 40, 54, 0.7)",
         padding: "1%",
     },
     media: {

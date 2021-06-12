@@ -3,26 +3,17 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import { Box } from "grommet";
 import Grid from "@material-ui/core/Grid";
-import Navbar from "./Navbar";
-import MyFooter from "./MyFooter";
+
 import { v4 as uuidv4 } from "uuid";
 import DetailsNavigator from "./DetailsNavigator";
 // import { Link } from "react-router-dom";
 import styles from "./styles/ProjectDetailsStyles";
 function EducationDetails({ classes, education, allEducations }) {
-    const {
-        title,
-        degree,
-        startYear,
-        endYear,
-        image,
-        descriptions,
-        courses,
-    } = education;
+    const { title, degree, startYear, endYear, image, descriptions, courses } =
+        education;
     const type = "about";
     return (
         <Box flex fill className={classes.root}>
-            <Navbar />
             <div className={classes.content}>
                 <Grid container spacing={3} className={classes.container}>
                     <Grid item xs={12} sm={7}>
@@ -65,7 +56,6 @@ function EducationDetails({ classes, education, allEducations }) {
                 currentItemTitle={title}
                 type={type}
             />
-            <MyFooter />
         </Box>
     );
 }

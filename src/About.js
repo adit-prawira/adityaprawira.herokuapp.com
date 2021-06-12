@@ -6,9 +6,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Navbar from "./Navbar";
-import MyFooter from "./MyFooter";
-import { Box } from "grommet";
+import { Box } from "@material-ui/core";
 import styles from "./styles/AboutStyles";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
@@ -82,11 +80,10 @@ const About = ({ classes, educations }) => {
         setOpen(false);
     };
     return (
-        <Box flex fill className={classes.box}>
-            <Navbar />
-            <div className={classes.container}>
+        <Box className={classes.box}>
+            <div>
                 <Grid container spacing={3}>
-                    <Grid item xs={12} sm={8} className={classes.about}>
+                    <Grid item xs={12} sm={8}>
                         <h1>Hi, I'm Aditya Prawira.</h1>
                         <Typography>
                             I'm a master's student specialized in Robotics and
@@ -146,7 +143,6 @@ const About = ({ classes, educations }) => {
                             Email Me
                         </Button>
                     </Grid>
-
                     <Grid item xs={12} sm={4} className={classes.contact}>
                         <h4 className={classes.contactLabel}>GET IN TOUCH</h4>
                         <Typography>adityaprawira96@gmail.com</Typography>
@@ -250,7 +246,6 @@ const About = ({ classes, educations }) => {
                     </Button>
                 </DialogActions>
             </Dialog>
-            <MyFooter />
         </Box>
     );
 };

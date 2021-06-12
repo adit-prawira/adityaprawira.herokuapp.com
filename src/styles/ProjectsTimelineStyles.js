@@ -2,8 +2,6 @@ const styles = (theme) => ({
     root: {
         overflowX: "visible",
         overflowY: "auto",
-        // border: "1px solid azure",
-        backgroundColor: "rgb(43, 48, 62)",
     },
 
     timeline: {

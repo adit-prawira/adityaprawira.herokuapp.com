@@ -11,7 +11,10 @@ class MyFooter extends Component {
             <Footer
                 pad="small"
                 justify="end"
-                style={{ backgroundColor: "rgb(34, 40, 54)" }}
+                style={{
+                    backgroundColor: "rgb(34, 40, 54)",
+                    marginTop: "100vh",
+                }}
                 className="footer mt-auto"
             >
                 <a href="https://www.instagram.com/azuregazemusic/">

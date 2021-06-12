@@ -3,8 +3,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import { Box } from "grommet";
 import Grid from "@material-ui/core/Grid";
-import Navbar from "./Navbar";
-import MyFooter from "./MyFooter";
+
 import ProjectCarousel from "./ProjectCarousel";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./styles/ProjectDetailsStyles";
@@ -14,7 +13,6 @@ function ProjectDetails({ classes, project, filteredProjects, allProjects }) {
     const type = "projects";
     return (
         <Box flex fill className={classes.root}>
-            <Navbar />
             <div className={classes.content}>
                 <Grid container spacing={3} className={classes.container}>
                     <Grid item xs={12} sm={7}>
@@ -52,7 +50,6 @@ function ProjectDetails({ classes, project, filteredProjects, allProjects }) {
                 currentItemTitle={title}
                 type={type}
             />
-            <MyFooter />
         </Box>
     );
 }

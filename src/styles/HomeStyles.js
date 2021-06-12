@@ -2,9 +2,6 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
     container: {
         color: "azure",
-        overflowX: "hidden",
-        overflowY: "auto",
-        backgroundColor: "rgb(43, 48, 62)",
     },
     selfImage: {
         display: "flex",

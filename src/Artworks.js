@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Box } from "grommet";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Navbar from "./Navbar";
-import MyFooter from "./MyFooter";
+
 import styles from "./styles/ArtworksStyles";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -62,9 +61,8 @@ const Artworks = ({ classes, artworks }) => {
     };
 
     return (
-        <Box flex fill className={classes.container}>
-            <Navbar />
-            <Grid container spacing={3} className={classes.gallery}>
+        <Box className={classes.container}>
+            <Grid container spacing={3}>
                 {artworks.map(({ title }) => (
                     <Grid
                         item
@@ -167,7 +165,6 @@ const Artworks = ({ classes, artworks }) => {
                     </Button>
                 </DialogActions>
             </Dialog>
-            <MyFooter />
         </Box>
     );
 };

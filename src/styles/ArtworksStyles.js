@@ -12,9 +12,11 @@ const styles = (theme) => ({
         color: theme.palette.grey[500],
     },
     container: {
+        width: "100%",
+        padding: "2%",
+        height: "90vh",
         overflowX: "hidden",
         overflowY: "auto",
-        backgroundColor: "rgb(43, 48, 62)",
     },
     gallery: {
         padding: "1%",
@@ -28,7 +30,7 @@ const styles = (theme) => ({
         "& label": { color: "rgb(229, 116, 133)" },
     },
     images: {
-        width: "100%",
+        width: "80%",
         "&:hover": {
             boxShadow: "0 0.5em 0.5em -0.4em black",
             transform: "translateY(-0.25em)",
