@@ -56,7 +56,14 @@ const ProjectsTimeline = ({ classes, projects }) => {
         }
     };
     return (
-        <Box>
+        <Box
+            style={{
+                border: "1px solid white",
+                height: "100%",
+                padding: "2%",
+                overflowY: "auto",
+            }}
+        >
             <Timeline align="alternate">
                 {projects.map(({ title, startPeriod, endPeriod, type }) => (
                     <TimelineItem key={uuidv4()}>

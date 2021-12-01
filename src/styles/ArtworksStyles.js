@@ -14,9 +14,10 @@ const styles = (theme) => ({
     container: {
         width: "100%",
         padding: "2%",
-        height: "90vh",
+        height: "100%",
         overflowX: "hidden",
         overflowY: "auto",
+        border: "1px solid white",
     },
     gallery: {
         padding: "1%",

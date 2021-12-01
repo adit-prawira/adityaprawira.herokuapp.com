@@ -13,7 +13,7 @@ function EducationDetails({ classes, education, allEducations }) {
         education;
     const type = "about";
     return (
-        <Box flex fill className={classes.root}>
+        <Box className={classes.root}>
             <div className={classes.content}>
                 <Grid container spacing={3} className={classes.container}>
                     <Grid item xs={12} sm={7}>

@@ -1,11 +1,15 @@
 const styles = (theme) => ({
+    container: {
+        height: "100%",
+        overflowY: "auto",
+        padding: "2%",
+    },
     box: {
         color: "white",
         padding: "2%",
         border: "1px solid white",
         borderRadius: "10px",
         boxShadow: "5px 10px white",
-
         "& h4": {
             color: "rgb(125,136,171)",
         },

@@ -2,6 +2,10 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
     container: {
         color: "azure",
+        height: "100%",
+        overflowY: "auto",
+        overflowX: "hidden",
+        padding: "2%",
     },
     selfImage: {
         display: "flex",
@@ -17,12 +21,7 @@ const useStyles = makeStyles((theme) => ({
         height: "5%",
     },
     content: {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        paddingLeft: "5%",
-        paddingRight: "5%",
-        paddingBottom: "5%",
+        height: "100%",
     },
     link: {
         textDecoration: "none",
@@ -38,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
     gridList: {
         width: "100%",
-        height: 450,
+        height: "100%",
     },
     icon: {
         color: "rgba(255, 255, 255, 0.54)",

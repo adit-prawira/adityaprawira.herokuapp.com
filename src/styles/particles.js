@@ -9,14 +9,14 @@ export const particles = {
         },
         line_linked: {
             enable: true,
-            opacity: 0.1,
+            opacity: 0.6,
         },
         move: {
             direction: "right",
             speed: 0.5,
         },
         size: {
-            value: 1,
+            value: 2,
         },
         opacity: {
             anim: {

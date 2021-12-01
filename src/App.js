@@ -11,8 +11,9 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Navbar from "./Navbar";
 import Particles from "react-particles-js";
 import { particles } from "./styles/particles";
+import MyFooter from "./CustomFooter";
+// import PerfectScrollbar from "react-perfect-scrollbar";
 import Page from "./Page";
-import MyFooter from "./MyFooter";
 class App extends Component {
     constructor(props) {
         super(props);
@@ -38,116 +39,136 @@ class App extends Component {
     }
     render() {
         return (
-            <div>
-                <Navbar />
-                <Particles
-                    params={particles}
-                    style={{
-                        position: "absolute",
-                        zIndex: -1,
-                    }}
-                />
-                <Route
-                    render={({ location }) => (
-                        <TransitionGroup>
-                            <CSSTransition
-                                key={location.key}
-                                classNames="page"
-                                timeout={1000}
-                            >
-                                <Switch location={location}>
-                                    <Route
-                                        exact
-                                        path="/"
-                                        render={(routeProps) => (
-                                            <Page>
-                                                <Home
-                                                    projects={projects}
-                                                    artworks={artworks}
-                                                    {...routeProps}
-                                                />
-                                            </Page>
-                                        )}
-                                    />
-                                    <Route
-                                        exact
-                                        path="/about"
-                                        render={(routeProps) => (
-                                            <Page>
-                                                <About
-                                                    educations={educations}
-                                                    {...routeProps}
-                                                />
-                                            </Page>
-                                        )}
-                                    />
-                                    <Route
-                                        exact
-                                        path="/about/:title"
-                                        render={(routeProps) => (
-                                            <Page>
-                                                <EducationDetails
-                                                    education={this.findEducation(
-                                                        routeProps.match.params
-                                                            .title
-                                                    )}
-                                                    allEducations={educations}
-                                                    {...routeProps}
-                                                />
-                                            </Page>
-                                        )}
-                                    />
-                                    <Route
-                                        exact
-                                        path="/projects"
-                                        render={(routeProps) => (
-                                            <Page>
-                                                <ProjectsTimeline
-                                                    projects={projects}
-                                                    {...routeProps}
-                                                />
-                                            </Page>
-                                        )}
-                                    />
-                                    <Route
-                                        exact
-                                        path="/projects/:title"
-                                        render={(routeProps) => (
-                                            <Page>
-                                                <ProjectDetails
-                                                    project={this.findProject(
-                                                        routeProps.match.params
-                                                            .title
-                                                    )}
-                                                    filteredProjects={this.filteredProjects(
-                                                        routeProps.match.params
-                                                            .title
-                                                    )}
-                                                    allProjects={projects}
-                                                    {...routeProps}
-                                                />
-                                            </Page>
-                                        )}
-                                    />
-                                    <Route
-                                        exact
-                                        path="/artworks"
-                                        render={(routeProps) => (
-                                            <Page>
-                                                <Artworks
-                                                    artworks={artworks}
-                                                    {...routeProps}
-                                                />
-                                            </Page>
-                                        )}
-                                    />
-                                </Switch>
-                            </CSSTransition>
-                        </TransitionGroup>
-                    )}
-                />
+            <>
+                <div>
+                    <Navbar />
+                    <Particles
+                        params={particles}
+                        style={{
+                            position: "absolute",
+                            zIndex: -1,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            top: 0,
+                            flexGrow: 1,
+                        }}
+                    />
+
+                    <div>
+                        <Route
+                            render={({ location }) => (
+                                <TransitionGroup>
+                                    <CSSTransition
+                                        key={location.key}
+                                        classNames="page"
+                                        timeout={1000}
+                                    >
+                                        <Switch location={location}>
+                                            <Route
+                                                exact
+                                                path="/"
+                                                render={(routeProps) => (
+                                                    <Page>
+                                                        <Home
+                                                            projects={projects}
+                                                            artworks={artworks}
+                                                            {...routeProps}
+                                                        />
+                                                    </Page>
+                                                )}
+                                            />
+                                            <Route
+                                                exact
+                                                path="/about"
+                                                render={(routeProps) => (
+                                                    <Page>
+                                                        <About
+                                                            educations={
+                                                                educations
+                                                            }
+                                                            {...routeProps}
+                                                        />
+                                                    </Page>
+                                                )}
+                                            />
+                                            <Route
+                                                exact
+                                                path="/about/:title"
+                                                render={(routeProps) => (
+                                                    <Page>
+                                                        <EducationDetails
+                                                            education={this.findEducation(
+                                                                routeProps.match
+                                                                    .params
+                                                                    .title
+                                                            )}
+                                                            allEducations={
+                                                                educations
+                                                            }
+                                                            {...routeProps}
+                                                        />
+                                                    </Page>
+                                                )}
+                                            />
+                                            <Route
+                                                exact
+                                                path="/projects"
+                                                render={(routeProps) => (
+                                                    <Page>
+                                                        {" "}
+                                                        <ProjectsTimeline
+                                                            projects={projects}
+                                                            {...routeProps}
+                                                        />
+                                                    </Page>
+                                                )}
+                                            />
+                                            <Route
+                                                exact
+                                                path="/projects/:title"
+                                                render={(routeProps) => (
+                                                    <Page>
+                                                        <ProjectDetails
+                                                            project={this.findProject(
+                                                                routeProps.match
+                                                                    .params
+                                                                    .title
+                                                            )}
+                                                            filteredProjects={this.filteredProjects(
+                                                                routeProps.match
+                                                                    .params
+                                                                    .title
+                                                            )}
+                                                            allProjects={
+                                                                projects
+                                                            }
+                                                            {...routeProps}
+                                                        />
+                                                    </Page>
+                                                )}
+                                            />
+                                            <Route
+                                                exact
+                                                path="/artworks"
+                                                render={(routeProps) => (
+                                                    <Page>
+                                                        <Artworks
+                                                            artworks={artworks}
+                                                            {...routeProps}
+                                                        />
+                                                    </Page>
+                                                )}
+                                            />
+                                        </Switch>
+                                    </CSSTransition>
+                                </TransitionGroup>
+                            )}
+                        />
+                    </div>
+                </div>
                 <MyFooter />
-            </div>
+            </>
         );
     }
 }

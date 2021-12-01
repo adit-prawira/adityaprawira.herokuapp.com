@@ -80,172 +80,181 @@ const About = ({ classes, educations }) => {
         setOpen(false);
     };
     return (
-        <Box className={classes.box}>
-            <div>
-                <Grid container spacing={3}>
-                    <Grid item xs={12} sm={8}>
-                        <h1>Hi, I'm Aditya Prawira.</h1>
-                        <Typography>
-                            I'm a master's student specialized in Robotics and
-                            Mechatronics Engineering. Dedicated to learn and
-                            improve autonomous systems to reduce human
-                            interaction in manufacturing complex designs.
-                        </Typography>
-                        <br />
-                        <Typography>
-                            As an engineering student, discipline, communication
-                            and the flexibility to work in different
-                            environments are the main aspects to grow in the
-                            field. I have the passion to enhance workflow in
-                            building projects, and to express my ideas by
-                            building/creating something.
-                        </Typography>
-                        <br />
-                        <Typography>
-                            I also produce music and you can find me as "Azure
-                            Gaze" on your favorite music streaming platforms
-                            like Spotify, Apple Music, Soundcloud, iHeartRadio,
-                            and many more.
-                        </Typography>
-                        <br />
-                        <h3>My Studies:</h3>
-                        <div className={classes.studiesContainer}>
-                            {educations.map(
-                                ({ logo, title, startYear, endYear }) => (
-                                    <div
-                                        className={classes.logoContainer}
-                                        key={uuidv4()}
-                                    >
-                                        <Link
-                                            to={`/about/${title
-                                                .toLowerCase()
-                                                .replace(/ /g, "-")}`}
+        <Box className={classes.container}>
+            <Box className={classes.box}>
+                <div>
+                    <Grid container spacing={3}>
+                        <Grid item xs={12} sm={8}>
+                            <h1>Hi, I'm Aditya Prawira.</h1>
+                            <Typography>
+                                I'm a master's student specialized in Robotics
+                                and Mechatronics Engineering. Dedicated to learn
+                                and improve autonomous systems to reduce human
+                                interaction in manufacturing complex designs.
+                            </Typography>
+                            <br />
+                            <Typography>
+                                As an engineering student, discipline,
+                                communication and the flexibility to work in
+                                different environments are the main aspects to
+                                grow in the field. I have the passion to enhance
+                                workflow in building projects, and to express my
+                                ideas by building/creating something.
+                            </Typography>
+                            <br />
+                            <Typography>
+                                I also produce music and you can find me as
+                                "Azure Gaze" on your favorite music streaming
+                                platforms like Spotify, Apple Music, Soundcloud,
+                                iHeartRadio, and many more.
+                            </Typography>
+                            <br />
+                            <h3>My Studies:</h3>
+                            <div className={classes.studiesContainer}>
+                                {educations.map(
+                                    ({ logo, title, startYear, endYear }) => (
+                                        <div
+                                            className={classes.logoContainer}
+                                            key={uuidv4()}
                                         >
-                                            <img
-                                                src={logo}
-                                                alt={title}
-                                                className={classes.studies}
-                                            />
-                                        </Link>
+                                            <Link
+                                                to={`/about/${title
+                                                    .toLowerCase()
+                                                    .replace(/ /g, "-")}`}
+                                            >
+                                                <img
+                                                    src={logo}
+                                                    alt={title}
+                                                    className={classes.studies}
+                                                />
+                                            </Link>
 
-                                        <Typography>
-                                            {startYear} - {endYear}
-                                        </Typography>
-                                    </div>
-                                )
-                            )}
-                        </div>
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            onClick={handleClickOpen}
-                        >
-                            Email Me
-                        </Button>
-                    </Grid>
-                    <Grid item xs={12} sm={4} className={classes.contact}>
-                        <h4 className={classes.contactLabel}>GET IN TOUCH</h4>
-                        <Typography>adityaprawira96@gmail.com</Typography>
-                        <Typography>(+61) 402 555 502</Typography>
-                        <h4 className={classes.contactLabel}>SOCIAL MEDIA</h4>
-                        <div>
-                            <a href="https://www.instagram.com/azuregazemusic/">
-                                <InstagramIcon
-                                    color="secondary"
-                                    fontSize="large"
-                                />
-                            </a>
-                            <a href="https://www.facebook.com/azuregazemusic/">
-                                <FacebookIcon
-                                    color="secondary"
-                                    fontSize="large"
-                                />
-                            </a>
-                            <a href="https://www.linkedin.com/in/aditya-prawira/">
-                                <LinkedInIcon
-                                    color="secondary"
-                                    fontSize="large"
-                                />
-                            </a>
-                            <a href="https://github.com/adit-prawira">
-                                <GitHubIcon
-                                    color="secondary"
-                                    fontSize="large"
-                                />
-                            </a>
-                        </div>
-                        <img
-                            src="Images/myphoto.jpg"
-                            alt="myphoto"
-                            className={classes.profile}
-                        />
-                    </Grid>
-                </Grid>
-            </div>
-            <Dialog
-                onClose={handleClose}
-                aria-labelledby="customized-dialog-title"
-                open={open}
-            >
-                <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-                    Email Me
-                </DialogTitle>
-                <DialogContent dividers className={classes.dialog}>
-                    <form onSubmit={sendEmail}>
-                        <div className="row mx-auto">
-                            <input
-                                type="text"
-                                className="fom-control mx-auto mb-3"
-                                placeholder="Name"
-                                name="name"
-                                required
-                            />
-                            <input
-                                type="email"
-                                className="fom-control mx-auto mb-3"
-                                placeholder="Email Address"
-                                name="email"
-                                required
-                            />
-                            <input
-                                type="text"
-                                className="fom-control mx-auto mb-3"
-                                placeholder="Subject"
-                                name="subject"
-                            />
-                            <textarea
-                                className="form-control mx-auto mb-3"
-                                id=""
-                                cols="30"
-                                rows="8"
-                                placeholder="Messages"
-                                name="message"
-                                required
-                            ></textarea>
-
+                                            <Typography>
+                                                {startYear} - {endYear}
+                                            </Typography>
+                                        </div>
+                                    )
+                                )}
+                            </div>
                             <Button
-                                type="submit"
-                                aria-label="Next"
-                                variant="outlined"
-                                color="secondary"
+                                variant="contained"
+                                color="primary"
+                                onClick={handleClickOpen}
                             >
-                                <Typography className={classes.send}>
-                                    Send Message
-                                </Typography>
+                                Email Me
                             </Button>
-                        </div>
-                    </form>
-                </DialogContent>
-                <DialogActions className={classes.dialogFooter}>
-                    <Button
-                        onClick={handleClose}
-                        variant="contained"
-                        color="secondary"
+                        </Grid>
+                        <Grid item xs={12} sm={4} className={classes.contact}>
+                            <h4 className={classes.contactLabel}>
+                                GET IN TOUCH
+                            </h4>
+                            <Typography>adityaprawira96@gmail.com</Typography>
+                            <Typography>(+61) 402 555 502</Typography>
+                            <h4 className={classes.contactLabel}>
+                                SOCIAL MEDIA
+                            </h4>
+                            <div>
+                                <a href="https://www.instagram.com/azuregazemusic/">
+                                    <InstagramIcon
+                                        color="secondary"
+                                        fontSize="large"
+                                    />
+                                </a>
+                                <a href="https://www.facebook.com/azuregazemusic/">
+                                    <FacebookIcon
+                                        color="secondary"
+                                        fontSize="large"
+                                    />
+                                </a>
+                                <a href="https://www.linkedin.com/in/aditya-prawira/">
+                                    <LinkedInIcon
+                                        color="secondary"
+                                        fontSize="large"
+                                    />
+                                </a>
+                                <a href="https://github.com/adit-prawira">
+                                    <GitHubIcon
+                                        color="secondary"
+                                        fontSize="large"
+                                    />
+                                </a>
+                            </div>
+                            <img
+                                src="Images/myphoto.jpg"
+                                alt="myphoto"
+                                className={classes.profile}
+                            />
+                        </Grid>
+                    </Grid>
+                </div>
+                <Dialog
+                    onClose={handleClose}
+                    aria-labelledby="customized-dialog-title"
+                    open={open}
+                >
+                    <DialogTitle
+                        id="customized-dialog-title"
+                        onClose={handleClose}
                     >
-                        Cancel
-                    </Button>
-                </DialogActions>
-            </Dialog>
+                        Email Me
+                    </DialogTitle>
+                    <DialogContent dividers className={classes.dialog}>
+                        <form onSubmit={sendEmail}>
+                            <div className="row mx-auto">
+                                <input
+                                    type="text"
+                                    className="fom-control mx-auto mb-3"
+                                    placeholder="Name"
+                                    name="name"
+                                    required
+                                />
+                                <input
+                                    type="email"
+                                    className="fom-control mx-auto mb-3"
+                                    placeholder="Email Address"
+                                    name="email"
+                                    required
+                                />
+                                <input
+                                    type="text"
+                                    className="fom-control mx-auto mb-3"
+                                    placeholder="Subject"
+                                    name="subject"
+                                />
+                                <textarea
+                                    className="form-control mx-auto mb-3"
+                                    id=""
+                                    cols="30"
+                                    rows="8"
+                                    placeholder="Messages"
+                                    name="message"
+                                    required
+                                ></textarea>
+
+                                <Button
+                                    type="submit"
+                                    aria-label="Next"
+                                    variant="outlined"
+                                    color="secondary"
+                                >
+                                    <Typography className={classes.send}>
+                                        Send Message
+                                    </Typography>
+                                </Button>
+                            </div>
+                        </form>
+                    </DialogContent>
+                    <DialogActions className={classes.dialogFooter}>
+                        <Button
+                            onClick={handleClose}
+                            variant="contained"
+                            color="secondary"
+                        >
+                            Cancel
+                        </Button>
+                    </DialogActions>
+                </Dialog>
+            </Box>
         </Box>
     );
 };
