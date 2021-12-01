@@ -101,7 +101,7 @@ function Home({ artworks, projects }) {
                     <Calendar
                         style={{
                             width: "100%",
-                            height: "80%",
+                            height: "75%",
                             border: "2px solid rgba(255, 255, 255, 0.2)",
                             borderRadius: 10,
                         }}

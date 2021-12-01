@@ -1,5 +1,17 @@
 export const projects = [
     {
+        title: "Kinesis Project",
+        startPeriod: "10/2021",
+        endPeriod: "Present",
+        descriptions: [
+            "Develop a fitness mobile apps in a test-driven development environment, and develop CI/CD Pipeline with HerokuCI.",
+            "Utilise React Native for the Mobile UI Framework, monolith architecture with authentication on the backend with Express (Typescript), and MongoDB Atlas as the database technology",
+        ],
+        type: "programming",
+        image: "/Images/kinesis.png",
+        links: [],
+    },
+    {
         title: "Personal Portfolio React Web App",
         startPeriod: "12/2020",
         endPeriod: "Present",
@@ -206,10 +218,12 @@ export const educations = [
             "Trained to enhance communication, management and flexibility in different work environments",
         ],
         courses: [
-            "OENG1120(Research Method in Engineering)",
-            "OENG1117(Risk and Project Management)",
             "MANU2453(Advanced Robotic Systems)",
-            "OENG1115(Innovation and Technology Management)",
+            "MANU2451(Advanced Mechatronics System Design)",
+            "EEET1262(Real Time Systems Design)",
+            "EEET2223(Real Time Estimation & Control)",
+            "OENG1116(Modelling and Simulation)",
+            "EEET1368(Advanced Control Systems)",
         ],
     },
 ];
