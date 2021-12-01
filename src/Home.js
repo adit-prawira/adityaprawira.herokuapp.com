@@ -97,6 +97,7 @@ function Home({ artworks, projects }) {
                         }}
                         date={new Date().toISOString()}
                     />
+
                     <div className={classes.buttons}>
                         <Button
                             variant="contained"
