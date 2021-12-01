@@ -88,14 +88,27 @@ function Home({ artworks, projects }) {
                         />
                     </div>
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                    md={3}
+                    style={{
+                        maxHeight: "68vh",
+                        overflow: "auto",
+                    }}
+                >
                     <Calendar
                         style={{
                             width: "100%",
+                            height: "80%",
                             border: "2px solid rgba(255, 255, 255, 0.2)",
                             borderRadius: 10,
                         }}
                         date={new Date().toISOString()}
+                        size="small"
+                        fill
+                        daysOfWeek
                     />
 
                     <div className={classes.buttons}>

@@ -1,7 +1,7 @@
 const styles = (theme) => ({
     root: {
         width: "100%",
-        border: "1px solid white",
+
         overflowX: "visible",
         overflowY: "auto",
     },

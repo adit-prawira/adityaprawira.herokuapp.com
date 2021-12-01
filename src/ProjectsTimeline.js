@@ -58,7 +58,6 @@ const ProjectsTimeline = ({ classes, projects }) => {
     return (
         <Box
             style={{
-                border: "1px solid white",
                 height: "100%",
                 padding: "2%",
                 overflowY: "auto",

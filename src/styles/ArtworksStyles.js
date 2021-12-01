@@ -17,7 +17,6 @@ const styles = (theme) => ({
         height: "100%",
         overflowX: "hidden",
         overflowY: "auto",
-        border: "1px solid white",
     },
     gallery: {
         padding: "1%",
