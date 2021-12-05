@@ -14,7 +14,6 @@ export default function ProjectCarousel({ projects }) {
                     {projects.map(({ title, image }) => (
                         <GridListTile key={title}>
                             <img src={image} alt={title} />
-
                             <GridListTileBar
                                 title={
                                     <Link

@@ -1,11 +1,25 @@
 export const projects = [
     {
+        title: "Face Identity Computer Vision Project",
+        startPeriod: "11/2021",
+        endPeriod: "12/2021",
+        descriptions: [
+            "Develop a face identification system with monolith Django Rest Framework API (server side application) to store data and manage it with SQL and utilise AWS for cloud storage on image capture.",
+            `Utilise OpenCV as the client side application that will interact with user, capture/learn new data (face) that is not yet exist in the “computer’s memory”, and recognize faces that the computer has “memorized”`,
+            "Integrate Google Voice Assistant on the software to interact with user verbally.",
+        ],
+        type: "programming",
+        image: "/Images/face-identity.png",
+        links: [],
+    },
+    {
         title: "Kinesis Project",
         startPeriod: "10/2021",
         endPeriod: "Present",
         descriptions: [
             "Develop a fitness mobile apps in a test-driven development environment, and develop CI/CD Pipeline with HerokuCI.",
             "Utilise React Native for the Mobile UI Framework, monolith architecture with authentication on the backend with Express (Typescript), and MongoDB Atlas as the database technology",
+            "UI Framework such as UI Kitten, and React-Native Elements are utilise to develop the whole mobile app's Front-End",
         ],
         type: "programming",
         image: "/Images/kinesis.png",

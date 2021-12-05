@@ -9,10 +9,8 @@ import { projects, artworks, educations } from "./seedInfo";
 import { Route, Switch } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Navbar from "./Navbar";
-import Particles from "react-particles-js";
-import { particles } from "./styles/particles";
 import MyFooter from "./CustomFooter";
-// import PerfectScrollbar from "react-perfect-scrollbar";
+import CustomParticle from "./CustomParticle.jsx";
 import Page from "./Page";
 class App extends Component {
     constructor(props) {
@@ -42,19 +40,7 @@ class App extends Component {
             <>
                 <div>
                     <Navbar />
-                    <Particles
-                        params={particles}
-                        style={{
-                            position: "absolute",
-                            zIndex: -1,
-                            left: 0,
-                            right: 0,
-                            bottom: 0,
-                            top: 0,
-                            flexGrow: 1,
-                        }}
-                    />
-
+                    <CustomParticle />
                     <div>
                         <Route
                             render={({ location }) => (

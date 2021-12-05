@@ -55,7 +55,7 @@ const Navbar = ({ history }) => {
                 <Button
                     onClick={() => history.push("/")}
                     className={classes.button}
-                    variant="outlined"
+        
                 >
                     Home
                 </Button>
@@ -63,7 +63,7 @@ const Navbar = ({ history }) => {
                 <Button
                     onClick={() => history.push("/about")}
                     className={classes.button}
-                    variant="outlined"
+        
                 >
                     About
                 </Button>
@@ -71,7 +71,7 @@ const Navbar = ({ history }) => {
                 <Button
                     onClick={() => history.push("/projects")}
                     className={classes.button}
-                    variant="outlined"
+                   
                 >
                     Projects
                 </Button>
@@ -79,7 +79,7 @@ const Navbar = ({ history }) => {
                 <Button
                     onClick={() => history.push("/artworks")}
                     className={classes.button}
-                    variant="outlined"
+        
                 >
                     Artworks/Albums
                 </Button>
