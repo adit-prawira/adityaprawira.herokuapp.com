@@ -7,6 +7,8 @@ export const projects = [
             "Develop a face identification system with monolith Django Rest Framework API (server side application) to store data and manage it with SQL and utilise AWS for cloud storage on image capture.",
             `Utilise OpenCV as the client side application that will interact with user, capture/learn new data (face) that is not yet exist in the “computer’s memory”, and recognize faces that the computer has “memorized”`,
             "Integrate Google Voice Assistant on the software to interact with user verbally.",
+            "Utilise utilise multi threads system to run different tasks at the same time",
+            "Use message queue to pass package of information between threads",
         ],
         type: "programming",
         image: "/Images/face-identity.png",
