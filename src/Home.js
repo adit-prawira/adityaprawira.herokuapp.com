@@ -183,7 +183,7 @@ function Home({ artworks, projects }) {
                 </DialogTitle>
                 <DialogContent dividers className={classes.dialog}>
                     <Document
-                        file={`/Documents/${docType}.pdf`}
+                        file={`/JobDocuments/${docType}.pdf`}
                         onLoadSuccess={onDocumentLoadSuccess}
                         className={classes.cv}
                     >
