@@ -1,5 +1,5 @@
 import React from "react";
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/styles";
 import Typography from "@material-ui/core/Typography";
 import { Box } from "grommet";
 import Grid from "@material-ui/core/Grid";
@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import ProjectCarousel from "./ProjectCarousel";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./styles/ProjectDetailsStyles";
-import DetailsNavigator from "./DetailsNavigator";
+import DetailsNavigator from "./DetailsNavigator.jsx";
 function ProjectDetails({ classes, project, filteredProjects, allProjects }) {
     const { descriptions, startPeriod, endPeriod, image, title } = project;
     const type = "projects";

@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/styles";
 const useStyles = makeStyles((theme) => ({
     container: {
         color: "azure",
@@ -76,9 +76,11 @@ const useStyles = makeStyles((theme) => ({
     },
     buttonResume: {
         marginTop: "5%",
-        color: "grey",
-        backgroundColor: "rgb(211, 233, 166)",
-        "&:hover": { backgroundColor: "rgb(186, 225, 106)" },
+        backgroundColor: "#7db8a2",
+        "&:hover": {
+            backgroundColor: "#639482",
+            transition: "background-color 0.3s ease-in-out",
+        },
     },
     dialogFooter: {
         display: "flex",
@@ -88,6 +90,20 @@ const useStyles = makeStyles((theme) => ({
     pageNav: {
         color: "azure",
     },
+    calendar: {
+        border: "2px solid rgba(255, 255, 255, 0.2)",
+        borderRadius: 10,
+    },
+    calendarContainer: {
+        overflow: "auto",
+    },
+    calendarSubContainer: {
+        height: "50vh",
+        width: "100%",
+    },
+    artContainer: { maxHeight: "68vh" },
+    pdfControlPanel: { alignContent: "flex-end" },
+    image: { width: "90%" },
 }));
 
 export default useStyles;

@@ -1,11 +1,11 @@
 import React from "react";
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/styles";
 import Typography from "@material-ui/core/Typography";
 import { Box } from "grommet";
 import Grid from "@material-ui/core/Grid";
 
 import { v4 as uuidv4 } from "uuid";
-import DetailsNavigator from "./DetailsNavigator";
+import DetailsNavigator from "./DetailsNavigator.jsx";
 // import { Link } from "react-router-dom";
 import styles from "./styles/ProjectDetailsStyles";
 function EducationDetails({ classes, education, allEducations }) {

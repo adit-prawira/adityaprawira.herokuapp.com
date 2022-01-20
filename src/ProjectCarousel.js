@@ -1,8 +1,8 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
-import GridListTileBar from "@material-ui/core/GridListTileBar";
+import ImageList from "@material-ui/core/ImageList";
+import ImageListItem from "@material-ui/core/ImageListItem";
+import ImageListItemBar from "@material-ui/core/ImageListItemBar";
 import useStyles from "./styles/ProjectCarouselStyles";
 import { Link } from "react-router-dom";
 export default function ProjectCarousel({ projects }) {
@@ -10,11 +10,11 @@ export default function ProjectCarousel({ projects }) {
     return (
         <Grid item xs={12} sm={12}>
             <div className={classes.bottomCarousel}>
-                <GridList className={classes.gridListHorizontal} cols={2.5}>
+                <ImageList className={classes.gridListHorizontal} cols={2.5}>
                     {projects.map(({ title, image }) => (
-                        <GridListTile key={title}>
+                        <ImageListItem key={title}>
                             <img src={image} alt={title} />
-                            <GridListTileBar
+                            <ImageListItemBar
                                 title={
                                     <Link
                                         to={`/projects/${title
@@ -30,9 +30,9 @@ export default function ProjectCarousel({ projects }) {
                                     title: classes.title,
                                 }}
                             />
-                        </GridListTile>
+                        </ImageListItem>
                     ))}
-                </GridList>
+                </ImageList>
             </div>
         </Grid>
     );

@@ -8,8 +8,10 @@ import EducationDetails from "./EducationDetails";
 import { projects, artworks, educations } from "./seedInfo";
 import { Route, Switch } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { ThemeProvider } from "@material-ui/styles";
+import { darkTheme } from "./theme-dark";
 import Navbar from "./Navbar";
-import MyFooter from "./CustomFooter";
+import CustomFooter from "./CustomFooter.jsx";
 import CustomParticle from "./CustomParticle.jsx";
 import Page from "./Page";
 class App extends Component {
@@ -37,7 +39,7 @@ class App extends Component {
     }
     render() {
         return (
-            <>
+            <ThemeProvider theme={darkTheme}>
                 <div>
                     <Navbar />
                     <CustomParticle />
@@ -153,8 +155,8 @@ class App extends Component {
                         />
                     </div>
                 </div>
-                <MyFooter />
-            </>
+                <CustomFooter />
+            </ThemeProvider>
         );
     }
 }

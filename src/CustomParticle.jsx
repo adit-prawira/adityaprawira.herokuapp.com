@@ -7,7 +7,7 @@ const params = {
     },
     particles: {
         number: {
-            value: 180,
+            value: 120,
             density: {
                 enable: true,
                 value_area: 2000,
@@ -37,7 +37,7 @@ const params = {
         size: {
             value: 3,
         },
-        fps_limit: 60,
+
         color: { value: "rgba(200, 200, 200,1)" },
     },
     retina_detect: true,

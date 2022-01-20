@@ -26,8 +26,6 @@ const styles = (theme) => ({
     },
     dialog: {
         backgroundColor: "rgb(43, 48, 62)",
-        color: "rgb(244, 213, 138)",
-        "& label": { color: "rgb(229, 116, 133)" },
     },
     images: {
         width: "80%",
@@ -50,6 +48,12 @@ const styles = (theme) => ({
             cursor: "pointer",
             opacity: "0.5",
         },
+    },
+    songLinksContainer: {
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
     },
 });
 export default styles;

@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/styles";
 import { Clock } from "grommet";
 import { AppBar, Toolbar, Button } from "@material-ui/core";
 import { withRouter } from "react-router";
@@ -55,7 +55,6 @@ const Navbar = ({ history }) => {
                 <Button
                     onClick={() => history.push("/")}
                     className={classes.button}
-        
                 >
                     Home
                 </Button>
@@ -63,7 +62,6 @@ const Navbar = ({ history }) => {
                 <Button
                     onClick={() => history.push("/about")}
                     className={classes.button}
-        
                 >
                     About
                 </Button>
@@ -71,7 +69,6 @@ const Navbar = ({ history }) => {
                 <Button
                     onClick={() => history.push("/projects")}
                     className={classes.button}
-                   
                 >
                     Projects
                 </Button>
@@ -79,7 +76,6 @@ const Navbar = ({ history }) => {
                 <Button
                     onClick={() => history.push("/artworks")}
                     className={classes.button}
-        
                 >
                     Artworks/Albums
                 </Button>

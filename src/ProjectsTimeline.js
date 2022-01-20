@@ -16,7 +16,7 @@ import Paper from "@material-ui/core/Paper";
 
 import styles from "./styles/ProjectsTimelineStyles";
 
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/styles";
 import { v4 as uuidv4 } from "uuid";
 import { Box } from "grommet";
 import { Link } from "react-router-dom";

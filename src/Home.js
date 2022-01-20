@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
-import GridListTileBar from "@material-ui/core/GridListTileBar";
+import ImageList from "@material-ui/core/ImageList";
+import ImageListItem from "@material-ui/core/ImageListItem";
+import ImageListItemBar from "@material-ui/core/ImageListItemBar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
@@ -17,8 +17,8 @@ import MuiDialogActions from "@material-ui/core/DialogActions";
 import CloseIcon from "@material-ui/icons/Close";
 import { Document, Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
-import { withStyles } from "@material-ui/core/styles";
-import PdfControlPanel from "./PdfControlPanel";
+import { withStyles } from "@material-ui/styles";
+import PdfControlPanel from "./PdfControlPanel.jsx";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const DialogTitle = (props) => {
@@ -73,18 +73,27 @@ function Home({ artworks, projects }) {
     return (
         <Box className={classes.container}>
             <Grid container spacing={3}>
-                <Grid item xs={12} sm={6} md={5}>
-                    <h2>Hi, I'm Aditya Prawira,</h2>
+                <Grid item xs={12} sm={6} md={4}>
+                    <Typography variant="h2" gutterBottom>
+                        Hi, I'm Aditya Prawira,
+                    </Typography>
+                    <Typography gutterBottom>
+                        I'm a curious software developer with 6+ months of
+                        experience in a fast and dynamic development team
+                        environment. Aiming to apply proven skills and
+                        continuously learn new technology stack in improving
+                        human's productivity through a piece of software.
+                    </Typography>
                     <Typography>
-                        a master's student and also a music producer based out
-                        of Melbourne, VIC.
+                        Also a master's student and a music producer based in
+                        Melbourne, VIC.
                     </Typography>
                     <hr />
                     <div className={classes.selfImage}>
                         <img
                             src="/Images/self-cartoon.png"
                             alt="self"
-                            style={{ width: "90%" }}
+                            className={classes.image}
                         />
                     </div>
                 </Grid>
@@ -92,63 +101,56 @@ function Home({ artworks, projects }) {
                     item
                     xs={12}
                     sm={6}
-                    md={3}
-                    style={{
-                        maxHeight: "68vh",
-                        overflow: "auto",
-                    }}
+                    md={4}
+                    className={classes.calendarContainer}
                 >
-                    <Calendar
-                        style={{
-                            width: "100%",
-                            height: "75%",
-                            border: "2px solid rgba(255, 255, 255, 0.2)",
-                            borderRadius: 10,
-                        }}
-                        date={new Date().toISOString()}
-                        size="small"
-                        fill
-                        daysOfWeek
-                    />
-
+                    <div className={classes.calendarSubContainer}>
+                        <Calendar
+                            className={classes.calendar}
+                            date={new Date().toISOString()}
+                            size="small"
+                            fill
+                            daysOfWeek
+                        />
+                    </div>
                     <div className={classes.buttons}>
                         <Button
                             variant="contained"
                             color="primary"
+                            name="resume"
+                            onClick={handleClickOpen}
+                            className={classes.buttonResume}
+                        >
+                            My Resume
+                        </Button>
+                        <Button
+                            variant="contained"
+                            color="secondary"
                             name="cv"
                             onClick={handleClickOpen}
                             className={classes.buttonCv}
                         >
                             My CV
                         </Button>
-                        <Button
-                            variant="contained"
-                            name="resume"
-                            onClick={handleClickOpen}
-                            style={{
-                                marginTop: "5%",
-                                color: "grey",
-                                backgroundColor: "rgb(211, 233, 166)",
-                                "&:hover": {
-                                    backgroundColor: "rgb(186, 225, 106)",
-                                },
-                            }}
-                        >
-                            My Resume
-                        </Button>
                     </div>
                 </Grid>
-                <Grid item xs={12} sm={12} md={4} style={{ maxHeight: "68vh" }}>
-                    <GridList className={classes.gridList}>
+                <Grid
+                    item
+                    xs={12}
+                    sm={12}
+                    md={4}
+                    className={classes.artContainer}
+                >
+                    <ImageList className={classes.gridList}>
                         {artworks.map(({ title, dateCreated }) => (
-                            <GridListTile key={title}>
+                            <ImageListItem key={title}>
                                 <img
                                     src={`/Images/${title
                                         .toLowerCase()
                                         .replace(/ /g, "-")}.png`}
                                     alt={title}
                                 />
-                                <GridListTileBar
+                                <ImageListItemBar
                                     title={title}
                                     subtitle={
                                         <span>Created in: {dateCreated}</span>
@@ -162,9 +164,9 @@ function Home({ artworks, projects }) {
                                         </IconButton>
                                     }
                                 />
-                            </GridListTile>
+                            </ImageListItem>
                         ))}
-                    </GridList>
+                    </ImageList>
                 </Grid>
                 <Grid item xs={12} sm={12}>
                     <ProjectCarousel projects={projects} />
@@ -193,7 +195,7 @@ function Home({ artworks, projects }) {
                         pageNumber={pageNumber}
                         numPages={numPages}
                         setPageNumber={setPageNumber}
-                        style={{ alignContent: "flex-end" }}
+                        className={classes.pdfControlPanel}
                     />
                     <Button
                         onClick={handleClose}

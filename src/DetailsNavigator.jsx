@@ -1,5 +1,5 @@
 import React from "react";
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/styles";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
@@ -16,8 +16,7 @@ const styles = {
     },
     button: {
         width: "100%",
-        color: "rgb(244, 213, 138)",
-        border: "1px solid rgb(225, 63, 91)",
+
         textDecoration: "none",
     },
 };
@@ -40,7 +39,7 @@ const DetailsNavigator = ({ classes, elements, currentItemTitle, type }) => {
                         >
                             <Button
                                 variant="outlined"
-                                color="secondary"
+                                color="primary"
                                 className={classes.button}
                             >
                                 <ArrowBackIcon />
@@ -53,7 +52,7 @@ const DetailsNavigator = ({ classes, elements, currentItemTitle, type }) => {
                     <Link to={`/${type}`}>
                         <Button
                             variant="outlined"
-                            color="primary"
+                            color="secondary"
                             className={classes.button}
                         >
                             <ExitToAppIcon />
@@ -71,7 +70,7 @@ const DetailsNavigator = ({ classes, elements, currentItemTitle, type }) => {
                             <Button
                                 aria-label="Next"
                                 variant="outlined"
-                                color="secondary"
+                                color="primary"
                                 className={classes.button}
                             >
                                 <ArrowForwardIcon />

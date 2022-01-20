@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Box } from "grommet";
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/styles";
 import Grid from "@material-ui/core/Grid";
-
 import styles from "./styles/ArtworksStyles";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -12,7 +11,7 @@ import MuiDialogActions from "@material-ui/core/DialogActions";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
-
+import { v4 as uuid } from "uuid";
 const DialogTitle = withStyles(styles)((props) => {
     const { children, classes, onClose, ...other } = props;
     return (
@@ -68,7 +67,7 @@ const Artworks = ({ classes, artworks }) => {
                         item
                         xs={4}
                         className={classes.imgContainer}
-                        key={title}
+                        key={uuid()}
                     >
                         <img
                             src={`/Images/${title
@@ -87,7 +86,7 @@ const Artworks = ({ classes, artworks }) => {
                 open={open}
             >
                 <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-                    {art.title}
+                    <Typography variant="subtitle1">{art.title}</Typography>
                 </DialogTitle>
                 <DialogContent dividers className={classes.dialog}>
                     <Grid container spacing={3}>
@@ -104,54 +103,63 @@ const Artworks = ({ classes, artworks }) => {
                                 className={classes.imageDialog}
                             />
                             <hr style={{ color: "azure" }} />
+                            <div className={classes.songLinksContainer}>
+                                <a href={art.spotify}>
+                                    <img
+                                        src="/Images/spotify.ico"
+                                        alt={art.spotify}
+                                        className={classes.links}
+                                    />
+                                </a>
+                                <a href={art.appleMusic}>
+                                    <img
+                                        src="/Images/applemusic.ico"
+                                        alt={art.appleMusic}
+                                        className={classes.links}
+                                    />
+                                </a>
+                                <a href={art.soundCloud}>
+                                    <img
+                                        src="/Images/soundcloud.ico"
+                                        alt={art.soundCloud}
+                                        className={classes.links}
+                                    />
+                                </a>
+                            </div>
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <Typography gutterBottom>
-                                <label>Album title: </label>
-                                <span> {art.title}</span>
+                            <Typography variant="subtitle1">
+                                Album Title:
                             </Typography>
-                            <Typography gutterBottom>
-                                <label>Artwork Created: </label>
-                                <span> {art.dateCreated}</span>
+                            <Typography gutterBottom variant="body1">
+                                {art.title}
                             </Typography>
-                            <Typography gutterBottom>
-                                <label>Release Date: </label>
-                                <span> {art.releaseDate}</span>
+                            <Typography variant="subtitle1">
+                                Artwork Created:
                             </Typography>
-                            <Typography gutterBottom>
-                                <label>Tracks: </label>
-                                <span> {art.tracksNumber}</span>
+                            <Typography gutterBottom variant="body1">
+                                {art.dateCreated}
                             </Typography>
-
+                            <Typography variant="subtitle1">
+                                Release Date:
+                            </Typography>
+                            <Typography gutterBottom variant="body1">
+                                {art.releaseDate}
+                            </Typography>
+                            <Typography variant="subtitle1">
+                                Track List:
+                            </Typography>
                             {open && (
                                 <ul>
                                     {art.trackTitles.map((title) => (
-                                        <li>{`"${title}"`}</li>
+                                        <li key={uuid()}>
+                                            <Typography variant="body1">
+                                                {title}
+                                            </Typography>
+                                        </li>
                                     ))}
                                 </ul>
                             )}
-                            <a href={art.spotify}>
-                                <img
-                                    src="/Images/spotify.ico"
-                                    alt={art.spotify}
-                                    className={classes.links}
-                                />
-                            </a>
-                            <a href={art.appleMusic}>
-                                <img
-                                    src="/Images/applemusic.ico"
-                                    alt={art.appleMusic}
-                                    className={classes.links}
-                                />
-                            </a>
-                            <a href={art.soundCloud}>
-                                <img
-                                    src="/Images/soundcloud.ico"
-                                    alt={art.soundCloud}
-                                    className={classes.links}
-                                />
-                            </a>
-                            <Typography gutterBottom></Typography>
                         </Grid>
                     </Grid>
                 </DialogContent>

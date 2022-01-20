@@ -54,10 +54,9 @@ const styles = (theme) => ({
         top: theme.spacing(1),
         color: theme.palette.grey[500],
     },
-    dialog: {
-        backgroundColor: "rgb(43, 48, 62)",
-    },
-    send: { color: "rgb(244, 213, 138)" },
+    dialogContent: { backgroundColor: "rgb(43, 48, 62)" },
+
     dialogFooter: { backgroundColor: "rgb(34, 40, 54)" },
+    socialMedia: { marginBottom: theme.spacing(2) },
 });
 export default styles;
