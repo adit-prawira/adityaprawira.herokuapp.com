@@ -38,7 +38,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "release": "npm run release-it"
+    "release": "npx release-it"
   },
   "eslintConfig": {
     "extends": [
