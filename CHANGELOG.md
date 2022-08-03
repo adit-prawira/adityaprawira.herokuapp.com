@@ -1,5 +1,13 @@
 
 
+### [0.2.1](https://github.com/adit-prawira/adityaprawira.herokuapp.com/compare/0.2.0...0.2.1) (2022-08-03)
+
+
+### Chores
+
+* update resume ([459cc7f](https://github.com/adit-prawira/adityaprawira.herokuapp.com/commit/459cc7f698812c91f302cdae5de77789524e94ff))
+* update spacing ([c5ed40a](https://github.com/adit-prawira/adityaprawira.herokuapp.com/commit/c5ed40a01798d6c13c522c1eac3e9cd29663c90a))
+
 ## 0.2.0 (2022-07-17)
 
 
