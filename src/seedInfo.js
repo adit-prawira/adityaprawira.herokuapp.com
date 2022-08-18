@@ -261,7 +261,7 @@ export const workExperiences = [
     ],
   },
   {
-    title: "Mid-Level Full-stack Software Engineer",
+    title: "Junior Full-stack Software Engineer",
     companyName: "University of Melbourne",
     location: "Melbourne",
     start: "March 2022",
