@@ -11,7 +11,7 @@ function CustomFooter() {
       pad="small"
       style={{
         width: "100%",
-        backgroundColor: "rgb(34, 40, 54)",
+        backgroundColor: "rgb(43, 48, 62)",
         position: "fixed",
         bottom: 0,
       }}
