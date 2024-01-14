@@ -18,7 +18,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import { Document, Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
 import { withStyles } from "@material-ui/styles";
-import PdfControlPanel from "./PdfControlPanel.jsx";
+import PdfControlPanel from "./PdfControlPanel";
 import PerfectScrollBar from "react-perfect-scrollbar";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 

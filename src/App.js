@@ -1,5 +1,5 @@
 import "react-perfect-scrollbar/dist/css/styles.css";
-import React, { Component } from "react";
+import React from "react";
 import Home from "./Home";
 import About from "./About";
 import Artworks from "./Artworks";
@@ -12,159 +12,149 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { ThemeProvider } from "@material-ui/styles";
 import { darkTheme } from "./theme-dark";
 import Navbar from "./Navbar";
-import CustomFooter from "./CustomFooter.jsx";
-import CustomParticle from "./CustomParticle.jsx";
+import CustomFooter from "./CustomFooter";
+import CustomParticle from "./CustomParticle";
 import Page from "./Page";
 import WorkExperienceDetails from "./WorkExperienceDetails";
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.findProject = this.findProject.bind(this);
-    this.filtered = this.filteredProjects.bind(this);
-  }
-  findProject(urlTitle) {
+
+function App() {
+  function findProject(urlTitle) {
     return projects.find(function (project) {
       return project.title.toLowerCase().replace(/ /g, "-") === urlTitle;
     });
   }
-  findEducation(urlTitle) {
+  function findEducation(urlTitle) {
     return educations.find(function (education) {
       return education.title.toLowerCase().replace(/ /g, "-") === urlTitle;
     });
   }
-  findWorkExperience(urlTitle) {
+  function findWorkExperience(urlTitle) {
     return workExperiences.find(
       ({ title }) => title.toLowerCase().replace(/ /g, "-") === urlTitle
     );
   }
-  filteredProjects(urlTitle) {
+  function filteredProjects(urlTitle) {
     return projects.filter(function (project) {
       return project.title.toLowerCase().replace(/ /g, "-") !== urlTitle;
     });
   }
-  render() {
-    return (
-      <ThemeProvider theme={darkTheme}>
+  return (
+    <ThemeProvider theme={darkTheme}>
+      <div>
+        <Navbar />
+        <CustomParticle />
         <div>
-          <Navbar />
-          <CustomParticle />
-          <div>
-            <Route
-              render={({ location }) => (
-                <TransitionGroup>
-                  <CSSTransition
-                    key={location.key}
-                    classNames="page"
-                    timeout={1000}
-                  >
-                    <Switch location={location}>
-                      <Route
-                        exact
-                        path="/"
-                        render={(routeProps) => (
-                          <Page>
-                            <Home
-                              projects={projects}
-                              artworks={artworks}
-                              {...routeProps}
-                            />
-                          </Page>
-                        )}
-                      />
-                      <Route
-                        exact
-                        path="/about"
-                        render={(routeProps) => (
-                          <Page>
-                            <About
-                              educations={educations}
-                              workExperiences={workExperiences}
-                              {...routeProps}
-                            />
-                          </Page>
-                        )}
-                      />
-                      <Route
-                        exact
-                        path="/about/educations/:title"
-                        render={(routeProps) => (
-                          <Page>
-                            <EducationDetails
-                              education={this.findEducation(
-                                routeProps.match.params.title
-                              )}
-                              allEducations={educations}
-                              {...routeProps}
-                            />
-                          </Page>
-                        )}
-                      />
-                      <Route
-                        exact
-                        path="/about/work-experiences/:title"
-                        render={(routeProps) => (
-                          <Page>
-                            <WorkExperienceDetails
-                              workExperience={this.findWorkExperience(
-                                routeProps.match.params.title
-                              )}
-                              allWorkExperiences={workExperiences}
-                              {...routeProps}
-                            />
-                          </Page>
-                        )}
-                      />
-                      <Route
-                        exact
-                        path="/projects"
-                        render={(routeProps) => (
-                          <Page>
-                            {" "}
-                            <ProjectsTimeline
-                              projects={projects}
-                              {...routeProps}
-                            />
-                          </Page>
-                        )}
-                      />
-                      <Route
-                        exact
-                        path="/projects/:title"
-                        render={(routeProps) => (
-                          <Page>
-                            <ProjectDetails
-                              project={this.findProject(
-                                routeProps.match.params.title
-                              )}
-                              filteredProjects={this.filteredProjects(
-                                routeProps.match.params.title
-                              )}
-                              allProjects={projects}
-                              {...routeProps}
-                            />
-                          </Page>
-                        )}
-                      />
-                      <Route
-                        exact
-                        path="/artworks"
-                        render={(routeProps) => (
-                          <Page>
-                            <Artworks artworks={artworks} {...routeProps} />
-                          </Page>
-                        )}
-                      />
-                    </Switch>
-                  </CSSTransition>
-                </TransitionGroup>
-              )}
-            />
-          </div>
+          <Route
+            render={({ location }) => (
+              <TransitionGroup>
+                <CSSTransition
+                  key={location.key}
+                  classNames="page"
+                  timeout={1000}
+                >
+                  <Switch location={location}>
+                    <Route
+                      exact
+                      path="/"
+                      render={(routeProps) => (
+                        <Page>
+                          <Home
+                            projects={projects}
+                            artworks={artworks}
+                            {...routeProps}
+                          />
+                        </Page>
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/about"
+                      render={(routeProps) => (
+                        <Page>
+                          <About
+                            educations={educations}
+                            workExperiences={workExperiences}
+                            {...routeProps}
+                          />
+                        </Page>
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/about/educations/:title"
+                      render={(routeProps) => (
+                        <Page>
+                          <EducationDetails
+                            education={findEducation(
+                              routeProps.match.params.title
+                            )}
+                            allEducations={educations}
+                            {...routeProps}
+                          />
+                        </Page>
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/about/work-experiences/:title"
+                      render={(routeProps) => (
+                        <Page>
+                          <WorkExperienceDetails
+                            workExperience={findWorkExperience(
+                              routeProps.match.params.title
+                            )}
+                            allWorkExperiences={workExperiences}
+                            {...routeProps}
+                          />
+                        </Page>
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/projects"
+                      render={(routeProps) => (
+                        <Page>
+                          <ProjectsTimeline
+                            projects={projects}
+                            {...routeProps}
+                          />
+                        </Page>
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/projects/:title"
+                      render={(routeProps) => (
+                        <Page>
+                          <ProjectDetails
+                            project={findProject(routeProps.match.params.title)}
+                            filteredProjects={filteredProjects(
+                              routeProps.match.params.title
+                            )}
+                            allProjects={projects}
+                            {...routeProps}
+                          />
+                        </Page>
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/artworks"
+                      render={(routeProps) => (
+                        <Page>
+                          <Artworks artworks={artworks} {...routeProps} />
+                        </Page>
+                      )}
+                    />
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+            )}
+          />
         </div>
-        <CustomFooter />
-      </ThemeProvider>
-    );
-  }
+      </div>
+      <CustomFooter />
+    </ThemeProvider>
+  );
 }
-
 export default App;
