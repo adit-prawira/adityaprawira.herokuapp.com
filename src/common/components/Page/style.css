@@ -1,0 +1,15 @@
+.page {
+  height: 83vh;
+  padding: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.page-enter {
+  transform: translateX(100%);
+}
+.page-enter-active {
+  transform: translateX(0);
+}
+.page-exit-active {
+  transform: translateX(-100%);
+}

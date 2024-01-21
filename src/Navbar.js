@@ -1,7 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@mui/styles";
 import { Clock } from "grommet";
-import { AppBar, Toolbar, Button } from "@material-ui/core";
+import { AppBar, Toolbar, Button } from "@mui/material";
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
 const Navbar = () => {
   const classes = useStyles();
   const history = useHistory();
+
   return (
     <AppBar
       position="static"
@@ -77,7 +78,7 @@ const Navbar = () => {
           Artworks/Albums
         </Button>
         <div className={classes.flexGrow} />
-        <Clock type="digital" color="azure" style={{ marginLeft: "1%" }} />
+        <Clock type="digital" style={{ marginLeft: "1%", color: "#e6e9f0" }} />
       </Toolbar>
     </AppBar>
   );

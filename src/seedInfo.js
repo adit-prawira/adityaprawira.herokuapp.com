@@ -310,6 +310,7 @@ export const workExperiences = [
     ],
   },
 ];
+
 export const artworks = [
   {
     title: "Lost",

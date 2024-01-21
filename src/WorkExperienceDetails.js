@@ -1,8 +1,8 @@
 import React from "react";
-import { withStyles } from "@material-ui/styles";
-import Typography from "@material-ui/core/Typography";
+import { withStyles } from "@mui/styles";
+import Typography from "@mui/material/Typography";
 import { Box } from "grommet";
-import Grid from "@material-ui/core/Grid";
+import Grid from "@mui/material/Grid";
 import { v4 as uuidv4 } from "uuid";
 import DetailsNavigator from "./DetailsNavigator";
 import styles from "./styles/ProjectDetailsStyles";

@@ -1,8 +1,8 @@
 import React from "react";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { Footer } from "grommet";
 
 function CustomFooter() {
@@ -17,16 +17,16 @@ function CustomFooter() {
       }}
     >
       <a href="https://www.instagram.com/azuregazemusic/">
-        <InstagramIcon color="secondary" fontSize="large" />
+        <InstagramIcon color="action" fontSize="large" />
       </a>
       <a href="https://www.facebook.com/azuregazemusic/">
-        <FacebookIcon color="secondary" fontSize="large" />
+        <FacebookIcon color="action" fontSize="large" />
       </a>
       <a href="https://www.linkedin.com/in/aditya-prawira/">
-        <LinkedInIcon color="secondary" fontSize="large" />
+        <LinkedInIcon color="action" fontSize="large" />
       </a>
       <a href="https://github.com/adit-prawira">
-        <GitHubIcon color="secondary" fontSize="large" />
+        <GitHubIcon color="action" fontSize="large" />
       </a>
     </Footer>
   );

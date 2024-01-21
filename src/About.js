@@ -9,17 +9,17 @@ import {
   DialogActions,
   Button,
   TextField,
-} from "@material-ui/core";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import { withStyles } from "@material-ui/styles";
+} from "@mui/material";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { withStyles } from "@mui/styles";
 import styles from "./styles/AboutStyles";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import emailjs from "emailjs-com";
-import SendIcon from "@material-ui/icons/Send";
+import SendIcon from "@mui/icons-material/Send";
 const About = ({ classes, educations, workExperiences }) => {
   const form = useRef();
   const [open, setOpen] = useState(false);

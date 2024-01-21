@@ -1,11 +1,11 @@
 import React from "react";
-import { withStyles } from "@material-ui/styles";
+import { withStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 const styles = {
   root: {
     // border: "1px solid azure",
@@ -58,11 +58,7 @@ const DetailsNavigator = ({
 
         <Grid item xs={12} sm={isFinal || isInitial ? 11 : 10}>
           <Link to={`/${type}`}>
-            <Button
-              variant="outlined"
-              color="secondary"
-              className={classes.button}
-            >
+            <Button variant="outlined" color="info" className={classes.button}>
               <ExitToAppIcon />
             </Button>
           </Link>

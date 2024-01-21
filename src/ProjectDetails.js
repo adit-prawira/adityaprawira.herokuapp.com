@@ -1,13 +1,14 @@
 import React from "react";
-import { withStyles } from "@material-ui/styles";
-import Typography from "@material-ui/core/Typography";
+import { withStyles } from "@mui/styles";
+import Typography from "@mui/material/Typography";
 import { Box } from "grommet";
-import Grid from "@material-ui/core/Grid";
+import Grid from "@mui/material/Grid";
 
-import ProjectCarousel from "./ProjectCarousel";
+// import { Projects } from "./common/components/Projects";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./styles/ProjectDetailsStyles";
 import DetailsNavigator from "./DetailsNavigator";
+
 function ProjectDetails({ classes, project, filteredProjects, allProjects }) {
   const { descriptions, startPeriod, endPeriod, image, title } = project;
   const type = "projects";
@@ -35,13 +36,6 @@ function ProjectDetails({ classes, project, filteredProjects, allProjects }) {
           </Grid>
           <Grid item xs={12} sm={5} className={classes.media}>
             <img src={image} alt={title} />
-          </Grid>
-          <Grid item xs={12} sm={12}>
-            <Typography>
-              <label>See more projects:</label>
-            </Typography>
-            <br />
-            <ProjectCarousel projects={filteredProjects} />
           </Grid>
         </Grid>
       </div>
