@@ -45,15 +45,7 @@ export default function App(): JSX.Element {
             render={({ location }) => (
               <PerfectScrollBar>
                 <Switch location={location}>
-                  <Route
-                    exact
-                    path="/"
-                    render={() => (
-                      <Page>
-                        <Home />
-                      </Page>
-                    )}
-                  />
+                  <Route exact path="/" render={() => <Home />} />
                   <Route
                     exact
                     path="/about"

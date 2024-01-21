@@ -5,24 +5,27 @@ import { Bio } from "./components/Bio";
 import { Artworks } from "./components/Artworks";
 import PerfectScrollBar from "react-perfect-scrollbar";
 import { ModalProvider } from "../../common/components/Modal";
+import Page from "../../common/components/Page";
 
 export function Home(): JSX.Element {
   const classes = useStyles();
 
   return (
-    <ModalProvider>
-      <Box className={classes.container}>
-        <PerfectScrollBar>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <Bio />
+    <Page>
+      <ModalProvider>
+        <Box className={classes.container}>
+          <PerfectScrollBar>
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <Bio />
+              </Grid>
+              <Grid item xs={12}>
+                <Artworks />
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <Artworks />
-            </Grid>
-          </Grid>
-        </PerfectScrollBar>
-      </Box>
-    </ModalProvider>
+          </PerfectScrollBar>
+        </Box>
+      </ModalProvider>
+    </Page>
   );
 }
