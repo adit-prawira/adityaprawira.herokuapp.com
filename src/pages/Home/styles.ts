@@ -97,7 +97,6 @@ const useStyles = makeStyles<Theme>((theme) =>
       width: "100%",
     },
     artContainer: { maxHeight: "60vh", overflow: "auto" },
-    pdfControlPanel: { alignContent: "flex-end" },
   })
 );
 
