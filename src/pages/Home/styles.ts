@@ -10,6 +10,7 @@ const useStyles = makeStyles<Theme>((theme) =>
       overflowY: "auto",
       overflowX: "hidden",
       padding: "2%",
+      width: "2000px",
     },
 
     time: {
