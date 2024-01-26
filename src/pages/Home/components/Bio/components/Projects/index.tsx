@@ -78,7 +78,7 @@ export function Projects(): JSX.Element {
             ),
           }))}
           goToSlide={goToSlide}
-          offsetRadius={4}
+          offsetRadius={2}
           showNavigation={false}
           animationConfig={config.gentle}
         />

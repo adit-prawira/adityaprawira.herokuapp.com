@@ -30,7 +30,7 @@ export function About(): JSX.Element {
     <>
       <Grid container style={{ marginBottom: 10 }}>
         <Grid container item xs={8} alignItems="center">
-          <Typography variant="h3">Hi, I'm Aditya Prawira</Typography>
+          <Typography variant="h3">Aditya Prawira</Typography>
         </Grid>
         <Grid
           container

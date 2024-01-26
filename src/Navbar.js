@@ -1,4 +1,3 @@
-import React from "react";
 import { makeStyles } from "@mui/styles";
 import { Clock } from "grommet";
 import { AppBar, Toolbar, Button } from "@mui/material";
@@ -55,20 +54,6 @@ const Navbar = () => {
       <Toolbar>
         <Button onClick={() => history.push("/")} className={classes.button}>
           Home
-        </Button>
-        <div className={classes.flexGrow} />
-        <Button
-          onClick={() => history.push("/about")}
-          className={classes.button}
-        >
-          About
-        </Button>
-        <div className={classes.flexGrow} />
-        <Button
-          onClick={() => history.push("/projects")}
-          className={classes.button}
-        >
-          Projects
         </Button>
         <div className={classes.flexGrow} />
         <Button

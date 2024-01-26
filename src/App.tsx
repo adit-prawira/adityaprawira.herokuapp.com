@@ -1,7 +1,5 @@
 import Home from "./pages/Home";
-import About from "./About";
 import Artworks from "./Artworks";
-import ProjectsTimeline from "./ProjectsTimeline";
 import ProjectDetails from "./ProjectDetails";
 import EducationDetails from "./EducationDetails";
 import { projects, artworks, educations, workExperiences } from "./seedInfo";
@@ -48,19 +46,7 @@ export default function App(): JSX.Element {
                   <Route exact path="/" render={() => <Home />} />
                   <Route
                     exact
-                    path="/about"
-                    render={(routeProps) => (
-                      <Page>
-                        <About
-                          educations={educations}
-                          workExperiences={workExperiences}
-                        />
-                      </Page>
-                    )}
-                  />
-                  <Route
-                    exact
-                    path="/about/educations/:title"
+                    path="/educations/:title"
                     render={(routeProps) => (
                       <Page>
                         <EducationDetails
@@ -75,7 +61,7 @@ export default function App(): JSX.Element {
                   />
                   <Route
                     exact
-                    path="/about/work-experiences/:title"
+                    path="/work-experiences/:title"
                     render={(routeProps) => (
                       <Page>
                         <WorkExperienceDetails
@@ -85,15 +71,6 @@ export default function App(): JSX.Element {
                           allWorkExperiences={workExperiences}
                           {...routeProps}
                         />
-                      </Page>
-                    )}
-                  />
-                  <Route
-                    exact
-                    path="/projects"
-                    render={(routeProps) => (
-                      <Page>
-                        <ProjectsTimeline projects={projects} {...routeProps} />
                       </Page>
                     )}
                   />
