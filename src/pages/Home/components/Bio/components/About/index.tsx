@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Page, Document, pdfjs } from "react-pdf";
-import { Grid, Typography, Button } from "@mui/material";
+import { Grid, Typography, Button, CircularProgress, Box } from "@mui/material";
 
 import { OnDocumentLoadSuccess } from "react-pdf/dist/cjs/shared/types";
 import { useModal } from "../../../../../../common/components/Modal";
@@ -19,7 +19,21 @@ export function About(): JSX.Element {
     handleOpen({
       title: "Resume",
       content: (
-        <Document file="JobDocuments/resume.pdf" onLoadSuccess={handleLoad}>
+        <Document
+          file="JobDocuments/resume.pdf"
+          onLoadSuccess={handleLoad}
+          loading={
+            <Box
+              width="100%"
+              height={500}
+              justifyContent="center"
+              alignItems="center"
+              display="flex"
+            >
+              <CircularProgress size={300} color="primary" thickness={1} />
+            </Box>
+          }
+        >
           <Page pageNumber={numPages} />
         </Document>
       ),
