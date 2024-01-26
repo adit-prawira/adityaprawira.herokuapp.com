@@ -1,28 +1,35 @@
 import SendIcon from "@mui/icons-material/Send";
-import { Grid, Button, TextField } from "@mui/material";
+import { Grid, TextField } from "@mui/material";
 
-import emailjs from "emailjs-com";
-import { useModal } from "../../../../../common/components/Modal";
+import { useModal } from "../../../../../../common/components/Modal";
 import { useForm } from "react-hook-form";
+import { EmailFormStore, useEmail } from "./hooks/useEmail";
+import { useToast } from "../../../../../../common/components/ToastProvider";
+import { LoadingButton } from "@mui/lab";
 
 export function EmailForm(): JSX.Element {
   const { handleClose } = useModal();
-  const { register, handleSubmit } = useForm();
-
+  const { notify } = useToast();
+  const { register, handleSubmit } = useForm<EmailFormStore>();
+  const { send, isLoading } = useEmail({
+    onSuccess() {
+      notify("Successfully sent email", {
+        position: "bottom-left",
+        type: "success",
+      });
+      handleClose();
+    },
+    onError() {
+      notify("Unable to send email!", {
+        position: "bottom-left",
+        type: "error",
+      });
+    },
+  });
   return (
     <form
       onSubmit={handleSubmit(async (data) => {
-        try {
-          await emailjs.send(
-            "service_g6m7g7e",
-            "template_s1l81ls",
-            data,
-            "user_KIPqhGTfzH2WY8fR04z5X"
-          );
-          handleClose();
-        } catch (err) {
-          console.error(err);
-        }
+        send(data);
       })}
     >
       <Grid container spacing={3}>
@@ -66,7 +73,9 @@ export function EmailForm(): JSX.Element {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button
+          <LoadingButton
+            loading={isLoading}
+            loadingPosition="start"
             type="submit"
             aria-label="Next"
             variant="contained"
@@ -75,7 +84,7 @@ export function EmailForm(): JSX.Element {
             fullWidth
           >
             Send Message
-          </Button>
+          </LoadingButton>
         </Grid>
       </Grid>
     </form>

@@ -18,26 +18,24 @@ export function Projects(): JSX.Element {
   const [goToSlide, setGoToSlide] = useState(1);
 
   return (
-    <Grid item xs={12} sm={12}>
-      <Grid container>
-        <Grid container item xs={6} justifyContent="flex-start">
-          <IconButton
-            onClick={() => setGoToSlide(goToSlide - 1)}
-            color="primary"
-            size="medium"
-          >
-            <ChevronLeftIcon />
-          </IconButton>
-        </Grid>
-        <Grid container item xs={6} justifyContent="flex-end">
-          <IconButton
-            onClick={() => setGoToSlide(goToSlide + 1)}
-            color="primary"
-            size="medium"
-          >
-            <ChevronRightIcon />
-          </IconButton>
-        </Grid>
+    <Grid container>
+      <Grid container item xs={6} justifyContent="flex-start">
+        <IconButton
+          onClick={() => setGoToSlide(goToSlide - 1)}
+          color="primary"
+          size="medium"
+        >
+          <ChevronLeftIcon />
+        </IconButton>
+      </Grid>
+      <Grid container item xs={6} justifyContent="flex-end">
+        <IconButton
+          onClick={() => setGoToSlide(goToSlide + 1)}
+          color="primary"
+          size="medium"
+        >
+          <ChevronRightIcon />
+        </IconButton>
       </Grid>
       <div
         style={{

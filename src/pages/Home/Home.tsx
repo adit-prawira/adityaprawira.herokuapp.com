@@ -9,7 +9,7 @@ import { About } from "./components/About";
 import { ProjectTimeline } from "./components/ProjectTimeline";
 import { EducationTimeline } from "./components/EducationTimeline";
 import { WorkExperienceTimeline } from "./components/WorkExperienceTimeline";
-
+import { Zoom, Slide } from "react-awesome-reveal";
 export function Home(): JSX.Element {
   const classes = useStyles();
 
@@ -23,16 +23,24 @@ export function Home(): JSX.Element {
                 <Bio />
               </Grid>
               <Grid item xs={12}>
-                <About />
+                <Zoom triggerOnce>
+                  <About />
+                </Zoom>
               </Grid>
               <Grid item xs={12}>
-                <WorkExperienceTimeline />
+                <Slide triggerOnce>
+                  <WorkExperienceTimeline />
+                </Slide>
               </Grid>
               <Grid item xs={12}>
-                <EducationTimeline />
+                <Slide triggerOnce direction="right">
+                  <EducationTimeline />
+                </Slide>
               </Grid>
               <Grid item xs={12}>
-                <ProjectTimeline />
+                <Slide triggerOnce>
+                  <ProjectTimeline />
+                </Slide>
               </Grid>
             </Grid>
           </PerfectScrollBar>
