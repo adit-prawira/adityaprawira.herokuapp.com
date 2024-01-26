@@ -1,8 +1,7 @@
 import Home from "./pages/Home";
-import Artworks from "./Artworks";
 import ProjectDetails from "./ProjectDetails";
 import EducationDetails from "./EducationDetails";
-import { projects, artworks, educations, workExperiences } from "./seedInfo";
+import { projects, educations, workExperiences } from "./seedInfo";
 import { Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "./common/components/ThemeProvider";
 import Navbar from "./Navbar";
@@ -11,6 +10,7 @@ import CustomParticle from "./CustomParticle";
 import Page from "./common/components/Page";
 import WorkExperienceDetails from "./WorkExperienceDetails";
 import PerfectScrollBar from "react-perfect-scrollbar";
+import { Artworks } from "./pages/Artworks";
 
 export default function App(): JSX.Element {
   function findProject(urlTitle: string) {
@@ -93,11 +93,7 @@ export default function App(): JSX.Element {
                   <Route
                     exact
                     path="/artworks"
-                    render={(routeProps) => (
-                      <Page>
-                        <Artworks artworks={artworks} {...routeProps} />
-                      </Page>
-                    )}
+                    render={(routeProps) => <Artworks />}
                   />
                 </Switch>
               </PerfectScrollBar>

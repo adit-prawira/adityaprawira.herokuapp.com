@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 import { noop } from "lodash";
 import { createContext, useContext, useState } from "react";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 
 type Options = {
   title: string;
@@ -66,7 +67,12 @@ export function ModalProvider({ children }: ModalProviderProps): JSX.Element {
         <DialogTitle>{options.title}</DialogTitle>
         <DialogContent dividers>{options.content}</DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} variant="contained" color="secondary">
+          <Button
+            onClick={handleClose}
+            variant="contained"
+            color="secondary"
+            startIcon={<ExitToAppIcon />}
+          >
             Close
           </Button>
         </DialogActions>

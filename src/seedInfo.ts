@@ -342,7 +342,18 @@ export const workExperiences = [
   },
 ];
 
-export const artworks = [
+export type Artwork = {
+  title: string;
+  dateCreated: string;
+  releaseDate: string;
+  tracksNumber: number;
+  spotify: string;
+  appleMusic: string;
+  soundCloud: string;
+  tracks: { title: string; time: string }[];
+};
+
+export const artworks: Artwork[] = [
   {
     title: "Lost",
     dateCreated: "13/03/2021",
@@ -352,7 +363,10 @@ export const artworks = [
       "https://open.spotify.com/album/2OrqjmzTWak9PlC7GnaVxm?si=Xx9SkwDHStO9vW_cQw98Ig",
     appleMusic: "https://music.apple.com/us/album/lost-single/1558363703",
     soundCloud: "https://soundcloud.com/azuregaze/sets/lost",
-    trackTitles: ["lost", "lakeside"],
+    tracks: [
+      { title: "lost", time: "2:23" },
+      { title: "lakeside", time: "2:37" },
+    ],
   },
   {
     title: "Within the Mist",
@@ -364,7 +378,20 @@ export const artworks = [
     appleMusic:
       "https://music.apple.com/us/album/within-the-mist-single/1547507932",
     soundCloud: "https://soundcloud.com/azuregaze/sets/within-the-mist",
-    trackTitles: ["within the mist", "sanpo", "by your side"],
+    tracks: [
+      {
+        title: "within the mist",
+        time: "2:13",
+      },
+      {
+        title: "sanpo",
+        time: "2:18",
+      },
+      {
+        title: "by your side",
+        time: "2:08",
+      },
+    ],
   },
   {
     title: "Cold Morning",
@@ -376,9 +403,9 @@ export const artworks = [
     appleMusic:
       "https://music.apple.com/us/album/cold-morning-single/1538670268",
     soundCloud: "https://soundcloud.com/azuregaze/sets/cold-morning",
-    trackTitles: [
-      "walking through the cold morning breeze",
-      "met her at the station",
+    tracks: [
+      { title: "walking through the cold morning breeze", time: "1:52" },
+      { title: "met her at the station", time: "2:54" },
     ],
   },
   {
@@ -390,7 +417,7 @@ export const artworks = [
       "https://open.spotify.com/album/5ojtNrVgRB6n9qVzpaBfLx?si=6zBwuRQoToWZTZ5hYw7tUw",
     appleMusic: "https://music.apple.com/us/album/waterfall-single/1535671046",
     soundCloud: "https://soundcloud.com/azuregaze/waterfall",
-    trackTitles: ["waterfall"],
+    tracks: [{ title: "waterfall", time: "2:23" }],
   },
   {
     title: "City Night Walk",
@@ -402,7 +429,14 @@ export const artworks = [
     appleMusic:
       "https://music.apple.com/us/album/city-night-walk-single/1531757712",
     soundCloud: "https://soundcloud.com/azuregaze/sets/city-night-walk",
-    trackTitles: ["city night walk", "on the way home", "suddenly sleepy"],
+    tracks: [
+      {
+        title: "city night walk",
+        time: "2:47",
+      },
+      { title: "on the way home", time: "2:28" },
+      { title: "suddenly sleepy", time: "1:37" },
+    ],
   },
   {
     title: "springtime",
@@ -413,7 +447,12 @@ export const artworks = [
       "https://open.spotify.com/album/4Jyyu3vi32weEbgYQSjEDd?si=YbRSEWlzRgGxHlSsN5nqAw",
     appleMusic: "https://music.apple.com/us/album/springtime-single/1530987506",
     soundCloud: "https://soundcloud.com/azuregaze/springtime",
-    trackTitles: ["springtime"],
+    tracks: [
+      {
+        title: "springtime",
+        time: "2:21",
+      },
+    ],
   },
   {
     title: "Wander",
@@ -424,7 +463,13 @@ export const artworks = [
       "https://open.spotify.com/album/3PG95oQgYdBxp34nWhq0dO?si=MiIg6DXMTVOTta_ipdf5tg",
     appleMusic: "https://music.apple.com/us/album/wander-single/1525609992",
     soundCloud: "https://soundcloud.com/azuregaze/sets/wander",
-    trackTitles: ["Wander", "Pluie de la Ville"],
+    tracks: [
+      {
+        title: "Wander",
+        time: "2:50",
+      },
+      { title: "Pluie de la Ville", time: "3:56" },
+    ],
   },
   {
     title: "Sleep Deprived",
@@ -436,7 +481,12 @@ export const artworks = [
     appleMusic:
       "https://music.apple.com/us/album/sleep-deprived-single/1523865684",
     soundCloud: "https://soundcloud.com/azuregaze/sleep-deprived",
-    trackTitles: ["Sleep Deprived"],
+    tracks: [
+      {
+        title: "Sleep Deprived",
+        time: "3:24",
+      },
+    ],
   },
   {
     title: "Reminiscing",
@@ -448,7 +498,12 @@ export const artworks = [
     appleMusic:
       "https://music.apple.com/us/album/reminiscing-single/1522701238",
     soundCloud: "https://soundcloud.com/azuregaze/reminiscing",
-    trackTitles: ["Reminiscing"],
+    tracks: [
+      {
+        title: "Reminiscing",
+        time: "4:27",
+      },
+    ],
   },
   {
     title: "Hey There",
@@ -459,7 +514,12 @@ export const artworks = [
       "https://open.spotify.com/album/26hrFc2urW7yQlpCZljzgo?si=cs4YtxrsSLOR07Z0pFRZww",
     appleMusic: "https://music.apple.com/us/album/hey-there-single/1513381692",
     soundCloud: "https://soundcloud.com/azuregaze/hey-there",
-    trackTitles: ["Hey There"],
+    tracks: [
+      {
+        title: "Hey There",
+        time: "3:17",
+      },
+    ],
   },
   {
     title: "Blue Nostalgia",
@@ -470,12 +530,12 @@ export const artworks = [
       "https://open.spotify.com/album/5TykcNF7HwmCV3mMc9c5MK?si=Pv-kAa-rSF6j5axYXaxKjw",
     appleMusic: "https://music.apple.com/us/album/blue-nostalgia-ep/1511766216",
     soundCloud: "https://soundcloud.com/azuregaze/sets/blue-nostalgia",
-    trackTitles: [
-      "Love in Tokyo",
-      "Rain and Cigarettes",
-      "Funny Romance",
-      "Blue Nostalgia",
-      "Lovesick",
+    tracks: [
+      { title: "Love in Tokyo", time: "1:41" },
+      { title: "Rain and Cigarettes", time: "4:18" },
+      { title: "Funny Romance", time: "1:56" },
+      { title: "Blue Nostalgia", time: "4:50" },
+      { title: "Lovesick", time: "4:57" },
     ],
   },
 ];
