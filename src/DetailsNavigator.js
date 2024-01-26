@@ -57,7 +57,7 @@ const DetailsNavigator = ({
         )}
 
         <Grid item xs={12} sm={isFinal || isInitial ? 11 : 10}>
-          <Link to={`/${type}`}>
+          <Link to="/">
             <Button variant="outlined" color="info" className={classes.button}>
               <ExitToAppIcon />
             </Button>
