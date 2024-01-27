@@ -1,22 +1,29 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Grid from "@mui/material/Grid";
 
-import useStyles from "../../../../../../styles/ProjectCarouselStyles";
-import { Link } from "react-router-dom";
-import { map } from "lodash";
+import { get, keyBy, map } from "lodash";
 import { projects } from "../../../../../../seedInfo";
 
-import { Card, CardContent, CardMedia, IconButton } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import ChevronRightRounded from "@mui/icons-material/ChevronRightRounded";
 import Carousel from "react-spring-3d-carousel";
 import { config } from "@react-spring/web";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import { useModal } from "../../../../../../common/components/Modal";
+import { ProjectDetails } from "../../../ProjectTimeline/components/ProjectDetails";
 
 export function Projects(): JSX.Element {
-  const classes = useStyles();
   const [goToSlide, setGoToSlide] = useState(1);
-
+  const { handleOpen } = useModal();
+  const projectDictionary = keyBy(projects, "title");
   return (
     <Grid container>
       <Grid container item xs={6} justifyContent="flex-start">
@@ -64,13 +71,33 @@ export function Projects(): JSX.Element {
                   />
                 </CardMedia>
                 <CardContent>
-                  <Link
-                    to={`/projects/${title.toLowerCase().replace(/ /g, "-")}`}
-                    className={classes.titleProject}
-                  >
-                    {title}
-                    <ChevronRightRounded />
-                  </Link>
+                  <Grid container spacing={1}>
+                    <Grid container item xs={12} justifyContent="flex-end">
+                      <Typography>{title}</Typography>
+                    </Grid>
+                    <Grid container item xs={12} justifyContent="flex-end">
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        endIcon={<ChevronRightRounded />}
+                        onClick={() => {
+                          const project = get(
+                            projectDictionary,
+                            title,
+                            undefined
+                          );
+                          if (project) {
+                            handleOpen({
+                              title,
+                              content: <ProjectDetails project={project} />,
+                            });
+                          }
+                        }}
+                      >
+                        See more
+                      </Button>
+                    </Grid>
+                  </Grid>
                 </CardContent>
               </Card>
             ),

@@ -8,7 +8,7 @@ import {
 import { noop } from "lodash";
 import { createContext, useContext, useState } from "react";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-
+import PerfectScrollBar from "react-perfect-scrollbar";
 type Options = {
   title: string;
   content: JSX.Element;
@@ -65,7 +65,9 @@ export function ModalProvider({ children }: ModalProviderProps): JSX.Element {
         maxWidth="md"
       >
         <DialogTitle>{options.title}</DialogTitle>
-        <DialogContent dividers>{options.content}</DialogContent>
+        <PerfectScrollBar>
+          <DialogContent>{options.content}</DialogContent>
+        </PerfectScrollBar>
         <DialogActions>
           <Button
             onClick={handleClose}

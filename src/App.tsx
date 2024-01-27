@@ -1,38 +1,13 @@
 import Home from "./pages/Home";
-import ProjectDetails from "./ProjectDetails";
-import EducationDetails from "./EducationDetails";
-import { projects, educations, workExperiences } from "./seedInfo";
 import { Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "./common/components/ThemeProvider";
 import Navbar from "./Navbar";
 import CustomFooter from "./CustomFooter";
 import CustomParticle from "./CustomParticle";
-import Page from "./common/components/Page";
-import WorkExperienceDetails from "./WorkExperienceDetails";
 import PerfectScrollBar from "react-perfect-scrollbar";
 import { Artworks } from "./pages/Artworks";
 
 export default function App(): JSX.Element {
-  function findProject(urlTitle: string) {
-    return projects.find(function (project) {
-      return project.title.toLowerCase().replace(/ /g, "-") === urlTitle;
-    });
-  }
-  function findEducation(urlTitle: string) {
-    return educations.find(function (education) {
-      return education.title.toLowerCase().replace(/ /g, "-") === urlTitle;
-    });
-  }
-  function findWorkExperience(urlTitle: string) {
-    return workExperiences.find(
-      ({ title }) => title.toLowerCase().replace(/ /g, "-") === urlTitle
-    );
-  }
-  function filteredProjects(urlTitle: string) {
-    return projects.filter(function (project) {
-      return project.title.toLowerCase().replace(/ /g, "-") !== urlTitle;
-    });
-  }
   return (
     <ThemeProvider>
       <div>
@@ -44,57 +19,7 @@ export default function App(): JSX.Element {
               <PerfectScrollBar>
                 <Switch location={location}>
                   <Route exact path="/" render={() => <Home />} />
-                  <Route
-                    exact
-                    path="/educations/:title"
-                    render={(routeProps) => (
-                      <Page>
-                        <EducationDetails
-                          education={findEducation(
-                            routeProps.match.params.title
-                          )}
-                          allEducations={educations}
-                          {...routeProps}
-                        />
-                      </Page>
-                    )}
-                  />
-                  <Route
-                    exact
-                    path="/work-experiences/:title"
-                    render={(routeProps) => (
-                      <Page>
-                        <WorkExperienceDetails
-                          workExperience={findWorkExperience(
-                            routeProps.match.params.title
-                          )}
-                          allWorkExperiences={workExperiences}
-                          {...routeProps}
-                        />
-                      </Page>
-                    )}
-                  />
-                  <Route
-                    exact
-                    path="/projects/:title"
-                    render={(routeProps) => (
-                      <Page>
-                        <ProjectDetails
-                          project={findProject(routeProps.match.params.title)}
-                          filteredProjects={filteredProjects(
-                            routeProps.match.params.title
-                          )}
-                          allProjects={projects}
-                          {...routeProps}
-                        />
-                      </Page>
-                    )}
-                  />
-                  <Route
-                    exact
-                    path="/artworks"
-                    render={(routeProps) => <Artworks />}
-                  />
+                  <Route exact path="/artworks" render={() => <Artworks />} />
                 </Switch>
               </PerfectScrollBar>
             )}

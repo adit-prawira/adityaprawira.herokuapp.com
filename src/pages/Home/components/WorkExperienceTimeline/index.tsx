@@ -7,15 +7,18 @@ import Typography from "@mui/material/Typography";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 
 import Paper from "@mui/material/Paper";
-import { Link } from "react-router-dom";
 import { useStyles } from "./styles";
-import { map } from "lodash";
+import { get, keyBy, map } from "lodash";
 import { workExperiences } from "../../../../seedInfo";
 import { v4 as uuid } from "uuid";
 import { Avatar, Grid } from "@mui/material";
+import { useModal } from "../../../../common/components/Modal";
+import { WorkExperienceDetails } from "./components/WorkExperienceDetails";
 
 export function WorkExperienceTimeline(): JSX.Element {
   const classes = useStyles();
+  const { handleOpen } = useModal();
+  const workExperienceDictionary = keyBy(workExperiences, "title");
   return (
     <Grid container>
       <Grid container item xs={12} justifyContent="center" marginBottom={5}>
@@ -36,16 +39,29 @@ export function WorkExperienceTimeline(): JSX.Element {
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                <Link
-                  to={`/work-experiences/${title
-                    .toLowerCase()
-                    .replace(/ /g, "-")}`}
-                  className={classes.titleProject}
+                <Paper
+                  elevation={3}
+                  className={classes.paper}
+                  onClick={() => {
+                    const workExperience = get(
+                      workExperienceDictionary,
+                      title,
+                      undefined
+                    );
+                    if (workExperience) {
+                      handleOpen({
+                        title,
+                        content: (
+                          <WorkExperienceDetails
+                            workExperience={workExperience}
+                          />
+                        ),
+                      });
+                    }
+                  }}
                 >
-                  <Paper elevation={3} className={classes.paper}>
-                    <Typography>{title}</Typography>
-                  </Paper>
-                </Link>
+                  <Typography>{title}</Typography>
+                </Paper>
               </TimelineContent>
             </TimelineItem>
           ))}

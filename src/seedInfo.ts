@@ -1,4 +1,6 @@
-export const projects = [
+import { Artwork, Education, Project, WorkExperience } from "./types";
+
+export const projects: Project[] = [
   {
     title: "FrontEndDiary",
     startPeriod: "04/2022",
@@ -137,6 +139,7 @@ export const projects = [
     ],
     type: "programming",
     image: "/Images/rainfall.png",
+    links: [],
   },
   {
     title: "Drone Delivery Path Optimization",
@@ -167,7 +170,7 @@ export const projects = [
   },
 ];
 
-export const educations = [
+export const educations: Education[] = [
   {
     title: "RMIT University",
     degree: "Master of Engineering, Robotics and Mechatronics Engineering",
@@ -231,7 +234,7 @@ export const educations = [
   },
 ];
 
-export const workExperiences = [
+export const workExperiences: WorkExperience[] = [
   {
     title: "Software Engineer (Mid Level)",
     companyName: "Education Horizons",
@@ -341,17 +344,6 @@ export const workExperiences = [
     ],
   },
 ];
-
-export type Artwork = {
-  title: string;
-  dateCreated: string;
-  releaseDate: string;
-  tracksNumber: number;
-  spotify: string;
-  appleMusic: string;
-  soundCloud: string;
-  tracks: { title: string; time: string }[];
-};
 
 export const artworks: Artwork[] = [
   {

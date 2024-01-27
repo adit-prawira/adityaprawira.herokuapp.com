@@ -7,16 +7,19 @@ import Typography from "@mui/material/Typography";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 
 import Paper from "@mui/material/Paper";
-import { Link } from "react-router-dom";
 import { useStyles } from "./styles";
-import { map } from "lodash";
+import { get, keyBy, map } from "lodash";
 import { educations } from "../../../../seedInfo";
 import { v4 as uuid } from "uuid";
 import { Avatar, Grid } from "@mui/material";
 import { TimelineDot } from "@mui/lab";
+import { useModal } from "../../../../common/components/Modal";
+import { EducationDetails } from "./components/EducationDetails";
 
 export function EducationTimeline(): JSX.Element {
   const classes = useStyles();
+  const { handleOpen } = useModal();
+  const educationDictionary = keyBy(educations, "title");
 
   return (
     <Grid container>
@@ -43,14 +46,25 @@ export function EducationTimeline(): JSX.Element {
                 <TimelineConnector sx={{ height: 50 }} />
               </TimelineSeparator>
               <TimelineContent>
-                <Link
-                  to={`/educations/${title.toLowerCase().replace(/ /g, "-")}`}
-                  className={classes.titleProject}
+                <Paper
+                  elevation={3}
+                  className={classes.paper}
+                  onClick={() => {
+                    const education = get(
+                      educationDictionary,
+                      title,
+                      undefined
+                    );
+                    if (education) {
+                      handleOpen({
+                        title,
+                        content: <EducationDetails education={education} />,
+                      });
+                    }
+                  }}
                 >
-                  <Paper elevation={3} className={classes.paper}>
-                    <Typography>{title}</Typography>
-                  </Paper>
-                </Link>
+                  <Typography>{title}</Typography>
+                </Paper>
               </TimelineContent>
             </TimelineItem>
           ))}
