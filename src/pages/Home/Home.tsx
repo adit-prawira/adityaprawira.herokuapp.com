@@ -25,6 +25,7 @@ export function Home(): JSX.Element {
                   <About />
                 </Zoom>
               </Grid>
+
               <Grid item xs={12}>
                 <Slide triggerOnce>
                   <WorkExperienceTimeline />

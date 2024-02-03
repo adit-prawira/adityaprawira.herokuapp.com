@@ -4,6 +4,7 @@ import { StyledBox } from "./styles";
 import { useModal } from "../../../../common/components/Modal";
 import { EmailForm } from "./components/EmailForm";
 import { ContactDetails } from "./components/ContactDetails";
+import { Robot } from "./components/Robot";
 
 export function About(): JSX.Element {
   const { handleOpen } = useModal();
@@ -52,6 +53,9 @@ export function About(): JSX.Element {
           </Grid>
           <Grid item xs={12} sm={4}>
             <ContactDetails />
+          </Grid>
+          <Grid item xs={12}>
+            <Robot />
           </Grid>
         </Grid>
       </div>

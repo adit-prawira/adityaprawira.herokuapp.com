@@ -1,9 +1,12 @@
 import { styled } from "@mui/system";
-import { Footer } from "grommet";
 
-export const StyledFooter = styled(Footer)({
+export const StyledFooter = styled("div")({
   width: "100%",
-  backgroundColor: "rgb(43, 48, 62)",
   position: "fixed",
   bottom: 0,
+  padding: 10,
+});
+
+export const StyledFlexGrow = styled("div")({
+  flexGrow: 1,
 });

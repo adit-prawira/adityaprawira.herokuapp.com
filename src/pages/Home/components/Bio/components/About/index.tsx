@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { Page, Document, pdfjs } from "react-pdf";
-import { Grid, Typography, CircularProgress, Box } from "@mui/material";
+import { Grid, Typography, CircularProgress } from "@mui/material";
 
 import { OnDocumentLoadSuccess } from "react-pdf/dist/cjs/shared/types";
 import { useModal } from "../../../../../../common/components/Modal";
-import { StyledButton, StyledHeaderContainer } from "./styles";
+import {
+  StyledButton,
+  StyledHeaderContainer,
+  StyledLoadingContainer,
+} from "./styles";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -24,15 +28,9 @@ export function About(): JSX.Element {
           file="JobDocuments/resume.pdf"
           onLoadSuccess={handleLoad}
           loading={
-            <Box
-              width="100%"
-              height={500}
-              justifyContent="center"
-              alignItems="center"
-              display="flex"
-            >
+            <StyledLoadingContainer>
               <CircularProgress size={300} color="primary" thickness={1} />
-            </Box>
+            </StyledLoadingContainer>
           }
         >
           <Page pageNumber={numPages} />
