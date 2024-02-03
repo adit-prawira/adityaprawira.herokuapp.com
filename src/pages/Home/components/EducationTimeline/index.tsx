@@ -6,8 +6,6 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import Typography from "@mui/material/Typography";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 
-import Paper from "@mui/material/Paper";
-import { useStyles } from "./styles";
 import { get, keyBy, map } from "lodash";
 import { educations } from "../../../../seedInfo";
 import { v4 as uuid } from "uuid";
@@ -15,9 +13,9 @@ import { Avatar, Grid } from "@mui/material";
 import { TimelineDot } from "@mui/lab";
 import { useModal } from "../../../../common/components/Modal";
 import { EducationDetails } from "./components/EducationDetails";
+import { StyledPaper } from "./styles";
 
 export function EducationTimeline(): JSX.Element {
-  const classes = useStyles();
   const { handleOpen } = useModal();
   const educationDictionary = keyBy(educations, "title");
 
@@ -46,9 +44,8 @@ export function EducationTimeline(): JSX.Element {
                 <TimelineConnector sx={{ height: 50 }} />
               </TimelineSeparator>
               <TimelineContent>
-                <Paper
+                <StyledPaper
                   elevation={3}
-                  className={classes.paper}
                   onClick={() => {
                     const education = get(
                       educationDictionary,
@@ -64,7 +61,7 @@ export function EducationTimeline(): JSX.Element {
                   }}
                 >
                   <Typography>{title}</Typography>
-                </Paper>
+                </StyledPaper>
               </TimelineContent>
             </TimelineItem>
           ))}

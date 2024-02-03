@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import { v4 as uuidv4 } from "uuid";
 import { map } from "lodash";
 import { Project } from "../../../../../types";
+import { StyledImage } from "./styles";
 
 interface ProjectDetailsProps {
   readonly project: Project;
@@ -39,16 +40,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps): JSX.Element {
         justifyContent="center"
         alignItems="center"
       >
-        <img
-          src={image}
-          alt={title}
-          width={300}
-          style={{
-            border: "1px solid black",
-            borderRadius: "10px",
-            boxShadow: "10px 10px white",
-          }}
-        />
+        <StyledImage src={image} alt={title} width={300} />
       </Grid>
     </Grid>
   );

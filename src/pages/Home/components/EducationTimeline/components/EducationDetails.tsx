@@ -2,6 +2,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import { v4 as uuidv4 } from "uuid";
 import { Education } from "../../../../../types";
+import { StyledImage } from "./styles";
 
 interface EducationDetailsProps {
   readonly education: Education;
@@ -50,18 +51,7 @@ export function EducationDetails({ education }: EducationDetailsProps) {
         justifyContent="center"
         alignItems="center"
       >
-        <img
-          src={image}
-          alt={title}
-          width={300}
-          style={{
-            border: "1px solid black",
-            borderRadius: "10px",
-            background: "white",
-            boxShadow: "10px 10px white",
-            objectFit: "contain",
-          }}
-        />
+        <StyledImage src={image} alt={title} width={300} />
       </Grid>
     </Grid>
   );

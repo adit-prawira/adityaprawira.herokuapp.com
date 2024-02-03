@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Page, Document, pdfjs } from "react-pdf";
-import { Grid, Typography, Button, CircularProgress, Box } from "@mui/material";
+import { Grid, Typography, CircularProgress, Box } from "@mui/material";
 
 import { OnDocumentLoadSuccess } from "react-pdf/dist/cjs/shared/types";
 import { useModal } from "../../../../../../common/components/Modal";
+import { StyledButton, StyledHeaderContainer } from "./styles";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -42,7 +43,7 @@ export function About(): JSX.Element {
 
   return (
     <>
-      <Grid container style={{ marginBottom: 10 }}>
+      <StyledHeaderContainer container>
         <Grid container item xs={8} alignItems="center">
           <Typography variant="h3">Aditya Prawira</Typography>
         </Grid>
@@ -53,16 +54,15 @@ export function About(): JSX.Element {
           justifyContent="flex-end"
           alignItems="center"
         >
-          <Button
+          <StyledButton
             variant="contained"
             color="primary"
-            style={{ borderRadius: 50 }}
             onClick={handleRenderPDF}
           >
             Resume
-          </Button>
+          </StyledButton>
         </Grid>
-      </Grid>
+      </StyledHeaderContainer>
       <Typography gutterBottom variant="body1">
         Aiming to apply proven skills and continuously learn new technology
         stack in improving human productivity through a piece of software.

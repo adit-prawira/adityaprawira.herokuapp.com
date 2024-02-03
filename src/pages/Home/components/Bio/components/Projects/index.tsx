@@ -19,11 +19,13 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { useModal } from "../../../../../../common/components/Modal";
 import { ProjectDetails } from "../../../ProjectTimeline/components/ProjectDetails";
+import { StyledCarouselContainer } from "./styles";
 
 export function Projects(): JSX.Element {
   const [goToSlide, setGoToSlide] = useState(1);
   const { handleOpen } = useModal();
   const projectDictionary = keyBy(projects, "title");
+
   return (
     <Grid container>
       <Grid container item xs={6} justifyContent="flex-start">
@@ -44,13 +46,7 @@ export function Projects(): JSX.Element {
           <ChevronRightIcon />
         </IconButton>
       </Grid>
-      <div
-        style={{
-          width: "100%",
-          height: "400px",
-          margin: "0 auto",
-        }}
-      >
+      <StyledCarouselContainer>
         <Carousel
           slides={map(projects, ({ title, image }) => ({
             key: title,
@@ -107,7 +103,7 @@ export function Projects(): JSX.Element {
           showNavigation={false}
           animationConfig={config.gentle}
         />
-      </div>
+      </StyledCarouselContainer>
     </Grid>
   );
 }

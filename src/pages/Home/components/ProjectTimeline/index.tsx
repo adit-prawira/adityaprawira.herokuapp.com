@@ -5,9 +5,7 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import Typography from "@mui/material/Typography";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
-
-import Paper from "@mui/material/Paper";
-import { useStyles } from "./styles";
+import { StyledPaper } from "./styles";
 import { get, keyBy, map } from "lodash";
 import { projects } from "../../../../seedInfo";
 import { v4 as uuid } from "uuid";
@@ -17,7 +15,6 @@ import { useModal } from "../../../../common/components/Modal";
 import { ProjectDetails } from "./components/ProjectDetails";
 
 export function ProjectTimeline(): JSX.Element {
-  const classes = useStyles();
   const { handleOpen } = useModal();
   const projectDictionary = keyBy(projects, "title");
   return (
@@ -39,9 +36,8 @@ export function ProjectTimeline(): JSX.Element {
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                <Paper
+                <StyledPaper
                   elevation={3}
-                  className={classes.paper}
                   onClick={() => {
                     const project = get(projectDictionary, title, undefined);
                     if (project) {
@@ -53,7 +49,7 @@ export function ProjectTimeline(): JSX.Element {
                   }}
                 >
                   <Typography>{title}</Typography>
-                </Paper>
+                </StyledPaper>
               </TimelineContent>
             </TimelineItem>
           ))}

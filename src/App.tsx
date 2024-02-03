@@ -1,7 +1,7 @@
 import Home from "./pages/Home";
 import { Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "./common/components/ThemeProvider";
-import Navbar from "./Navbar";
+import { Navbar } from "./common/components/Navbar";
 import CustomFooter from "./CustomFooter";
 import CustomParticle from "./CustomParticle";
 import PerfectScrollBar from "react-perfect-scrollbar";

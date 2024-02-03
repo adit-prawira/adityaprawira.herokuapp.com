@@ -2,6 +2,8 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import { v4 as uuidv4 } from "uuid";
 import { WorkExperience } from "../../../../../types";
+import { map } from "lodash";
+import { StyledImage } from "./styles";
 
 interface WorkExperienceDetailsProps {
   readonly workExperience: WorkExperience;
@@ -30,8 +32,8 @@ export function WorkExperienceDetails({
           <strong>Descriptions:</strong>
         </Typography>
         <ul>
-          {descriptions.map((d) => (
-            <li key={uuidv4()}>{d}</li>
+          {map(descriptions, (description) => (
+            <li key={uuidv4()}>{description}</li>
           ))}
         </ul>
       </Grid>
@@ -43,16 +45,7 @@ export function WorkExperienceDetails({
         justifyContent="center"
         alignItems="center"
       >
-        <img
-          src={image}
-          alt={title}
-          width={300}
-          style={{
-            border: "1px solid black",
-            borderRadius: "10px",
-            boxShadow: "10px 10px white",
-          }}
-        />
+        <StyledImage src={image} alt={title} width={300} />
       </Grid>
     </Grid>
   );

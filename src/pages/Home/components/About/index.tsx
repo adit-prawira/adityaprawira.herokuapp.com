@@ -1,12 +1,11 @@
-import { Box, Grid, Typography, Button } from "@mui/material";
+import { Grid, Typography, Button } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
-import { useStyles } from "./styles";
+import { StyledBox } from "./styles";
 import { useModal } from "../../../../common/components/Modal";
 import { EmailForm } from "./components/EmailForm";
 import { ContactDetails } from "./components/ContactDetails";
 
 export function About(): JSX.Element {
-  const classes = useStyles();
   const { handleOpen } = useModal();
   function handleSendEmail(): void {
     handleOpen({
@@ -16,7 +15,7 @@ export function About(): JSX.Element {
   }
 
   return (
-    <Box className={classes.box}>
+    <StyledBox>
       <div>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={8}>
@@ -56,6 +55,6 @@ export function About(): JSX.Element {
           </Grid>
         </Grid>
       </div>
-    </Box>
+    </StyledBox>
   );
 }

@@ -1,6 +1,4 @@
 import { Grid } from "@mui/material";
-import { Box } from "grommet";
-import useStyles from "./styles";
 import { Bio } from "./components/Bio";
 import PerfectScrollBar from "react-perfect-scrollbar";
 import { ModalProvider } from "../../common/components/Modal";
@@ -10,13 +8,13 @@ import { ProjectTimeline } from "./components/ProjectTimeline";
 import { EducationTimeline } from "./components/EducationTimeline";
 import { WorkExperienceTimeline } from "./components/WorkExperienceTimeline";
 import { Zoom, Slide } from "react-awesome-reveal";
-export function Home(): JSX.Element {
-  const classes = useStyles();
+import { StyledBox } from "./styles";
 
+export function Home(): JSX.Element {
   return (
     <Page>
       <ModalProvider>
-        <Box className={classes.container}>
+        <StyledBox>
           <PerfectScrollBar>
             <Grid container spacing={10}>
               <Grid item xs={12}>
@@ -44,7 +42,7 @@ export function Home(): JSX.Element {
               </Grid>
             </Grid>
           </PerfectScrollBar>
-        </Box>
+        </StyledBox>
       </ModalProvider>
     </Page>
   );

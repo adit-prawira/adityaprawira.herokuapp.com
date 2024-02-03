@@ -1,14 +1,9 @@
-import { Theme } from "@mui/material";
-import makeStyles from "@mui/styles/makeStyles";
-import createStyles from "@mui/styles/createStyles";
+import { styled } from "@mui/system";
 
-export const useStyles = makeStyles<Theme>(() =>
-  createStyles({
-    imageContainer: {
-      display: "flex",
-      justifyContent: "flex-start",
-      alignItems: "center",
-    },
-    image: { width: "100%" },
-  })
-);
+export const StyledContainer = styled("div")({
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "center",
+});
+
+export const StyledImage = styled("img")({ width: "100%" });
