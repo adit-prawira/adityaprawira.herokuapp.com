@@ -1,21 +1,22 @@
 import { Toolbar } from "@mui/material";
-import { useHistory } from "react-router-dom";
+
 import {
   StyledAppBar,
   StyledButton,
   StyledClock,
   StyledFlexGrow,
 } from "./styles";
+import { useNavigate } from "react-router";
 
 export function Navbar(): JSX.Element {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (
     <StyledAppBar position="static" elevation={0}>
       <Toolbar>
-        <StyledButton onClick={() => history.push("/")}>Home</StyledButton>
+        <StyledButton onClick={() => navigate("/")}>Home</StyledButton>
         <StyledFlexGrow />
-        <StyledButton onClick={() => history.push("/artworks")}>
+        <StyledButton onClick={() => navigate("/artworks")}>
           Artworks/Albums
         </StyledButton>
         <StyledFlexGrow />

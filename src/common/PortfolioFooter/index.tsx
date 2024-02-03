@@ -2,19 +2,11 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { Footer } from "grommet";
+import { StyledFooter } from "./styles";
 
-function CustomFooter() {
+export function PortfolioFooter(): JSX.Element {
   return (
-    <Footer
-      pad="small"
-      style={{
-        width: "100%",
-        backgroundColor: "rgb(43, 48, 62)",
-        position: "fixed",
-        bottom: 0,
-      }}
-    >
+    <StyledFooter pad="small">
       <a href="https://www.instagram.com/azuregazemusic/">
         <InstagramIcon color="action" fontSize="large" />
       </a>
@@ -27,7 +19,6 @@ function CustomFooter() {
       <a href="https://github.com/adit-prawira">
         <GitHubIcon color="action" fontSize="large" />
       </a>
-    </Footer>
+    </StyledFooter>
   );
 }
-export default CustomFooter;

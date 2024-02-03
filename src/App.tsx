@@ -1,32 +1,27 @@
 import Home from "./pages/Home";
-import { Route, Switch } from "react-router-dom";
-import { ThemeProvider } from "./common/components/ThemeProvider";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import { Navbar } from "./common/components/Navbar";
-import CustomFooter from "./CustomFooter";
+
 import CustomParticle from "./CustomParticle";
 import PerfectScrollBar from "react-perfect-scrollbar";
 import { Artworks } from "./pages/Artworks";
+import { PortfolioFooter } from "./common/PortfolioFooter";
 
 export default function App(): JSX.Element {
   return (
-    <ThemeProvider>
-      <div>
+    <div>
+      <CustomParticle />
+      <Router>
         <Navbar />
-        <CustomParticle />
-        <div>
-          <Route
-            render={({ location }) => (
-              <PerfectScrollBar>
-                <Switch location={location}>
-                  <Route exact path="/" render={() => <Home />} />
-                  <Route exact path="/artworks" render={() => <Artworks />} />
-                </Switch>
-              </PerfectScrollBar>
-            )}
-          />
-        </div>
-      </div>
-      <CustomFooter />
-    </ThemeProvider>
+        <PerfectScrollBar>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/artworks" element={<Artworks />} />
+          </Routes>
+        </PerfectScrollBar>
+      </Router>
+      <PortfolioFooter />
+    </div>
   );
 }
