@@ -1,21 +1,17 @@
-import { Theme } from "@mui/material";
-import makeStyles from "@mui/styles/makeStyles";
-import createStyles from "@mui/styles/createStyles";
+import { Grid } from "@mui/material";
+import { styled } from "@mui/system";
 
-export const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    image: {
-      width: "80%",
-      "&:hover": {
-        boxShadow: "0 0.5em 0.5em -0.4em black",
-        transform: "translateY(-0.25em)",
-        cursor: "pointer",
-      },
-    },
-    container: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    },
-  })
-);
+export const Image = styled("img")({
+  width: "80%",
+  "&:hover": {
+    boxShadow: "0 0.5em 0.5em -0.4em black",
+    transform: "translateY(-0.25em)",
+    cursor: "pointer",
+  },
+});
+
+export const ImageContainer = styled(Grid)({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+});

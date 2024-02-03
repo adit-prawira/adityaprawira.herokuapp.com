@@ -1,25 +1,23 @@
-import { Theme } from "@mui/material";
-import makeStyles from "@mui/styles/makeStyles";
-import createStyles from "@mui/styles/createStyles";
+import { Avatar } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { styled as muiSystemStyled } from "@mui/system";
 
-export const useStyles = makeStyles<Theme>(() =>
-  createStyles({
-    image: {
-      width: "100%",
-      borderRadius: "10px",
-      boxShadow: "10px 10px white",
-    },
-    icon: {
-      "&:hover": {
-        cursor: "pointer",
-        boxShadow: "10px 10px white",
-      },
-    },
-    songLinksContainer: {
-      width: "100%",
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-    },
-  })
-);
+export const StyledAvatar = styled(Avatar)`
+  ${({ theme }) => `
+  cursor: pointer;
+  background-color: ${theme.palette.primary.main};
+  transition: ${theme.transitions.create(["background-color", "transform"], {
+    duration: theme.transitions.duration.standard,
+  })};
+  &:hover {
+    background-color: ${theme.palette.secondary.main};
+    transform: scale(1.3);
+  }
+  `}
+`;
+
+export const StyledImage = muiSystemStyled("img")({
+  width: "100%",
+  borderRadius: "10px",
+  boxShadow: "10px 10px white",
+});

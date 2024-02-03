@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Grid,
   Paper,
   Table,
@@ -10,43 +9,25 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { Artwork } from "../../../../../../seedInfo";
-import { useStyles } from "./styles";
+import { StyledAvatar, StyledImage } from "./styles";
 import { map } from "lodash";
-import { styled } from "@mui/material/styles";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import { Artwork } from "../../../../../../types";
 
 interface ArtworkDetailsProps {
   readonly art: Artwork;
 }
 
-const StyledAvatar = styled(Avatar)`
-  ${({ theme }) => `
-  cursor: pointer;
-  background-color: ${theme.palette.primary.main};
-  transition: ${theme.transitions.create(["background-color", "transform"], {
-    duration: theme.transitions.duration.standard,
-  })};
-  &:hover {
-    background-color: ${theme.palette.secondary.main};
-    transform: scale(1.3);
-  }
-  `}
-`;
-
 export function ArtworkDetails({ art }: ArtworkDetailsProps): JSX.Element {
-  const classes = useStyles();
-
   return (
     <Grid container spacing={3}>
       <Grid container item xs={12} sm={6} spacing={5}>
         <Grid item xs={12} marginRight="10px">
-          <img
+          <StyledImage
             src={`/Images/${
               art.title ? art.title.toLowerCase().replace(/ /g, "-") : ""
             }.png`}
             alt={art.title}
-            className={classes.image}
           />
         </Grid>
         <Grid item xs={12}>
